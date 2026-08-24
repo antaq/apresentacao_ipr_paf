@@ -16,6 +16,11 @@ DST = Path("/home/pedro/Apresentacoes/EncontroChefias2026/apresentacao_ipr_paf20
 TOTAL = 18
 RODAPE = "IPR 2.0 e o PAF 2027 — Encontro de Chefias · GPF/SFC/ANTAQ"
 
+# Fator global de texto. Cada slide declara o `base` em que foi fechado; este
+# fator multiplica todos eles de uma vez. Em 0.90 o texto do corpo encolhe 10%,
+# e a folga que sobra vira respiro vertical entre os cards (row-gap, abaixo).
+TEXT_SCALE = 0.90
+
 BASE_CSS = """
 body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
 .slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden; background:#ffffff; }
@@ -64,7 +69,10 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
   display:flex; align-items:center; justify-content:center;
 }
 /* As colunas dos slides de duas metades centram o proprio conteudo: a folga
-   vertical fica dividida em cima e embaixo, em vez de sobrar toda no rodape. */
+   vertical fica dividida em cima e embaixo, em vez de sobrar toda no rodape.
+   O contêiner de conteudo quase sempre E o proprio grid (`class="flex-1 ...
+   grid"`), e nao um grid dentro dele — por isso os dois seletores. */
+.slide > .flex-1 > .flex.flex-col,
 .slide > .flex-1 > .grid > .flex.flex-col { justify-content:center; }
 
 table.tbl { width:100%; border-collapse:collapse; }
@@ -104,6 +112,19 @@ table.tbl th.num { text-align:right; }
   font-weight:900; font-size:calc(13px * var(--tz));
   letter-spacing:0.1em; text-transform:uppercase;
 }
+
+/* Respiro vertical entre os cards.
+   Os utilitarios gap-* do Tailwind valem para as duas direcoes, e mexer no
+   `gap` cheio estreitaria as colunas dos grids de duas metades. Por isso aqui
+   so o `row-gap` e reescrito: um card fica mais longe do card de baixo, e a
+   largura das colunas continua exatamente a mesma. Esta folha vem depois do
+   CDN no <head>, entao vence no desempate por ordem. */
+.gap-2 { row-gap:18px; }
+.gap-3 { row-gap:30px; }
+.gap-4 { row-gap:32px; }
+.gap-5 { row-gap:34px; }
+.gap-6 { row-gap:34px; }
+.gap-8 { row-gap:38px; }
 """
 
 HEAD = """<!DOCTYPE html>
@@ -1632,7 +1653,7 @@ SLIDES.append(dict(n=18, raw=True))
 def render(s):
     # `--tz-base` diz ao zoom.js em que tamanho este slide foi fechado; o + / - do
     # usuario multiplica essa base. Slide denso fica perto de 1, slide arejado sobe.
-    css = f':root {{ --tz-base: {s.get("base", 1.0)}; }}\n' + BASE_CSS + s.get("extra_css", "")
+    css = f':root {{ --tz-base: {s.get("base", 1.0) * TEXT_SCALE:.4g}; }}\n' + BASE_CSS + s.get("extra_css", "")
     return HEAD.format(
         title=s["title"],
         css=css,

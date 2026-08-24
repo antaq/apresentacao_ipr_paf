@@ -27,6 +27,11 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
 .recado p { margin:0; }
 .recado-t { font-family:'Montserrat',sans-serif; font-weight:700; color:#fff; font-size:calc(19px * var(--tz)); }
 .recado-d { color:#BFD3E8; font-size:calc(15px * var(--tz)); line-height:1.5; margin-top:3px !important; }
+
+/* Mesmo respiro vertical entre os cards dos slides gerados: so o row-gap, para
+   nao estreitar as colunas do grid. O texto daqui ja foi fechado no tamanho
+   final (tz = 1), entao nao entra no fator de 90%. */
+.gap-4 { row-gap:32px; }
 </style>
 </head>
 <body>
