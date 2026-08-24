@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Os indicadores de comportamento</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>:root { --tz-base: 1.4; }
+
+body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
+.slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden; background:#ffffff; }
+.font-montserrat { font-family:'Montserrat',sans-serif; }
+.text-brand { color:#003366; }
+.bg-brand { background-color:#003366; }
+.text-accent { color:#0066CC; }
+.bg-accent { background-color:#0066CC; }
+.header-bar { height:10px; background:#003366; width:100%; }
+.secondary-bar { height:4px; background:#0066CC; width:100%; }
+
+.stat-card {
+  background: linear-gradient(135deg, #003366, #004d99);
+  border-radius: 16px;
+  padding: 20px 18px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::after {
+  content: '';
+  position: absolute; top: -30px; right: -30px;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+}
+.stat-num {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: calc(48px * var(--tz));
+  line-height: 1;
+}
+.card {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 14px 20px;
+  background: #F8FAFC;
+  border-radius: 14px;
+  border-left: 5px solid #0066CC;
+}
+.card-green  { background: linear-gradient(135deg,#F0FDF4,#DCFCE7); border-left-color:#22C55E; }
+.card-amber  { background: linear-gradient(135deg,#FFFBEB,#FEF3C7); border-left-color:#F59E0B; }
+.card-red    { background: linear-gradient(135deg,#FEF2F2,#FEE2E2); border-left-color:#EF4444; }
+.ico {
+  width:50px; height:50px; border-radius:12px; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+}
+/* As colunas dos slides de duas metades centram o proprio conteudo: a folga
+   vertical fica dividida em cima e embaixo, em vez de sobrar toda no rodape. */
+.slide > .flex-1 > .grid > .flex.flex-col { justify-content:center; }
+
+table.tbl { width:100%; border-collapse:collapse; }
+table.tbl th {
+  background:#F1F5F9; color:#475569; text-align:left;
+  font-family:'Montserrat',sans-serif; font-weight:700;
+  text-transform:uppercase; letter-spacing:0.06em;
+  padding:10px 14px; font-size:calc(15px * var(--tz));
+}
+table.tbl td { padding:11px 14px; border-top:1px solid #E2E8F0; color:#334155; font-size:calc(18px * var(--tz)); }
+table.tbl tr:nth-child(even) td { background:#FAFBFC; }
+.num { text-align:right; font-variant-numeric:tabular-nums; }
+table.tbl th.num { text-align:right; }
+.pill {
+  display:inline-block; padding:3px 12px; border-radius:999px;
+  font-family:'Montserrat',sans-serif; font-weight:700;
+  font-size:calc(14px * var(--tz)); letter-spacing:0.04em;
+}
+.pill-a { background:#DCFCE7; color:#166534; }
+.pill-b { background:#DBEAFE; color:#1E40AF; }
+.pill-c { background:#FEE2E2; color:#991B1B; }
+.pill-gold { background:#FEF3C7; color:#92400E; }
+.formula {
+  background:#0F172A; color:#E2E8F0; border-radius:14px;
+  padding:18px 24px; font-family:'Courier New',monospace;
+  font-size:calc(20px * var(--tz)); letter-spacing:0.02em;
+}
+.destaque {
+  background: linear-gradient(135deg,#003366,#0066CC);
+  color:#fff; border-radius:16px; padding:16px 24px;
+}
+.legenda { color:#64748B; font-size:calc(15px * var(--tz)); line-height:1.5; }
+.novo-tag {
+  display:inline-flex; align-items:center; gap:7px;
+  background:#FFD700; color:#003366; border-radius:999px;
+  padding:3px 14px; font-family:'Montserrat',sans-serif;
+  font-weight:900; font-size:calc(13px * var(--tz));
+  letter-spacing:0.1em; text-transform:uppercase;
+}
+
+td.sg { font-family:'Montserrat',sans-serif; font-weight:900; color:#003366; letter-spacing:0.04em; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header-bar"></div>
+  <div class="secondary-bar"></div>
+
+  <div class="px-16 pt-6 pb-2">
+    <div class="flex items-center gap-3">
+      <div style="width:5px;height:44px;" class="bg-accent"></div>
+      <div>
+        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Seção &ldquo;Indicadores comportamentais&rdquo; da Ajuda</p>
+        <p class="text-5xl font-montserrat font-bold text-brand uppercase tracking-tight">O que a empresa já fez</p>
+      </div>
+      <div class="ml-auto flex items-center gap-3">
+        
+        <img src="assets/logo-antaq-azul.png" alt="ANTAQ" style="height:32px;">
+        <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">GPF</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="flex-1 px-16 pb-2 grid grid-cols-12 gap-5">
+    <div class="col-span-7 flex flex-col gap-3">
+      <p class="text-gray-600 text-xl">
+        Seis indicadores da <strong>NT 9/2021</strong>. Todos são <strong>proporções</strong>:
+        o que deu errado dividido pelo total. Todos olham para os últimos 3 ou 5 anos.
+      </p>
+      <table class="tbl">
+        <thead><tr>
+          <th>Sigla</th><th>O que mede</th><th class="num">Peso</th><th>Janela</th>
+        </tr></thead>
+        <tbody>
+          <tr><td class="sg">IRI</td><td>Reincidência — repetiu a mesma infração</td><td class="num"><strong>3</strong></td><td>3 anos</td></tr>
+          <tr><td class="sg">IGI</td><td>Gravidade das infrações cometidas</td><td class="num"><strong>3</strong></td><td>5 anos</td></tr>
+          <tr><td class="sg">IOC</td><td>Ocorrência crítica — infrações da lista sensível</td><td class="num"><strong>3</strong></td><td>5 anos</td></tr>
+          <tr><td class="sg">INN</td><td>Não atendimento a NoCI</td><td class="num"><strong>2</strong></td><td>5 anos</td></tr>
+          <tr><td class="sg">IOU</td><td>Denúncia de Ouvidoria que virou sanção</td><td class="num"><strong>2</strong></td><td>5 anos</td></tr>
+          <tr><td class="sg">IIN</td><td>Irregularidade normativa — processos com penalidade</td><td class="num"><strong>1</strong></td><td>5 anos</td></tr>
+        </tbody>
+      </table>
+      <p class="legenda">
+        Pesos da gravidade no IGI (NT 9/2021, Tabela 4): Leve 1 · Média 3 · Grave 6 · Gravíssima 10.
+        Os pesos ficam em tabela no banco e o painel os lê de lá — não há número escondido em código.
+      </p>
+    </div>
+
+    <div class="col-span-5 flex flex-col gap-3">
+      <div class="card card-red">
+        <div class="ico" style="background:#FECACA;"><i class="fas fa-circle-exclamation text-red-600 text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-2xl">O defeito que isso criava</p>
+          <p class="text-gray-600 text-lg mt-1">
+            <strong>Todos os seis dependem de fiscalização anterior.</strong> Empresa nunca
+            fiscalizada não tem autuação, não tem NoCI, não tem reincidência — e por isso
+            marcava <strong>zero em tudo</strong>.
+          </p>
+          <p class="text-gray-600 text-lg mt-1">
+            Zero em tudo caía em <strong>A1, a faixa de menor risco</strong>. Ou seja: quanto
+            menos a Agência olhava para uma outorga, mais segura ela parecia.
+          </p>
+        </div>
+      </div>
+
+      <div class="destaque">
+        <p class="font-montserrat font-bold" style="font-size:calc(22px * var(--tz));">
+          &ldquo;Nunca fiscalizada&rdquo; não é o mesmo que &ldquo;sem problema&rdquo;.
+        </p>
+        <p class="text-blue-100 text-lg mt-2">
+          Corrigir isso é o que os dois próximos indicadores fazem — e é a mudança
+          mais importante do IPR 2.0.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-arrow-trend-down text-accent text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-xl">O tamanho do problema</p>
+          <p class="text-gray-600 text-lg mt-1">
+            <strong>591 outorgas</strong> do ciclo 2027 nunca foram fiscalizadas. Outras
+            <strong>378</strong> não recebem visita há mais de cinco anos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="px-16 pb-4 flex justify-between items-center border-t border-gray-100 pt-3 mx-8">
+    <p class="text-gray-400 text-sm">IPR 2.0 e o PAF 2027 — Encontro de Chefias · GPF/SFC/ANTAQ</p>
+    <p class="text-gray-300 text-sm font-mono">5 / 18</p>
+  </div>
+</div>
+<script src="zoom.js"></script>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
+</body>
+</html>

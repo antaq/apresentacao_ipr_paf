@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>O que mudou — IPR 2.0</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>:root { --tz-base: 1.33; }
+
+body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
+.slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden; background:#ffffff; }
+.font-montserrat { font-family:'Montserrat',sans-serif; }
+.text-brand { color:#003366; }
+.bg-brand { background-color:#003366; }
+.text-accent { color:#0066CC; }
+.bg-accent { background-color:#0066CC; }
+.header-bar { height:10px; background:#003366; width:100%; }
+.secondary-bar { height:4px; background:#0066CC; width:100%; }
+
+.stat-card {
+  background: linear-gradient(135deg, #003366, #004d99);
+  border-radius: 16px;
+  padding: 20px 18px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::after {
+  content: '';
+  position: absolute; top: -30px; right: -30px;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+}
+.stat-num {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: calc(48px * var(--tz));
+  line-height: 1;
+}
+.card {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 14px 20px;
+  background: #F8FAFC;
+  border-radius: 14px;
+  border-left: 5px solid #0066CC;
+}
+.card-green  { background: linear-gradient(135deg,#F0FDF4,#DCFCE7); border-left-color:#22C55E; }
+.card-amber  { background: linear-gradient(135deg,#FFFBEB,#FEF3C7); border-left-color:#F59E0B; }
+.card-red    { background: linear-gradient(135deg,#FEF2F2,#FEE2E2); border-left-color:#EF4444; }
+.ico {
+  width:50px; height:50px; border-radius:12px; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+}
+/* As colunas dos slides de duas metades centram o proprio conteudo: a folga
+   vertical fica dividida em cima e embaixo, em vez de sobrar toda no rodape. */
+.slide > .flex-1 > .grid > .flex.flex-col { justify-content:center; }
+
+table.tbl { width:100%; border-collapse:collapse; }
+table.tbl th {
+  background:#F1F5F9; color:#475569; text-align:left;
+  font-family:'Montserrat',sans-serif; font-weight:700;
+  text-transform:uppercase; letter-spacing:0.06em;
+  padding:10px 14px; font-size:calc(15px * var(--tz));
+}
+table.tbl td { padding:11px 14px; border-top:1px solid #E2E8F0; color:#334155; font-size:calc(18px * var(--tz)); }
+table.tbl tr:nth-child(even) td { background:#FAFBFC; }
+.num { text-align:right; font-variant-numeric:tabular-nums; }
+table.tbl th.num { text-align:right; }
+.pill {
+  display:inline-block; padding:3px 12px; border-radius:999px;
+  font-family:'Montserrat',sans-serif; font-weight:700;
+  font-size:calc(14px * var(--tz)); letter-spacing:0.04em;
+}
+.pill-a { background:#DCFCE7; color:#166534; }
+.pill-b { background:#DBEAFE; color:#1E40AF; }
+.pill-c { background:#FEE2E2; color:#991B1B; }
+.pill-gold { background:#FEF3C7; color:#92400E; }
+.formula {
+  background:#0F172A; color:#E2E8F0; border-radius:14px;
+  padding:18px 24px; font-family:'Courier New',monospace;
+  font-size:calc(20px * var(--tz)); letter-spacing:0.02em;
+}
+.destaque {
+  background: linear-gradient(135deg,#003366,#0066CC);
+  color:#fff; border-radius:16px; padding:16px 24px;
+}
+.legenda { color:#64748B; font-size:calc(15px * var(--tz)); line-height:1.5; }
+.novo-tag {
+  display:inline-flex; align-items:center; gap:7px;
+  background:#FFD700; color:#003366; border-radius:999px;
+  padding:3px 14px; font-family:'Montserrat',sans-serif;
+  font-weight:900; font-size:calc(13px * var(--tz));
+  letter-spacing:0.1em; text-transform:uppercase;
+}
+
+.bloco { background:#fff; border:1px solid #E2E8F0; border-radius:16px; overflow:hidden; display:flex; flex-direction:column; }
+.bloco-top {
+  color:#fff; padding:13px 20px; display:flex; align-items:center; gap:11px;
+  font-family:'Montserrat',sans-serif; font-weight:700; font-size:calc(20px * var(--tz));
+}
+.bloco-body {
+  flex:1; padding:16px 20px; display:flex; flex-direction:column;
+  justify-content:space-evenly; gap:10px;
+}
+.bloco-body p { margin:0; color:#475569; font-size:calc(17px * var(--tz)); line-height:1.5; padding-left:24px; position:relative; }
+.bloco-body p::before {
+  content:''; position:absolute; left:2px; top:calc(9px * var(--tz));
+  width:9px; height:9px; border-radius:50%; background:#0066CC; opacity:0.45;
+}
+.bloco-body strong { color:#003366; }
+.bloco-foot {
+  border-top:1px solid #E2E8F0; padding:11px 20px; background:#F8FAFC;
+  color:#475569; font-size:calc(15px * var(--tz));
+}
+.bloco-foot strong { font-family:'Montserrat',sans-serif; font-weight:900; color:#003366; font-size:calc(21px * var(--tz)); }
+.mini {
+  display:flex; align-items:center; gap:10px;
+  background:#F8FAFC; border-radius:12px; padding:10px 16px;
+  color:#475569; font-size:calc(15px * var(--tz));
+}
+.mini strong { color:#003366; font-family:'Montserrat',sans-serif; font-weight:900; font-size:calc(19px * var(--tz)); }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header-bar"></div>
+  <div class="secondary-bar"></div>
+
+  <div class="px-16 pt-6 pb-2">
+    <div class="flex items-center gap-3">
+      <div style="width:5px;height:44px;" class="bg-accent"></div>
+      <div>
+        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Panorama</p>
+        <p class="text-5xl font-montserrat font-bold text-brand uppercase tracking-tight">O que mudou desde o último PAF</p>
+      </div>
+      <div class="ml-auto flex items-center gap-3">
+        
+        <img src="assets/logo-antaq-azul.png" alt="ANTAQ" style="height:32px;">
+        <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">GPF</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="flex-1 px-16 pb-2 flex flex-col gap-4">
+
+    <div class="grid grid-cols-3 gap-4 flex-1">
+      <div class="bloco">
+        <div class="bloco-top" style="background:linear-gradient(135deg,#003366,#0066CC);">
+          <i class="fas fa-gauge-high"></i>
+          <span>1 · O risco ficou mais completo</span>
+        </div>
+        <div class="bloco-body">
+          <p><strong>Quem nunca foi fiscalizado deixou de ser &ldquo;risco zero&rdquo;</strong> (ICF).</p>
+          <p><strong>O tamanho da operação passou a pesar</strong> (IVO).</p>
+          <p><strong>Atividade perigosa tem piso</strong>: travessia nunca cai na faixa mais branda (F_IRA).</p>
+          <p><strong>As faixas A1..C4 foram refeitas</strong> para caber na capacidade real da Agência.</p>
+          <p><strong>Uma parcela do grupo de baixo risco entra por sorteio auditável.</strong></p>
+        </div>
+        <div class="bloco-foot"><strong>39%</strong> do universo sem visita recente — e agora isso pesa na nota</div>
+      </div>
+
+      <div class="bloco">
+        <div class="bloco-top" style="background:linear-gradient(135deg,#065F46,#059669);">
+          <i class="fas fa-id-card"></i>
+          <span>2 · A lista ficou confiável</span>
+        </div>
+        <div class="bloco-body">
+          <p><strong>Todo CNPJ do PAF é conferido na Receita Federal</strong> antes de a lista fechar.</p>
+          <p><strong>Empresa baixada ou suspensa sai da listagem</strong> e vai para uma fila de conferência humana.</p>
+          <p><strong>68 outorgas ficaram de fora</strong> do PAF 2027 por esse motivo.</p>
+          <p><strong>O dossiê do CNPJ já vem pronto</strong> para instruir a revogação do termo de outorga.</p>
+        </div>
+        <div class="bloco-foot"><strong>2.133</strong> CNPJs conferidos na Receita Federal</div>
+      </div>
+
+      <div class="bloco">
+        <div class="bloco-top" style="background:linear-gradient(135deg,#92400E,#D97706);">
+          <i class="fas fa-people-carry-box"></i>
+          <span>3 · O plano ficou executável</span>
+        </div>
+        <div class="bloco-body">
+          <p><strong>Sabemos quem fiscaliza cada outorga</strong> — 100% do universo tem regional responsável.</p>
+          <p><strong>Medimos se o plano cabe na equipe de cada regional</strong>, em horas por ano (PGD).</p>
+          <p><strong>O que não cabe pode ser redistribuído</strong>, com régua, registro e decisão humana.</p>
+          <p><strong>A missão de apoio deixou de ser informal</strong>: passa a ter dono e trilha de auditoria.</p>
+        </div>
+        <div class="bloco-foot"><strong>177% &rarr; 95%</strong> de ocupação na regional mais apertada</div>
+      </div>
+    </div>
+
+    <div class="destaque flex items-center gap-6">
+      <i class="fas fa-quote-left text-3xl" style="opacity:0.35;"></i>
+      <div>
+        <p class="font-montserrat font-bold" style="font-size:calc(23px * var(--tz));">
+          O IPR sempre disse <em>quem</em> fiscalizar. O que faltava era dizer
+          <em>se dá para fiscalizar</em> — e, quando não dá, <em>o que fazer a respeito</em>.
+        </p>
+        <p class="text-blue-100 text-lg mt-1">É essa a diferença entre o PAF 2026 e o PAF 2027.</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-4 gap-3">
+      <div class="mini"><i class="fas fa-list-check text-accent"></i><span><strong>2.478</strong> outorgas avaliadas</span></div>
+      <div class="mini"><i class="fas fa-clipboard-check text-accent"></i><span><strong>2.410</strong> na listagem do PAF 2027</span></div>
+      <div class="mini"><i class="fas fa-map-location-dot text-accent"></i><span><strong>14</strong> regionais executoras</span></div>
+      <div class="mini"><i class="fas fa-display text-accent"></i><span><strong>11</strong> telas no menu</span></div>
+    </div>
+  </div>
+
+
+  <div class="px-16 pb-4 flex justify-between items-center border-t border-gray-100 pt-3 mx-8">
+    <p class="text-gray-400 text-sm">IPR 2.0 e o PAF 2027 — Encontro de Chefias · GPF/SFC/ANTAQ</p>
+    <p class="text-gray-300 text-sm font-mono">2 / 18</p>
+  </div>
+</div>
+<script src="zoom.js"></script>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Equalização da carga entre regionais</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>:root { --tz-base: 1.05; }
+
+body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
+.slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden; background:#ffffff; }
+.font-montserrat { font-family:'Montserrat',sans-serif; }
+.text-brand { color:#003366; }
+.bg-brand { background-color:#003366; }
+.text-accent { color:#0066CC; }
+.bg-accent { background-color:#0066CC; }
+.header-bar { height:10px; background:#003366; width:100%; }
+.secondary-bar { height:4px; background:#0066CC; width:100%; }
+
+.stat-card {
+  background: linear-gradient(135deg, #003366, #004d99);
+  border-radius: 16px;
+  padding: 20px 18px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::after {
+  content: '';
+  position: absolute; top: -30px; right: -30px;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+}
+.stat-num {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: calc(48px * var(--tz));
+  line-height: 1;
+}
+.card {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 14px 20px;
+  background: #F8FAFC;
+  border-radius: 14px;
+  border-left: 5px solid #0066CC;
+}
+.card-green  { background: linear-gradient(135deg,#F0FDF4,#DCFCE7); border-left-color:#22C55E; }
+.card-amber  { background: linear-gradient(135deg,#FFFBEB,#FEF3C7); border-left-color:#F59E0B; }
+.card-red    { background: linear-gradient(135deg,#FEF2F2,#FEE2E2); border-left-color:#EF4444; }
+.ico {
+  width:50px; height:50px; border-radius:12px; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+}
+/* As colunas dos slides de duas metades centram o proprio conteudo: a folga
+   vertical fica dividida em cima e embaixo, em vez de sobrar toda no rodape. */
+.slide > .flex-1 > .grid > .flex.flex-col { justify-content:center; }
+
+table.tbl { width:100%; border-collapse:collapse; }
+table.tbl th {
+  background:#F1F5F9; color:#475569; text-align:left;
+  font-family:'Montserrat',sans-serif; font-weight:700;
+  text-transform:uppercase; letter-spacing:0.06em;
+  padding:10px 14px; font-size:calc(15px * var(--tz));
+}
+table.tbl td { padding:11px 14px; border-top:1px solid #E2E8F0; color:#334155; font-size:calc(18px * var(--tz)); }
+table.tbl tr:nth-child(even) td { background:#FAFBFC; }
+.num { text-align:right; font-variant-numeric:tabular-nums; }
+table.tbl th.num { text-align:right; }
+.pill {
+  display:inline-block; padding:3px 12px; border-radius:999px;
+  font-family:'Montserrat',sans-serif; font-weight:700;
+  font-size:calc(14px * var(--tz)); letter-spacing:0.04em;
+}
+.pill-a { background:#DCFCE7; color:#166534; }
+.pill-b { background:#DBEAFE; color:#1E40AF; }
+.pill-c { background:#FEE2E2; color:#991B1B; }
+.pill-gold { background:#FEF3C7; color:#92400E; }
+.formula {
+  background:#0F172A; color:#E2E8F0; border-radius:14px;
+  padding:18px 24px; font-family:'Courier New',monospace;
+  font-size:calc(20px * var(--tz)); letter-spacing:0.02em;
+}
+.destaque {
+  background: linear-gradient(135deg,#003366,#0066CC);
+  color:#fff; border-radius:16px; padding:16px 24px;
+}
+.legenda { color:#64748B; font-size:calc(15px * var(--tz)); line-height:1.5; }
+.novo-tag {
+  display:inline-flex; align-items:center; gap:7px;
+  background:#FFD700; color:#003366; border-radius:999px;
+  padding:3px 14px; font-family:'Montserrat',sans-serif;
+  font-weight:900; font-size:calc(13px * var(--tz));
+  letter-spacing:0.1em; text-transform:uppercase;
+}
+
+.modo { display:flex; gap:14px; align-items:flex-start; background:#F8FAFC; border-radius:14px; padding:12px 18px; border-left:5px solid #0066CC; }
+.modo-t { margin:0; font-family:'Montserrat',sans-serif; font-weight:700; color:#003366; font-size:calc(18px * var(--tz)); }
+.modo-d { margin:2px 0 0; color:#475569; font-size:calc(15px * var(--tz)); line-height:1.45; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header-bar"></div>
+  <div class="secondary-bar"></div>
+
+  <div class="px-16 pt-6 pb-2">
+    <div class="flex items-center gap-3">
+      <div style="width:5px;height:44px;" class="bg-accent"></div>
+      <div>
+        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Novo em 2027 · tela Equalização</p>
+        <p class="text-5xl font-montserrat font-bold text-brand uppercase tracking-tight">Dividir melhor o trabalho</p>
+      </div>
+      <div class="ml-auto flex items-center gap-3">
+        <span class="novo-tag"><i class="fas fa-star"></i> Novidade 2027</span>
+        <img src="assets/logo-antaq-azul.png" alt="ANTAQ" style="height:32px;">
+        <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">GPF</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="flex-1 px-16 pb-2 grid grid-cols-12 gap-5">
+    <div class="col-span-6 flex flex-col gap-3">
+      <div class="card card-amber">
+        <div class="ico" style="background:#FDE68A;"><i class="fas fa-triangle-exclamation text-yellow-700 text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-2xl">Isso já acontecia — sem regra e sem registro</p>
+          <p class="text-gray-600 text-lg mt-1">
+            As fiscalizações de Santana vinham sendo feitas por equipes de fora, principalmente de
+            Belém, em viagens de apoio. Sem regra escrita, sem registro de quem decidiu, e com as
+            <strong>horas lançadas na conta de quem viajou</strong>.
+          </p>
+          <p class="text-gray-600 text-lg mt-1">
+            Efeito colateral: a capacidade de Santana <em>parecia</em> maior do que é. Aqueles
+            <strong>177% são piso, não teto</strong>.
+          </p>
+        </div>
+      </div>
+
+      <p class="font-montserrat font-bold text-brand text-2xl">Duas formas diferentes de dividir</p>
+      <div class="modo">
+        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-right-left text-accent text-2xl"></i></div>
+        <div>
+          <p class="modo-t">Transferência</p>
+          <p class="modo-d">A outorga <strong>passa a ser de outra regional</strong> neste ciclo.
+          Só vale para o que não exige ir ao local — análise documental, navegação marítima.</p>
+        </div>
+      </div>
+      <div class="modo">
+        <div class="ico" style="background:#DCFCE7;"><i class="fas fa-plane-departure text-green-700 text-2xl"></i></div>
+        <div>
+          <p class="modo-t">Missão de apoio</p>
+          <p class="modo-d">A outorga <strong>fica onde está</strong> e uma equipe de fora vai até lá
+          executar. As horas são debitadas de quem apoia. É o que já se fazia — agora com dono,
+          registro e efeito no planejamento.</p>
+        </div>
+      </div>
+
+      <div class="card card-green">
+        <div class="ico" style="background:#BBF7D0;"><i class="fas fa-sitemap text-green-700 text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-xl">A jurisdição NÃO muda</p>
+          <p class="text-gray-600 text-lg mt-1">
+            Quem responde institucionalmente por cada outorga continua sendo quem sempre foi.
+            A equalização é uma <strong>camada sobreposta, válida para o ciclo</strong> — ela diz
+            quem <em>executa</em>, não quem <em>responde</em>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-span-6 flex flex-col gap-3">
+      <div class="grid grid-cols-3 gap-3">
+        <div class="stat-card"><p class="stat-num" style="font-size:calc(38px * var(--tz));">177%&rarr;95%</p><p class="text-blue-200 text-sm font-semibold mt-2">ocupação de Santana</p></div>
+        <div class="stat-card"><p class="stat-num">17</p><p class="text-blue-200 text-sm font-semibold mt-2">movimentos propostos<br/>(752 horas)</p></div>
+        <div class="stat-card"><p class="stat-num">0</p><p class="text-blue-200 text-sm font-semibold mt-2">regionais acima<br/>do limite</p></div>
+      </div>
+
+      <table class="tbl">
+        <thead><tr><th>O que a proposta faz</th><th class="num">Blocos</th><th class="num">Horas</th></tr></thead>
+        <tbody>
+          <tr><td>Transferências (a outorga muda de carteira)</td><td class="num">8</td><td class="num">110</td></tr>
+          <tr><td>Missões de apoio (a equipe é que viaja)</td><td class="num">9</td><td class="num">642</td></tr>
+          <tr><td colspan="3" style="color:#64748B;">Destinos: Santos, São Luís, Salvador e Recife — <strong>ninguém recebeu o problema inteiro</strong></td></tr>
+        </tbody>
+      </table>
+
+      <div class="card">
+        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-boxes-stacked text-accent text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-xl">Não se move uma outorga, move-se um bloco</p>
+          <p class="text-gray-600 text-lg mt-1">
+            Fiscalizar uma travessia ou vinte na mesma localidade custa quase o mesmo em
+            deslocamento. Por isso o que viaja é o <strong>bloco inteiro</strong> — e ele não se
+            quebra: ou vai todo, ou fica, com o motivo escrito.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-compass text-accent text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-xl">Como o destino é escolhido</p>
+          <p class="text-gray-600 text-lg mt-1">
+            Quatro critérios com peso: <strong>folga 40%</strong> · <strong>proximidade 35%</strong> ·
+            <strong>afinidade com a carteira 15%</strong> · <strong>jurisdição 10%</strong>.
+            O relatório publica quanto a preferência por folga custou em quilômetros.
+          </p>
+        </div>
+      </div>
+
+      <div class="destaque">
+        <p class="font-montserrat font-bold" style="font-size:calc(21px * var(--tz));">
+          <i class="fas fa-user-pen mr-2"></i>A rodada propõe. Quem decide é gente.
+        </p>
+        <p class="text-blue-100 text-lg mt-1">
+          Nenhum lote muda de responsável antes de alguém aprovar, lote por lote, com
+          <strong>fundamento e nº SEI</strong>. Rodada nova não desfaz o que foi aprovado nem
+          reapresenta o que foi rejeitado.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="px-16 pb-4 flex justify-between items-center border-t border-gray-100 pt-3 mx-8">
+    <p class="text-gray-400 text-sm">IPR 2.0 e o PAF 2027 — Encontro de Chefias · GPF/SFC/ANTAQ</p>
+    <p class="text-gray-300 text-sm font-mono">13 / 18</p>
+  </div>
+</div>
+<script src="zoom.js"></script>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
+</body>
+</html>

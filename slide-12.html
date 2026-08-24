@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Força de Trabalho — o PAF cabe?</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>:root { --tz-base: 1.2; }
+
+body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
+.slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden; background:#ffffff; }
+.font-montserrat { font-family:'Montserrat',sans-serif; }
+.text-brand { color:#003366; }
+.bg-brand { background-color:#003366; }
+.text-accent { color:#0066CC; }
+.bg-accent { background-color:#0066CC; }
+.header-bar { height:10px; background:#003366; width:100%; }
+.secondary-bar { height:4px; background:#0066CC; width:100%; }
+
+.stat-card {
+  background: linear-gradient(135deg, #003366, #004d99);
+  border-radius: 16px;
+  padding: 20px 18px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::after {
+  content: '';
+  position: absolute; top: -30px; right: -30px;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+}
+.stat-num {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: calc(48px * var(--tz));
+  line-height: 1;
+}
+.card {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 14px 20px;
+  background: #F8FAFC;
+  border-radius: 14px;
+  border-left: 5px solid #0066CC;
+}
+.card-green  { background: linear-gradient(135deg,#F0FDF4,#DCFCE7); border-left-color:#22C55E; }
+.card-amber  { background: linear-gradient(135deg,#FFFBEB,#FEF3C7); border-left-color:#F59E0B; }
+.card-red    { background: linear-gradient(135deg,#FEF2F2,#FEE2E2); border-left-color:#EF4444; }
+.ico {
+  width:50px; height:50px; border-radius:12px; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+}
+/* As colunas dos slides de duas metades centram o proprio conteudo: a folga
+   vertical fica dividida em cima e embaixo, em vez de sobrar toda no rodape. */
+.slide > .flex-1 > .grid > .flex.flex-col { justify-content:center; }
+
+table.tbl { width:100%; border-collapse:collapse; }
+table.tbl th {
+  background:#F1F5F9; color:#475569; text-align:left;
+  font-family:'Montserrat',sans-serif; font-weight:700;
+  text-transform:uppercase; letter-spacing:0.06em;
+  padding:10px 14px; font-size:calc(15px * var(--tz));
+}
+table.tbl td { padding:11px 14px; border-top:1px solid #E2E8F0; color:#334155; font-size:calc(18px * var(--tz)); }
+table.tbl tr:nth-child(even) td { background:#FAFBFC; }
+.num { text-align:right; font-variant-numeric:tabular-nums; }
+table.tbl th.num { text-align:right; }
+.pill {
+  display:inline-block; padding:3px 12px; border-radius:999px;
+  font-family:'Montserrat',sans-serif; font-weight:700;
+  font-size:calc(14px * var(--tz)); letter-spacing:0.04em;
+}
+.pill-a { background:#DCFCE7; color:#166534; }
+.pill-b { background:#DBEAFE; color:#1E40AF; }
+.pill-c { background:#FEE2E2; color:#991B1B; }
+.pill-gold { background:#FEF3C7; color:#92400E; }
+.formula {
+  background:#0F172A; color:#E2E8F0; border-radius:14px;
+  padding:18px 24px; font-family:'Courier New',monospace;
+  font-size:calc(20px * var(--tz)); letter-spacing:0.02em;
+}
+.destaque {
+  background: linear-gradient(135deg,#003366,#0066CC);
+  color:#fff; border-radius:16px; padding:16px 24px;
+}
+.legenda { color:#64748B; font-size:calc(15px * var(--tz)); line-height:1.5; }
+.novo-tag {
+  display:inline-flex; align-items:center; gap:7px;
+  background:#FFD700; color:#003366; border-radius:999px;
+  padding:3px 14px; font-family:'Montserrat',sans-serif;
+  font-weight:900; font-size:calc(13px * var(--tz));
+  letter-spacing:0.1em; text-transform:uppercase;
+}
+
+.leg { border-radius:999px; padding:4px 14px; font-size:calc(13px * var(--tz)); font-weight:600; }
+.leg-v { background:#DCFCE7; color:#166534; }
+.leg-a { background:#FEF9C3; color:#854D0E; }
+.leg-o { background:#FFEDD5; color:#9A3412; }
+.leg-r { background:#FEE2E2; color:#991B1B; }
+table.tbl tr.row-r td { background:#FEF2F2; }
+table.tbl tr.row-o td { background:#FFF7ED; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header-bar"></div>
+  <div class="secondary-bar"></div>
+
+  <div class="px-16 pt-6 pb-2">
+    <div class="flex items-center gap-3">
+      <div style="width:5px;height:44px;" class="bg-accent"></div>
+      <div>
+        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Novo em 2027 · tela Força de Trabalho</p>
+        <p class="text-5xl font-montserrat font-bold text-brand uppercase tracking-tight">O PAF cabe em quem o executa?</p>
+      </div>
+      <div class="ml-auto flex items-center gap-3">
+        <span class="novo-tag"><i class="fas fa-star"></i> Novidade 2027</span>
+        <img src="assets/logo-antaq-azul.png" alt="ANTAQ" style="height:32px;">
+        <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">GPF</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="flex-1 px-16 pb-2 grid grid-cols-12 gap-5">
+    <div class="col-span-7 flex flex-col gap-3">
+      <div class="formula" style="text-align:center; line-height:1.6;">
+        ocupação &nbsp;=&nbsp; horas que o plano exige no ano &nbsp;&divide;&nbsp; horas que a equipe tem livres
+      </div>
+      <div class="flex gap-2">
+        <span class="leg leg-v">abaixo de 70% · folga</span>
+        <span class="leg leg-a">70% a 100% · justa</span>
+        <span class="leg leg-o">100% a 130% · crítica</span>
+        <span class="leg leg-r">acima de 130% · inviável</span>
+      </div>
+
+      <table class="tbl">
+        <thead><tr>
+          <th>Regional</th><th class="num">Equipe</th><th class="num">CNU</th>
+          <th class="num">Capacidade c/ CNU</th><th class="num">Demanda h/ano</th>
+          <th class="num">Sem reforço</th><th class="num">Com reforço</th>
+        </tr></thead>
+        <tbody>
+          <tr class="row-r"><td><strong>URESN</strong> · Santana</td><td class="num">2</td><td class="num">+1</td><td class="num">918</td><td class="num">1.627</td><td class="num">292%</td><td class="num"><strong>177%</strong></td></tr>
+          <tr class="row-o"><td><strong>GREBL</strong> · Belém</td><td class="num">16</td><td class="num">+7</td><td class="num">7.173</td><td class="num">5.601</td><td class="num">121%</td><td class="num"><strong>78%</strong></td></tr>
+          <tr class="row-o"><td><strong>GREMN</strong> · Manaus</td><td class="num">14</td><td class="num">+7</td><td class="num">7.045</td><td class="num">4.876</td><td class="num">115%</td><td class="num"><strong>69%</strong></td></tr>
+          <tr><td><strong>GRERJ</strong> · Rio de Janeiro</td><td class="num">11</td><td class="num">+2</td><td class="num">7.225</td><td class="num">2.373</td><td class="num">37%</td><td class="num">33%</td></tr>
+          <tr><td><strong>UREPV</strong> · Porto Velho</td><td class="num">3</td><td class="num">—</td><td class="num">1.946</td><td class="num">617</td><td class="num">32%</td><td class="num">32%</td></tr>
+          <tr><td><strong>URESL</strong> · São Luís</td><td class="num">7</td><td class="num">—</td><td class="num">5.839</td><td class="num">1.443</td><td class="num">25%</td><td class="num">25%</td></tr>
+          <tr><td colspan="7" style="color:#64748B;">UREFT 21% · UREVT 21% · UREPL 16% · GREFL 16% · GREST 14% · URECB 8% · URESV 8% · GRERE 7%</td></tr>
+        </tbody>
+      </table>
+      <p class="legenda">
+        Cenário base: as 305 outorgas do Grupo C mais a expectativa do sorteio do Grupo A.
+        Capacidade &ldquo;com reforço&rdquo; inclui os <strong>20 convocados do CNU</strong> lotados
+        nas regionais, já com o rendimento reduzido de quem está começando.
+      </p>
+    </div>
+
+    <div class="col-span-5 flex flex-col gap-3">
+      <div class="destaque">
+        <p class="font-montserrat font-bold" style="font-size:calc(24px * var(--tz));">
+          O problema não é a Agência. É a distribuição.
+        </p>
+        <p class="text-blue-100 text-lg mt-2">
+          <strong>22 mil horas</strong> de trabalho previsto contra <strong>66 mil horas</strong>
+          disponíveis: a rede usa cerca de <strong>um terço</strong> da própria capacidade — e
+          mesmo assim uma regional está com quase o dobro do que aguenta.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-database text-accent text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-xl">De onde vêm as horas</p>
+          <p class="text-gray-600 text-lg mt-1">
+            Dos <strong>planos de trabalho do PGD (Hefesto)</strong>, de janeiro/2025 a julho/2026 —
+            o que vocês pactuam e lançam todo mês. Não é estimativa de gabinete.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-stopwatch text-accent text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-xl">Quanto custa uma fiscalização</p>
+          <p class="text-gray-600 text-lg mt-1">
+            Medido nos próprios lançamentos: <strong>72 h por processo</strong> na média.
+            Porto organizado 92 h · arrendamento 84 h · TUP 72 h · outorga geral 66 h ·
+            travessia registrada 58 h. Bate com a Tabela de Atividades da SFC dentro de 25%.
+          </p>
+        </div>
+      </div>
+
+      <div class="card card-amber">
+        <div class="ico" style="background:#FDE68A;"><i class="fas fa-shield text-yellow-700 text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-xl">A reserva é medida, não arbitrada</p>
+          <p class="text-gray-600 text-lg mt-1">
+            O PAF não pode ocupar 100% da equipe: há extraordinárias, sancionador, instrução
+            processual, gestão e capacitação. Essa fatia sai do <strong>próprio PdT de cada
+            regional</strong> — não é um percentual chutado.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="px-16 pb-4 flex justify-between items-center border-t border-gray-100 pt-3 mx-8">
+    <p class="text-gray-400 text-sm">IPR 2.0 e o PAF 2027 — Encontro de Chefias · GPF/SFC/ANTAQ</p>
+    <p class="text-gray-300 text-sm font-mono">12 / 18</p>
+  </div>
+</div>
+<script src="zoom.js"></script>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
+</body>
+</html>

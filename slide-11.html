@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cadastro — CNPJ baixado e suspenso</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>:root { --tz-base: 1.05; }
+
+body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
+.slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden; background:#ffffff; }
+.font-montserrat { font-family:'Montserrat',sans-serif; }
+.text-brand { color:#003366; }
+.bg-brand { background-color:#003366; }
+.text-accent { color:#0066CC; }
+.bg-accent { background-color:#0066CC; }
+.header-bar { height:10px; background:#003366; width:100%; }
+.secondary-bar { height:4px; background:#0066CC; width:100%; }
+
+.stat-card {
+  background: linear-gradient(135deg, #003366, #004d99);
+  border-radius: 16px;
+  padding: 20px 18px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::after {
+  content: '';
+  position: absolute; top: -30px; right: -30px;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+}
+.stat-num {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: calc(48px * var(--tz));
+  line-height: 1;
+}
+.card {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 14px 20px;
+  background: #F8FAFC;
+  border-radius: 14px;
+  border-left: 5px solid #0066CC;
+}
+.card-green  { background: linear-gradient(135deg,#F0FDF4,#DCFCE7); border-left-color:#22C55E; }
+.card-amber  { background: linear-gradient(135deg,#FFFBEB,#FEF3C7); border-left-color:#F59E0B; }
+.card-red    { background: linear-gradient(135deg,#FEF2F2,#FEE2E2); border-left-color:#EF4444; }
+.ico {
+  width:50px; height:50px; border-radius:12px; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+}
+/* As colunas dos slides de duas metades centram o proprio conteudo: a folga
+   vertical fica dividida em cima e embaixo, em vez de sobrar toda no rodape. */
+.slide > .flex-1 > .grid > .flex.flex-col { justify-content:center; }
+
+table.tbl { width:100%; border-collapse:collapse; }
+table.tbl th {
+  background:#F1F5F9; color:#475569; text-align:left;
+  font-family:'Montserrat',sans-serif; font-weight:700;
+  text-transform:uppercase; letter-spacing:0.06em;
+  padding:10px 14px; font-size:calc(15px * var(--tz));
+}
+table.tbl td { padding:11px 14px; border-top:1px solid #E2E8F0; color:#334155; font-size:calc(18px * var(--tz)); }
+table.tbl tr:nth-child(even) td { background:#FAFBFC; }
+.num { text-align:right; font-variant-numeric:tabular-nums; }
+table.tbl th.num { text-align:right; }
+.pill {
+  display:inline-block; padding:3px 12px; border-radius:999px;
+  font-family:'Montserrat',sans-serif; font-weight:700;
+  font-size:calc(14px * var(--tz)); letter-spacing:0.04em;
+}
+.pill-a { background:#DCFCE7; color:#166534; }
+.pill-b { background:#DBEAFE; color:#1E40AF; }
+.pill-c { background:#FEE2E2; color:#991B1B; }
+.pill-gold { background:#FEF3C7; color:#92400E; }
+.formula {
+  background:#0F172A; color:#E2E8F0; border-radius:14px;
+  padding:18px 24px; font-family:'Courier New',monospace;
+  font-size:calc(20px * var(--tz)); letter-spacing:0.02em;
+}
+.destaque {
+  background: linear-gradient(135deg,#003366,#0066CC);
+  color:#fff; border-radius:16px; padding:16px 24px;
+}
+.legenda { color:#64748B; font-size:calc(15px * var(--tz)); line-height:1.5; }
+.novo-tag {
+  display:inline-flex; align-items:center; gap:7px;
+  background:#FFD700; color:#003366; border-radius:999px;
+  padding:3px 14px; font-family:'Montserrat',sans-serif;
+  font-weight:900; font-size:calc(13px * var(--tz));
+  letter-spacing:0.1em; text-transform:uppercase;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header-bar"></div>
+  <div class="secondary-bar"></div>
+
+  <div class="px-16 pt-6 pb-2">
+    <div class="flex items-center gap-3">
+      <div style="width:5px;height:44px;" class="bg-accent"></div>
+      <div>
+        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Novo em 2027 · tela Cadastro</p>
+        <p class="text-5xl font-montserrat font-bold text-brand uppercase tracking-tight">O CNPJ existe mesmo?</p>
+      </div>
+      <div class="ml-auto flex items-center gap-3">
+        <span class="novo-tag"><i class="fas fa-star"></i> Novidade 2027</span>
+        <img src="assets/logo-antaq-azul.png" alt="ANTAQ" style="height:32px;">
+        <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">GPF</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="px-16 pb-3 grid grid-cols-4 gap-4">
+    <div class="stat-card"><p class="stat-num">2.133</p><p class="text-blue-200 text-sm font-semibold mt-2">CNPJs conferidos<br/>na Receita Federal</p></div>
+    <div class="stat-card"><p class="stat-num">149</p><p class="text-blue-200 text-sm font-semibold mt-2">não estão ativos<br/>(7% do total)</p></div>
+    <div class="stat-card"><p class="stat-num">68</p><p class="text-blue-200 text-sm font-semibold mt-2">outorgas fora da<br/>listagem do PAF 2027</p></div>
+    <div class="stat-card"><p class="stat-num">0</p><p class="text-blue-200 text-sm font-semibold mt-2">bloqueios sem<br/>tratamento</p></div>
+  </div>
+
+  <div class="flex-1 px-16 pb-2 grid grid-cols-12 gap-5">
+    <div class="col-span-6 flex flex-col gap-3">
+      <div class="card card-red">
+        <div class="ico" style="background:#FECACA;"><i class="fas fa-file-circle-xmark text-red-600 text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-2xl">O caso que motivou tudo</p>
+          <p class="text-gray-600 text-lg mt-1">
+            A <strong>ODSF nº 568/2026/URECB</strong> foi aberta contra a CPA Armazéns Gerais —
+            CNPJ <strong>baixado desde 2022</strong>. Quem opera o terminal de Paranaguá é outra
+            empresa, confirmado pela APPA.
+          </p>
+          <p class="text-gray-600 text-lg mt-1">
+            O risco tinha sido calculado, e a fiscalização programada, <strong>sobre a empresa
+            errada</strong>. Os sistemas internos não sabem quando um CNPJ é baixado na Receita.
+          </p>
+        </div>
+      </div>
+
+      <p class="font-montserrat font-bold text-brand text-2xl">O que a conferência encontrou</p>
+      <table class="tbl">
+        <thead><tr><th>Situação</th><th class="num">Outorgas</th><th>O que acontece</th></tr></thead>
+        <tbody>
+          <tr><td>Conforme</td><td class="num">2.254</td><td>segue no PAF sem ressalva</td></tr>
+          <tr><td><strong>Baixada</strong>, sem sucessor</td><td class="num">38</td><td><span class="pill pill-c">sai do PAF</span></td></tr>
+          <tr><td><strong>Baixada</strong>, com sucessor provável</td><td class="num">28</td><td><span class="pill pill-c">sai do PAF</span></td></tr>
+          <tr><td><strong>Suspensa</strong></td><td class="num">2</td><td><span class="pill pill-c">sai do PAF</span></td></tr>
+          <tr><td>Inapta</td><td class="num">83</td><td><span class="pill pill-a">continua no PAF</span></td></tr>
+          <tr><td>Ativa, com divergência de cadastro</td><td class="num">73</td><td><span class="pill pill-a">continua no PAF</span></td></tr>
+        </tbody>
+      </table>
+      <p class="legenda">
+        <strong>Inapta continua</strong> de propósito: deixar de entregar declaração não extingue a
+        empresa nem a obrigação regulatória. Tirar as 83 premiaria justamente quem não declara.
+      </p>
+    </div>
+
+    <div class="col-span-6 flex flex-col gap-3">
+      <p class="font-montserrat font-bold text-brand text-2xl">Quatro coisas que não se pode confundir</p>
+
+      <div class="card">
+        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-eye-slash text-accent text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-xl">1. Inativar não é excluir</p>
+          <p class="text-gray-600 text-lg mt-1">
+            A outorga <strong>continua visível</strong> no painel, marcada. Ela só não entra na
+            listagem do PAF. Ela precisa aparecer justamente na tela onde o problema dela é tratado.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-user-check text-accent text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-xl">2. A máquina propõe, a pessoa decide</p>
+          <p class="text-gray-600 text-lg mt-1">
+            A saída é <strong>imediata e protetiva</strong>; a conferência humana vem depois e pode
+            <strong>reverter</strong>. Revertida, a máquina não reinativa enquanto a situação
+            cadastral for a mesma. <strong>A decisão humana vence a regra.</strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-rotate-left text-accent text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-xl">3. CNPJ regularizado volta sozinho</p>
+          <p class="text-gray-600 text-lg mt-1">
+            Se a empresa se regulariza na Receita, a outorga retorna ao PAF na conferência seguinte —
+            desde que a saída ainda fosse proposta da máquina.
+          </p>
+        </div>
+      </div>
+
+      <div class="card card-green">
+        <div class="ico" style="background:#BBF7D0;"><i class="fas fa-folder-open text-green-700 text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-xl">4. O dossiê do CNPJ já vem pronto</p>
+          <p class="text-gray-600 text-lg mt-1">
+            Extinguir o termo de outorga é ato da área de outorgas, e ela decide sobre o
+            <strong>instrumento</strong>. A tela reúne, por CNPJ, <strong>todas as outorgas, os
+            283 instrumentos</strong> das quatro fontes (processo de outorga, terminal, operador
+            portuário e arrendamento) e o histórico de fiscalização — sem abrir quatro sistemas à mão.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="px-16 pb-4 flex justify-between items-center border-t border-gray-100 pt-3 mx-8">
+    <p class="text-gray-400 text-sm">IPR 2.0 e o PAF 2027 — Encontro de Chefias · GPF/SFC/ANTAQ</p>
+    <p class="text-gray-300 text-sm font-mono">11 / 18</p>
+  </div>
+</div>
+<script src="zoom.js"></script>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>O universo do PAF 2027</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>:root { --tz-base: 1.2; }
+
+body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
+.slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden; background:#ffffff; }
+.font-montserrat { font-family:'Montserrat',sans-serif; }
+.text-brand { color:#003366; }
+.bg-brand { background-color:#003366; }
+.text-accent { color:#0066CC; }
+.bg-accent { background-color:#0066CC; }
+.header-bar { height:10px; background:#003366; width:100%; }
+.secondary-bar { height:4px; background:#0066CC; width:100%; }
+
+.stat-card {
+  background: linear-gradient(135deg, #003366, #004d99);
+  border-radius: 16px;
+  padding: 20px 18px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::after {
+  content: '';
+  position: absolute; top: -30px; right: -30px;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+}
+.stat-num {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: calc(48px * var(--tz));
+  line-height: 1;
+}
+.card {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 14px 20px;
+  background: #F8FAFC;
+  border-radius: 14px;
+  border-left: 5px solid #0066CC;
+}
+.card-green  { background: linear-gradient(135deg,#F0FDF4,#DCFCE7); border-left-color:#22C55E; }
+.card-amber  { background: linear-gradient(135deg,#FFFBEB,#FEF3C7); border-left-color:#F59E0B; }
+.card-red    { background: linear-gradient(135deg,#FEF2F2,#FEE2E2); border-left-color:#EF4444; }
+.ico {
+  width:50px; height:50px; border-radius:12px; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+}
+/* As colunas dos slides de duas metades centram o proprio conteudo: a folga
+   vertical fica dividida em cima e embaixo, em vez de sobrar toda no rodape. */
+.slide > .flex-1 > .grid > .flex.flex-col { justify-content:center; }
+
+table.tbl { width:100%; border-collapse:collapse; }
+table.tbl th {
+  background:#F1F5F9; color:#475569; text-align:left;
+  font-family:'Montserrat',sans-serif; font-weight:700;
+  text-transform:uppercase; letter-spacing:0.06em;
+  padding:10px 14px; font-size:calc(15px * var(--tz));
+}
+table.tbl td { padding:11px 14px; border-top:1px solid #E2E8F0; color:#334155; font-size:calc(18px * var(--tz)); }
+table.tbl tr:nth-child(even) td { background:#FAFBFC; }
+.num { text-align:right; font-variant-numeric:tabular-nums; }
+table.tbl th.num { text-align:right; }
+.pill {
+  display:inline-block; padding:3px 12px; border-radius:999px;
+  font-family:'Montserrat',sans-serif; font-weight:700;
+  font-size:calc(14px * var(--tz)); letter-spacing:0.04em;
+}
+.pill-a { background:#DCFCE7; color:#166534; }
+.pill-b { background:#DBEAFE; color:#1E40AF; }
+.pill-c { background:#FEE2E2; color:#991B1B; }
+.pill-gold { background:#FEF3C7; color:#92400E; }
+.formula {
+  background:#0F172A; color:#E2E8F0; border-radius:14px;
+  padding:18px 24px; font-family:'Courier New',monospace;
+  font-size:calc(20px * var(--tz)); letter-spacing:0.02em;
+}
+.destaque {
+  background: linear-gradient(135deg,#003366,#0066CC);
+  color:#fff; border-radius:16px; padding:16px 24px;
+}
+.legenda { color:#64748B; font-size:calc(15px * var(--tz)); line-height:1.5; }
+.novo-tag {
+  display:inline-flex; align-items:center; gap:7px;
+  background:#FFD700; color:#003366; border-radius:999px;
+  padding:3px 14px; font-family:'Montserrat',sans-serif;
+  font-weight:900; font-size:calc(13px * var(--tz));
+  letter-spacing:0.1em; text-transform:uppercase;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header-bar"></div>
+  <div class="secondary-bar"></div>
+
+  <div class="px-16 pt-6 pb-2">
+    <div class="flex items-center gap-3">
+      <div style="width:5px;height:44px;" class="bg-accent"></div>
+      <div>
+        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Seção &ldquo;Universo do PPF&rdquo; da Ajuda</p>
+        <p class="text-5xl font-montserrat font-bold text-brand uppercase tracking-tight">O universo do PAF 2027</p>
+      </div>
+      <div class="ml-auto flex items-center gap-3">
+        
+        <img src="assets/logo-antaq-azul.png" alt="ANTAQ" style="height:32px;">
+        <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">GPF</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="px-16 pb-3 grid grid-cols-4 gap-4">
+    <div class="stat-card">
+      <p class="stat-num">2.478</p>
+      <p class="text-blue-200 text-lg font-semibold mt-2">Outorgas avaliadas<br/>no ciclo 2027</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-num">2.410</p>
+      <p class="text-blue-200 text-lg font-semibold mt-2">Na listagem do PAF<br/>(68 fora por cadastro)</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-num">14</p>
+      <p class="text-blue-200 text-lg font-semibold mt-2">Regionais executoras<br/>com carga atribuída</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-num">100%</p>
+      <p class="text-blue-200 text-lg font-semibold mt-2">Do universo com<br/>regional responsável</p>
+    </div>
+  </div>
+
+  <div class="flex-1 px-16 pb-2 grid grid-cols-12 gap-5">
+    <div class="col-span-7 flex flex-col gap-3">
+      <p class="font-montserrat font-bold text-brand text-2xl">Quanto cada regional responde</p>
+      <table class="tbl">
+        <thead><tr>
+          <th>Regional</th><th class="num">Outorgas</th><th class="num">Grupo C</th>
+          <th class="num">Grupo B</th><th class="num">Grupo A</th><th class="num">% do país</th>
+        </tr></thead>
+        <tbody>
+          <tr><td><strong>GREBL</strong> · Belém</td><td class="num">479</td><td class="num">82</td><td class="num">336</td><td class="num">61</td><td class="num">19,9%</td></tr>
+          <tr><td><strong>GREMN</strong> · Manaus</td><td class="num">446</td><td class="num">72</td><td class="num">316</td><td class="num">58</td><td class="num">18,5%</td></tr>
+          <tr><td><strong>GRERJ</strong> · Rio de Janeiro</td><td class="num">295</td><td class="num">31</td><td class="num">196</td><td class="num">68</td><td class="num">12,2%</td></tr>
+          <tr><td><strong>GREST</strong> · Santos</td><td class="num">219</td><td class="num">18</td><td class="num">129</td><td class="num">72</td><td class="num">9,1%</td></tr>
+          <tr><td><strong>GRERE</strong> · Recife</td><td class="num">146</td><td class="num">6</td><td class="num">105</td><td class="num">35</td><td class="num">6,1%</td></tr>
+          <tr><td><strong>URESN</strong> · Santana</td><td class="num">121</td><td class="num">25</td><td class="num">87</td><td class="num">9</td><td class="num">5,0%</td></tr>
+          <tr><td><strong>GREFL</strong> · Florianópolis</td><td class="num">113</td><td class="num">9</td><td class="num">72</td><td class="num">32</td><td class="num">4,7%</td></tr>
+          <tr><td colspan="6" style="color:#64748B;">URECB 96 · URESL 96 · URESV 88 · UREPL 85 · UREVT 83 · UREPV 76 · UREFT 67</td></tr>
+        </tbody>
+      </table>
+      <p class="legenda">
+        Já <strong>sem</strong> as outorgas retiradas por situação cadastral — a coluna existe para
+        dimensionar equipe, e contar o que não será fiscalizado dimensionaria errado.
+      </p>
+    </div>
+
+    <div class="col-span-5 flex flex-col gap-3">
+      <div class="card">
+        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-layer-group text-accent text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-xl">Cinco segmentos, três áreas</p>
+          <p class="text-gray-600 text-lg mt-1">
+            Navegação Marítima · Navegação Interior · Instalações Portuárias · Portos Públicos ·
+            Arrendamentos e Operadores Portuários.
+          </p>
+          <p class="text-gray-600 text-lg mt-1">
+            No ciclo 2027: <strong>Porto 1.201</strong> · <strong>Interior 698</strong> ·
+            <strong>Marítima 579</strong>.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-key text-accent text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-xl">A &ldquo;Chave&rdquo; da outorga</p>
+          <p class="text-gray-600 text-lg mt-1">
+            É o identificador que junta CNPJ + modalidade + trecho ou terminal. É por ela que o
+            sistema costura o histórico de fiscalização de anos anteriores.
+          </p>
+          <p class="text-gray-600 text-lg mt-1">
+            <strong>Cuidado prático:</strong> trocar o CNPJ de uma outorga troca a chave e
+            <strong>desliga a série histórica</strong>. Por isso sucessão de empresa é decisão
+            registrada, nunca correção de campo.
+          </p>
+        </div>
+      </div>
+      <div class="card card-green">
+        <div class="ico" style="background:#BBF7D0;"><i class="fas fa-clock-rotate-left text-green-700 text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-xl">Quatro ciclos carregados</p>
+          <p class="text-gray-600 text-lg mt-1">
+            2024, 2025, 2026 e 2027 no mesmo painel — dá para ver quem subiu de faixa, quem desceu
+            e o que explicou a mudança (tela <strong>Histórico</strong>).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="px-16 pb-4 flex justify-between items-center border-t border-gray-100 pt-3 mx-8">
+    <p class="text-gray-400 text-sm">IPR 2.0 e o PAF 2027 — Encontro de Chefias · GPF/SFC/ANTAQ</p>
+    <p class="text-gray-300 text-sm font-mono">4 / 18</p>
+  </div>
+</div>
+<script src="zoom.js"></script>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
+</body>
+</html>
