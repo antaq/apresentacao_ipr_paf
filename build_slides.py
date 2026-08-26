@@ -951,7 +951,7 @@ slide(
     10,
     "O sorteio do Grupo A",
     "Seção &ldquo;O sorteio do Grupo A&rdquo; da Ajuda",
-    "Por que a sorte entra no PAF",
+    "Aleatoriedade verificável no PAF",
     """
   <div class="flex-1 px-16 pb-2 grid grid-cols-12 gap-5">
     <div class="col-span-5 flex flex-col gap-3">
