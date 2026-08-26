@@ -9,7 +9,7 @@
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<style>:root { --tz-base: 1.08; }
+<style>:root { --tz-base: 1.008; }
 
 body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
 .slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden; background:#ffffff; }
@@ -117,6 +117,7 @@ table.tbl th.num { text-align:right; }
 
 .leg { border-radius:999px; padding:4px 14px; font-size:calc(13px * var(--tz)); font-weight:600; }
 .leg-v { background:#DCFCE7; color:#166534; }
+.leg-v2 { background:#ECFDF5; color:#047857; }
 .leg-a { background:#FEF9C3; color:#854D0E; }
 .leg-o { background:#FFEDD5; color:#9A3412; }
 .leg-r { background:#FEE2E2; color:#991B1B; }
@@ -148,35 +149,38 @@ table.tbl tr.row-o td { background:#FFF7ED; }
   <div class="flex-1 px-16 pb-2 grid grid-cols-12 gap-5">
     <div class="col-span-7 flex flex-col gap-3">
       <div class="formula" style="text-align:center; line-height:1.6;">
-        ocupação &nbsp;=&nbsp; horas que o plano exige no ano &nbsp;&divide;&nbsp; horas que a equipe tem livres
+        ocupação &nbsp;=&nbsp; horas que o plano exige no ano &nbsp;&divide;&nbsp; envelope do PAF<br/>
+        <span style="color:#94A3B8; font-size:calc(16px * var(--tz));">envelope do PAF = 35% das horas líquidas da equipe, igual para toda regional</span>
       </div>
       <div class="flex gap-2">
-        <span class="leg leg-v">abaixo de 70% · folga</span>
-        <span class="leg leg-a">70% a 100% · justa</span>
-        <span class="leg leg-o">100% a 130% · crítica</span>
+        <span class="leg leg-v">até 70% · folga</span>
+        <span class="leg leg-v2">até 90% · adequada</span>
+        <span class="leg leg-a">até 100% · justa</span>
+        <span class="leg leg-o">até 130% · excedida</span>
         <span class="leg leg-r">acima de 130% · inviável</span>
       </div>
 
       <table class="tbl">
         <thead><tr>
           <th>Regional</th><th class="num">Equipe</th><th class="num">CNU</th>
-          <th class="num">Capacidade c/ CNU</th><th class="num">Demanda h/ano</th>
+          <th class="num">Envelope PAF c/ CNU</th><th class="num">Demanda h/ano</th>
           <th class="num">Sem reforço</th><th class="num">Com reforço</th>
         </tr></thead>
         <tbody>
-          <tr class="row-r"><td><strong>URESN</strong> · Santana</td><td class="num">2</td><td class="num">+1</td><td class="num">918</td><td class="num">1.627</td><td class="num">292%</td><td class="num"><strong>177%</strong></td></tr>
-          <tr class="row-o"><td><strong>GREBL</strong> · Belém</td><td class="num">16</td><td class="num">+7</td><td class="num">7.173</td><td class="num">5.601</td><td class="num">121%</td><td class="num"><strong>78%</strong></td></tr>
-          <tr class="row-o"><td><strong>GREMN</strong> · Manaus</td><td class="num">14</td><td class="num">+7</td><td class="num">7.045</td><td class="num">4.876</td><td class="num">115%</td><td class="num"><strong>69%</strong></td></tr>
-          <tr><td><strong>GRERJ</strong> · Rio de Janeiro</td><td class="num">11</td><td class="num">+2</td><td class="num">7.225</td><td class="num">2.373</td><td class="num">37%</td><td class="num">33%</td></tr>
-          <tr><td><strong>UREPV</strong> · Porto Velho</td><td class="num">3</td><td class="num">—</td><td class="num">1.946</td><td class="num">617</td><td class="num">32%</td><td class="num">32%</td></tr>
-          <tr><td><strong>URESL</strong> · São Luís</td><td class="num">7</td><td class="num">—</td><td class="num">5.839</td><td class="num">1.443</td><td class="num">25%</td><td class="num">25%</td></tr>
-          <tr><td colspan="7" style="color:#64748B;">UREFT 21% · UREVT 21% · UREPL 16% · GREFL 16% · GREST 14% · URECB 8% · URESV 8% · GRERE 7%</td></tr>
+          <tr class="row-r"><td><strong>URESN</strong> · Santana</td><td class="num">2</td><td class="num">+1</td><td class="num">989</td><td class="num">1.662</td><td class="num">277%</td><td class="num"><strong>168%</strong></td></tr>
+          <tr class="row-o"><td><strong>GREBL</strong> · Belém</td><td class="num">16</td><td class="num">+7</td><td class="num">7.458</td><td class="num">5.941</td><td class="num">123%</td><td class="num"><strong>80%</strong></td></tr>
+          <tr class="row-o"><td><strong>GREMN</strong> · Manaus</td><td class="num">14</td><td class="num">+7</td><td class="num">6.973</td><td class="num">5.057</td><td class="num">121%</td><td class="num"><strong>73%</strong></td></tr>
+          <tr><td><strong>GRERJ</strong> · Rio de Janeiro</td><td class="num">11</td><td class="num">+2</td><td class="num">6.300</td><td class="num">2.580</td><td class="num">47%</td><td class="num">41%</td></tr>
+          <tr><td><strong>URESL</strong> · São Luís</td><td class="num">7</td><td class="num">—</td><td class="num">3.657</td><td class="num">1.375</td><td class="num">38%</td><td class="num">38%</td></tr>
+          <tr><td><strong>UREPV</strong> · Porto Velho</td><td class="num">3</td><td class="num">—</td><td class="num">1.723</td><td class="num">586</td><td class="num">34%</td><td class="num">34%</td></tr>
+          <tr><td colspan="7" style="color:#64748B;">UREFT 33% · GREST 26% · UREVT 25% · GREFL 21% · UREPL 18% · URESV 16% · GRERE 13% · URECB 13%</td></tr>
         </tbody>
       </table>
       <p class="legenda">
-        Cenário base: as 305 outorgas do Grupo C mais a expectativa do sorteio do Grupo A.
-        Capacidade &ldquo;com reforço&rdquo; inclui os <strong>20 convocados do CNU</strong> lotados
-        nas regionais, já com o rendimento reduzido de quem está começando.
+        Cenário base: as 305 outorgas do Grupo C mais a expectativa do sorteio do Grupo A,
+        precificadas pela <strong>Tabela de Atividades da SFC</strong>. O envelope &ldquo;com
+        reforço&rdquo; inclui os <strong>20 convocados do CNU</strong> lotados nas regionais, já com
+        o rendimento reduzido de quem está começando.
       </p>
     </div>
 
@@ -186,43 +190,48 @@ table.tbl tr.row-o td { background:#FFF7ED; }
           O problema não é a Agência. É a distribuição.
         </p>
         <p class="text-blue-100 text-lg mt-2">
-          <strong>22 mil horas</strong> de trabalho previsto contra <strong>66 mil horas</strong>
-          disponíveis: a rede usa cerca de <strong>um terço</strong> da própria capacidade — e
-          mesmo assim uma regional está com quase o dobro do que aguenta.
+          <strong>23,1 mil horas</strong> de trabalho previsto contra um envelope de
+          <strong>55,2 mil horas</strong>: a rede usa <strong>42%</strong> do que a régua destina ao
+          PAF, e o plano inteiro cabe em <strong>14,6% das horas líquidas</strong> do país. Ainda
+          assim uma regional fica em 168%.
         </p>
+      </div>
+
+      <div class="card card-amber">
+        <div class="ico" style="background:#FDE68A;"><i class="fas fa-ruler text-yellow-700 text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-xl">Uma régua só, igual para todas</p>
+          <p class="text-gray-600 text-lg mt-1">
+            Até agosto a capacidade de cada regional era o que sobrava do que ela mesma lançava fora
+            do PAF — <strong>quem registrava menos PAF ganhava capacidade maior</strong>. Agora o
+            envelope é 35% para todas. Ocupação de 100% quer dizer que <strong>o PAF preencheu esse
+            envelope</strong>, não que o servidor está 100% ocupado.
+          </p>
+        </div>
       </div>
 
       <div class="card">
         <div class="ico" style="background:#DBEAFE;"><i class="fas fa-database text-accent text-2xl"></i></div>
         <div>
-          <p class="font-montserrat font-bold text-brand text-xl">De onde vêm as horas</p>
+          <p class="font-montserrat font-bold text-brand text-xl">De onde vêm as horas e quanto custa</p>
           <p class="text-gray-600 text-lg mt-1">
-            Dos <strong>planos de trabalho do PGD (Hefesto)</strong>, de janeiro/2025 a julho/2026 —
-            o que vocês pactuam e lançam todo mês. Não é estimativa de gabinete.
+            As horas saem dos <strong>planos de trabalho do PGD (Hefesto)</strong>, de janeiro/2025 a
+            julho/2026 — o que vocês pactuam e lançam todo mês. O custo por processo sai da
+            <strong>Tabela da SFC</strong>: porto organizado 120 h · arrendamento 96 h · TUP 84 h ·
+            outorga geral 72 h · travessia registrada 48 h.
           </p>
         </div>
       </div>
 
       <div class="card">
-        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-stopwatch text-accent text-2xl"></i></div>
+        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-user-shield text-accent text-2xl"></i></div>
         <div>
-          <p class="font-montserrat font-bold text-brand text-xl">Quanto custa uma fiscalização</p>
+          <p class="font-montserrat font-bold text-brand text-xl">Quem está em GEF sai do cômputo</p>
           <p class="text-gray-600 text-lg mt-1">
-            Medido nos próprios lançamentos: <strong>72 h por processo</strong> na média.
-            Porto organizado 92 h · arrendamento 84 h · TUP 72 h · outorga geral 66 h ·
-            travessia registrada 58 h. Bate com a Tabela de Atividades da SFC dentro de 25%.
-          </p>
-        </div>
-      </div>
-
-      <div class="card card-amber">
-        <div class="ico" style="background:#FDE68A;"><i class="fas fa-shield text-yellow-700 text-2xl"></i></div>
-        <div>
-          <p class="font-montserrat font-bold text-brand text-xl">A reserva é medida, não arbitrada</p>
-          <p class="text-gray-600 text-lg mt-1">
-            O PAF não pode ocupar 100% da equipe: há extraordinárias, sancionador, instrução
-            processual, gestão e capacitação. Essa fatia sai do <strong>próprio PdT de cada
-            regional</strong> — não é um percentual chutado.
+            Contêiner e Investimento atuam em <strong>rito próprio</strong> e não recebem
+            fiscalização ordinária: <strong>23 integrantes</strong>, 17 servidores-equivalentes,
+            <strong>16,4% da capacidade bruta</strong>. Ninguém some da tela — a pessoa aparece com o
+            selo do grupo e a carga efetiva ao lado da bruta.
           </p>
         </div>
       </div>

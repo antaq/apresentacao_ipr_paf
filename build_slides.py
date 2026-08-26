@@ -236,8 +236,9 @@ slide(
           <p><strong>Medimos se o plano cabe na equipe de cada regional</strong>, em horas por ano (PGD).</p>
           <p><strong>O que não cabe pode ser redistribuído</strong>, com régua, registro e decisão humana.</p>
           <p><strong>A missão de apoio deixou de ser informal</strong>: passa a ter dono e trilha de auditoria.</p>
+          <p><strong>A régua de dimensionamento é a mesma para todas</strong> — 35% das horas da equipe destinados ao PAF.</p>
         </div>
-        <div class="bloco-foot"><strong>177% &rarr; 95%</strong> de ocupação na regional mais apertada</div>
+        <div class="bloco-foot"><strong>168% &rarr; 95%</strong> de ocupação na regional mais apertada</div>
       </div>
     </div>
 
@@ -1165,35 +1166,38 @@ slide(
   <div class="flex-1 px-16 pb-2 grid grid-cols-12 gap-5">
     <div class="col-span-7 flex flex-col gap-3">
       <div class="formula" style="text-align:center; line-height:1.6;">
-        ocupação &nbsp;=&nbsp; horas que o plano exige no ano &nbsp;&divide;&nbsp; horas que a equipe tem livres
+        ocupação &nbsp;=&nbsp; horas que o plano exige no ano &nbsp;&divide;&nbsp; envelope do PAF<br/>
+        <span style="color:#94A3B8; font-size:calc(16px * var(--tz));">envelope do PAF = 35% das horas líquidas da equipe, igual para toda regional</span>
       </div>
       <div class="flex gap-2">
-        <span class="leg leg-v">abaixo de 70% · folga</span>
-        <span class="leg leg-a">70% a 100% · justa</span>
-        <span class="leg leg-o">100% a 130% · crítica</span>
+        <span class="leg leg-v">até 70% · folga</span>
+        <span class="leg leg-v2">até 90% · adequada</span>
+        <span class="leg leg-a">até 100% · justa</span>
+        <span class="leg leg-o">até 130% · excedida</span>
         <span class="leg leg-r">acima de 130% · inviável</span>
       </div>
 
       <table class="tbl">
         <thead><tr>
           <th>Regional</th><th class="num">Equipe</th><th class="num">CNU</th>
-          <th class="num">Capacidade c/ CNU</th><th class="num">Demanda h/ano</th>
+          <th class="num">Envelope PAF c/ CNU</th><th class="num">Demanda h/ano</th>
           <th class="num">Sem reforço</th><th class="num">Com reforço</th>
         </tr></thead>
         <tbody>
-          <tr class="row-r"><td><strong>URESN</strong> · Santana</td><td class="num">2</td><td class="num">+1</td><td class="num">918</td><td class="num">1.627</td><td class="num">292%</td><td class="num"><strong>177%</strong></td></tr>
-          <tr class="row-o"><td><strong>GREBL</strong> · Belém</td><td class="num">16</td><td class="num">+7</td><td class="num">7.173</td><td class="num">5.601</td><td class="num">121%</td><td class="num"><strong>78%</strong></td></tr>
-          <tr class="row-o"><td><strong>GREMN</strong> · Manaus</td><td class="num">14</td><td class="num">+7</td><td class="num">7.045</td><td class="num">4.876</td><td class="num">115%</td><td class="num"><strong>69%</strong></td></tr>
-          <tr><td><strong>GRERJ</strong> · Rio de Janeiro</td><td class="num">11</td><td class="num">+2</td><td class="num">7.225</td><td class="num">2.373</td><td class="num">37%</td><td class="num">33%</td></tr>
-          <tr><td><strong>UREPV</strong> · Porto Velho</td><td class="num">3</td><td class="num">—</td><td class="num">1.946</td><td class="num">617</td><td class="num">32%</td><td class="num">32%</td></tr>
-          <tr><td><strong>URESL</strong> · São Luís</td><td class="num">7</td><td class="num">—</td><td class="num">5.839</td><td class="num">1.443</td><td class="num">25%</td><td class="num">25%</td></tr>
-          <tr><td colspan="7" style="color:#64748B;">UREFT 21% · UREVT 21% · UREPL 16% · GREFL 16% · GREST 14% · URECB 8% · URESV 8% · GRERE 7%</td></tr>
+          <tr class="row-r"><td><strong>URESN</strong> · Santana</td><td class="num">2</td><td class="num">+1</td><td class="num">989</td><td class="num">1.662</td><td class="num">277%</td><td class="num"><strong>168%</strong></td></tr>
+          <tr class="row-o"><td><strong>GREBL</strong> · Belém</td><td class="num">16</td><td class="num">+7</td><td class="num">7.458</td><td class="num">5.941</td><td class="num">123%</td><td class="num"><strong>80%</strong></td></tr>
+          <tr class="row-o"><td><strong>GREMN</strong> · Manaus</td><td class="num">14</td><td class="num">+7</td><td class="num">6.973</td><td class="num">5.057</td><td class="num">121%</td><td class="num"><strong>73%</strong></td></tr>
+          <tr><td><strong>GRERJ</strong> · Rio de Janeiro</td><td class="num">11</td><td class="num">+2</td><td class="num">6.300</td><td class="num">2.580</td><td class="num">47%</td><td class="num">41%</td></tr>
+          <tr><td><strong>URESL</strong> · São Luís</td><td class="num">7</td><td class="num">—</td><td class="num">3.657</td><td class="num">1.375</td><td class="num">38%</td><td class="num">38%</td></tr>
+          <tr><td><strong>UREPV</strong> · Porto Velho</td><td class="num">3</td><td class="num">—</td><td class="num">1.723</td><td class="num">586</td><td class="num">34%</td><td class="num">34%</td></tr>
+          <tr><td colspan="7" style="color:#64748B;">UREFT 33% · GREST 26% · UREVT 25% · GREFL 21% · UREPL 18% · URESV 16% · GRERE 13% · URECB 13%</td></tr>
         </tbody>
       </table>
       <p class="legenda">
-        Cenário base: as 305 outorgas do Grupo C mais a expectativa do sorteio do Grupo A.
-        Capacidade &ldquo;com reforço&rdquo; inclui os <strong>20 convocados do CNU</strong> lotados
-        nas regionais, já com o rendimento reduzido de quem está começando.
+        Cenário base: as 305 outorgas do Grupo C mais a expectativa do sorteio do Grupo A,
+        precificadas pela <strong>Tabela de Atividades da SFC</strong>. O envelope &ldquo;com
+        reforço&rdquo; inclui os <strong>20 convocados do CNU</strong> lotados nas regionais, já com
+        o rendimento reduzido de quem está começando.
       </p>
     </div>
 
@@ -1203,43 +1207,48 @@ slide(
           O problema não é a Agência. É a distribuição.
         </p>
         <p class="text-blue-100 text-lg mt-2">
-          <strong>22 mil horas</strong> de trabalho previsto contra <strong>66 mil horas</strong>
-          disponíveis: a rede usa cerca de <strong>um terço</strong> da própria capacidade — e
-          mesmo assim uma regional está com quase o dobro do que aguenta.
+          <strong>23,1 mil horas</strong> de trabalho previsto contra um envelope de
+          <strong>55,2 mil horas</strong>: a rede usa <strong>42%</strong> do que a régua destina ao
+          PAF, e o plano inteiro cabe em <strong>14,6% das horas líquidas</strong> do país. Ainda
+          assim uma regional fica em 168%.
         </p>
+      </div>
+
+      <div class="card card-amber">
+        <div class="ico" style="background:#FDE68A;"><i class="fas fa-ruler text-yellow-700 text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-xl">Uma régua só, igual para todas</p>
+          <p class="text-gray-600 text-lg mt-1">
+            Até agosto a capacidade de cada regional era o que sobrava do que ela mesma lançava fora
+            do PAF — <strong>quem registrava menos PAF ganhava capacidade maior</strong>. Agora o
+            envelope é 35% para todas. Ocupação de 100% quer dizer que <strong>o PAF preencheu esse
+            envelope</strong>, não que o servidor está 100% ocupado.
+          </p>
+        </div>
       </div>
 
       <div class="card">
         <div class="ico" style="background:#DBEAFE;"><i class="fas fa-database text-accent text-2xl"></i></div>
         <div>
-          <p class="font-montserrat font-bold text-brand text-xl">De onde vêm as horas</p>
+          <p class="font-montserrat font-bold text-brand text-xl">De onde vêm as horas e quanto custa</p>
           <p class="text-gray-600 text-lg mt-1">
-            Dos <strong>planos de trabalho do PGD (Hefesto)</strong>, de janeiro/2025 a julho/2026 —
-            o que vocês pactuam e lançam todo mês. Não é estimativa de gabinete.
+            As horas saem dos <strong>planos de trabalho do PGD (Hefesto)</strong>, de janeiro/2025 a
+            julho/2026 — o que vocês pactuam e lançam todo mês. O custo por processo sai da
+            <strong>Tabela da SFC</strong>: porto organizado 120 h · arrendamento 96 h · TUP 84 h ·
+            outorga geral 72 h · travessia registrada 48 h.
           </p>
         </div>
       </div>
 
       <div class="card">
-        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-stopwatch text-accent text-2xl"></i></div>
+        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-user-shield text-accent text-2xl"></i></div>
         <div>
-          <p class="font-montserrat font-bold text-brand text-xl">Quanto custa uma fiscalização</p>
+          <p class="font-montserrat font-bold text-brand text-xl">Quem está em GEF sai do cômputo</p>
           <p class="text-gray-600 text-lg mt-1">
-            Medido nos próprios lançamentos: <strong>72 h por processo</strong> na média.
-            Porto organizado 92 h · arrendamento 84 h · TUP 72 h · outorga geral 66 h ·
-            travessia registrada 58 h. Bate com a Tabela de Atividades da SFC dentro de 25%.
-          </p>
-        </div>
-      </div>
-
-      <div class="card card-amber">
-        <div class="ico" style="background:#FDE68A;"><i class="fas fa-shield text-yellow-700 text-2xl"></i></div>
-        <div>
-          <p class="font-montserrat font-bold text-brand text-xl">A reserva é medida, não arbitrada</p>
-          <p class="text-gray-600 text-lg mt-1">
-            O PAF não pode ocupar 100% da equipe: há extraordinárias, sancionador, instrução
-            processual, gestão e capacitação. Essa fatia sai do <strong>próprio PdT de cada
-            regional</strong> — não é um percentual chutado.
+            Contêiner e Investimento atuam em <strong>rito próprio</strong> e não recebem
+            fiscalização ordinária: <strong>23 integrantes</strong>, 17 servidores-equivalentes,
+            <strong>16,4% da capacidade bruta</strong>. Ninguém some da tela — a pessoa aparece com o
+            selo do grupo e a carga efetiva ao lado da bruta.
           </p>
         </div>
       </div>
@@ -1249,6 +1258,7 @@ slide(
     extra_css="""
 .leg { border-radius:999px; padding:4px 14px; font-size:calc(13px * var(--tz)); font-weight:600; }
 .leg-v { background:#DCFCE7; color:#166534; }
+.leg-v2 { background:#ECFDF5; color:#047857; }
 .leg-a { background:#FEF9C3; color:#854D0E; }
 .leg-o { background:#FFEDD5; color:#9A3412; }
 .leg-r { background:#FEE2E2; color:#991B1B; }
@@ -1256,7 +1266,7 @@ table.tbl tr.row-r td { background:#FEF2F2; }
 table.tbl tr.row-o td { background:#FFF7ED; }
 """,
     tag=TAG_NOVO,
-    base=1.2,
+    base=1.12,
 )
 
 # ---------------------------------------------------------------------------
@@ -1281,7 +1291,7 @@ slide(
           </p>
           <p class="text-gray-600 text-lg mt-1">
             Efeito colateral: a capacidade de Santana <em>parecia</em> maior do que é. Aqueles
-            <strong>177% são piso, não teto</strong>.
+            <strong>168% são piso, não teto</strong>.
           </p>
         </div>
       </div>
@@ -1320,17 +1330,17 @@ slide(
 
     <div class="col-span-6 flex flex-col gap-3">
       <div class="grid grid-cols-3 gap-3">
-        <div class="stat-card"><p class="stat-num" style="font-size:calc(38px * var(--tz));">177%&rarr;95%</p><p class="text-blue-200 text-sm font-semibold mt-2">ocupação de Santana</p></div>
-        <div class="stat-card"><p class="stat-num">17</p><p class="text-blue-200 text-sm font-semibold mt-2">movimentos propostos<br/>(752 horas)</p></div>
+        <div class="stat-card"><p class="stat-num" style="font-size:calc(38px * var(--tz));">168%&rarr;95%</p><p class="text-blue-200 text-sm font-semibold mt-2">ocupação de Santana</p></div>
+        <div class="stat-card"><p class="stat-num">13</p><p class="text-blue-200 text-sm font-semibold mt-2">movimentos propostos<br/>(724 horas)</p></div>
         <div class="stat-card"><p class="stat-num">0</p><p class="text-blue-200 text-sm font-semibold mt-2">regionais acima<br/>do limite</p></div>
       </div>
 
       <table class="tbl">
         <thead><tr><th>O que a proposta faz</th><th class="num">Blocos</th><th class="num">Horas</th></tr></thead>
         <tbody>
-          <tr><td>Transferências (a outorga muda de carteira)</td><td class="num">8</td><td class="num">110</td></tr>
-          <tr><td>Missões de apoio (a equipe é que viaja)</td><td class="num">9</td><td class="num">642</td></tr>
-          <tr><td colspan="3" style="color:#64748B;">Destinos: Santos, São Luís, Salvador e Recife — <strong>ninguém recebeu o problema inteiro</strong></td></tr>
+          <tr><td>Transferências (a outorga muda de carteira)</td><td class="num">8</td><td class="num">123</td></tr>
+          <tr><td>Missões de apoio (a equipe é que viaja)</td><td class="num">5</td><td class="num">601</td></tr>
+          <tr><td colspan="3" style="color:#64748B;">Destinos: Santos, São Luís, Salvador e Florianópolis — <strong>ninguém recebeu o problema inteiro</strong>. <strong>83% do alívio sai como apoio</strong>: a carteira de Santana é travessia presencial, que não muda de dono.</td></tr>
         </tbody>
       </table>
 
@@ -1353,7 +1363,8 @@ slide(
           <p class="text-gray-600 text-lg mt-1">
             Quatro critérios com peso: <strong>folga 40%</strong> · <strong>proximidade 35%</strong> ·
             <strong>afinidade com a carteira 15%</strong> · <strong>jurisdição 10%</strong>.
-            O relatório publica quanto a preferência por folga custou em quilômetros.
+            O relatório publica o preço da preferência por folga: <strong>4.984 km a mais</strong>
+            do que se a proximidade decidisse sozinha.
           </p>
         </div>
       </div>
@@ -1586,7 +1597,7 @@ slide(
         <div class="ico" style="background:#FDE68A;"><i class="fas fa-square-check text-yellow-700 text-2xl"></i></div>
         <div>
           <p class="font-montserrat font-bold text-brand text-xl">4. Decidir o que está na fila</p>
-          <p class="text-gray-600 text-lg mt-1">68 casos de cadastro aguardam conferência e 17 lotes de equalização aguardam aprovação. <strong>Nada disso anda sozinho</strong> — é decisão humana, por desenho.</p>
+          <p class="text-gray-600 text-lg mt-1">68 casos de cadastro aguardam conferência e 13 lotes de equalização aguardam aprovação. <strong>Nada disso anda sozinho</strong> — é decisão humana, por desenho.</p>
         </div>
       </div>
     </div>
@@ -1625,8 +1636,11 @@ slide(
     <div class="glos"><span class="g-t">TUP · ETC · IPTur</span><span class="g-d">Terminal de Uso Privado · Estação de Transbordo de Cargas · Instalação Portuária de Turismo</span></div>
     <div class="glos"><span class="g-t">PGD · Hefesto</span><span class="g-d">Programa de Gestão por Desempenho e o sistema onde o PdT é pactuado</span></div>
     <div class="glos"><span class="g-t">PdT · TCR</span><span class="g-d">Plano de Trabalho mensal · Termo de Ciência e Responsabilidade</span></div>
-    <div class="glos"><span class="g-t">Ocupação</span><span class="g-d">Horas que o plano exige ÷ horas que a equipe tem livres</span></div>
+    <div class="glos"><span class="g-t">Ocupação</span><span class="g-d">Horas que o plano exige ÷ o envelope do PAF da regional</span></div>
+    <div class="glos"><span class="g-t">Envelope do PAF</span><span class="g-d">Os 35% das horas líquidas que a régua destina ao PAF — igual para toda regional</span></div>
+    <div class="glos"><span class="g-t">Aderência</span><span class="g-d">Quanto das horas lançadas a regional de fato dedicou ao PAF — diagnóstico, não capacidade</span></div>
     <div class="glos"><span class="g-t">Reserva</span><span class="g-d">A fatia das horas comprometida com o que não é PAF</span></div>
+    <div class="glos"><span class="g-t">GEF</span><span class="g-d">Grupo Especializado de Fiscalização — rito próprio, fora do cômputo do PAF ordinário</span></div>
     <div class="glos"><span class="g-t">Lote</span><span class="g-d">O conjunto de outorgas que viaja junto na equalização</span></div>
     <div class="glos"><span class="g-t">Missão de apoio</span><span class="g-d">A outorga fica; a equipe de outra regional vai executar</span></div>
     <div class="glos"><span class="g-t">Jurisdição</span><span class="g-d">Quem responde institucionalmente pela outorga — não muda com a equalização</span></div>
