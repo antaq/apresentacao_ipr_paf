@@ -9,7 +9,7 @@
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<style>:root { --tz-base: 1.008; }
+<style>:root { --tz-base: 0.882; }
 
 body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
 .slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden; background:#ffffff; }
@@ -146,7 +146,8 @@ table.tbl tr.row-o td { background:#FFF7ED; }
   </div>
 
 
-  <div class="flex-1 px-16 pb-2 grid grid-cols-12 gap-5">
+  <div class="flex-1 px-16 pb-2 flex flex-col gap-3">
+    <div class="flex-1 grid grid-cols-12 gap-5">
     <div class="col-span-7 flex flex-col gap-3">
       <div class="formula" style="text-align:center; line-height:1.6;">
         ocupação &nbsp;=&nbsp; horas que o plano exige no ano &nbsp;&divide;&nbsp; envelope do PAF<br/>
@@ -167,20 +168,21 @@ table.tbl tr.row-o td { background:#FFF7ED; }
           <th class="num">Sem reforço</th><th class="num">Com reforço</th>
         </tr></thead>
         <tbody>
-          <tr class="row-r"><td><strong>URESN</strong> · Santana</td><td class="num">2</td><td class="num">+1</td><td class="num">989</td><td class="num">1.662</td><td class="num">277%</td><td class="num"><strong>168%</strong></td></tr>
-          <tr class="row-o"><td><strong>GREBL</strong> · Belém</td><td class="num">16</td><td class="num">+7</td><td class="num">7.458</td><td class="num">5.941</td><td class="num">123%</td><td class="num"><strong>80%</strong></td></tr>
-          <tr class="row-o"><td><strong>GREMN</strong> · Manaus</td><td class="num">14</td><td class="num">+7</td><td class="num">6.973</td><td class="num">5.057</td><td class="num">121%</td><td class="num"><strong>73%</strong></td></tr>
-          <tr><td><strong>GRERJ</strong> · Rio de Janeiro</td><td class="num">11</td><td class="num">+2</td><td class="num">6.300</td><td class="num">2.580</td><td class="num">47%</td><td class="num">41%</td></tr>
-          <tr><td><strong>URESL</strong> · São Luís</td><td class="num">7</td><td class="num">—</td><td class="num">3.657</td><td class="num">1.375</td><td class="num">38%</td><td class="num">38%</td></tr>
-          <tr><td><strong>UREPV</strong> · Porto Velho</td><td class="num">3</td><td class="num">—</td><td class="num">1.723</td><td class="num">586</td><td class="num">34%</td><td class="num">34%</td></tr>
-          <tr><td colspan="7" style="color:#64748B;">UREFT 33% · GREST 26% · UREVT 25% · GREFL 21% · UREPL 18% · URESV 16% · GRERE 13% · URECB 13%</td></tr>
+          <tr class="row-r"><td><strong>URESN</strong> · Santana</td><td class="num">3</td><td class="num">+1</td><td class="num">1.281</td><td class="num">1.742</td><td class="num">195%</td><td class="num"><strong>136%</strong></td></tr>
+          <tr class="row-o"><td><strong>GREBL</strong> · Belém</td><td class="num">17</td><td class="num">+7</td><td class="num">8.061</td><td class="num">6.091</td><td class="num">112%</td><td class="num"><strong>76%</strong></td></tr>
+          <tr class="row-o"><td><strong>GREMN</strong> · Manaus</td><td class="num">14</td><td class="num">+7</td><td class="num">6.973</td><td class="num">5.257</td><td class="num">126%</td><td class="num"><strong>75%</strong></td></tr>
+          <tr><td><strong>GRERJ</strong> · Rio de Janeiro</td><td class="num">11</td><td class="num">+2</td><td class="num">6.300</td><td class="num">2.610</td><td class="num">47%</td><td class="num">41%</td></tr>
+          <tr><td><strong>URESL</strong> · São Luís</td><td class="num">7</td><td class="num">—</td><td class="num">3.657</td><td class="num">1.525</td><td class="num">42%</td><td class="num">42%</td></tr>
+          <tr><td><strong>UREPV</strong> · Porto Velho</td><td class="num">3</td><td class="num">—</td><td class="num">1.723</td><td class="num">646</td><td class="num">37%</td><td class="num">37%</td></tr>
+          <tr><td colspan="7" style="color:#64748B;">UREFT 49% · GREST 27% · UREVT 26% · GREFL 21% · UREPL 18% · URESV 16% · GRERE 14% · URECB 13%</td></tr>
         </tbody>
       </table>
       <p class="legenda">
         Cenário base: as 305 outorgas do Grupo C mais a expectativa do sorteio do Grupo A,
         precificadas pela <strong>Tabela de Atividades da SFC</strong>. O envelope &ldquo;com
         reforço&rdquo; inclui os <strong>20 convocados do CNU</strong> lotados nas regionais, já com
-        o rendimento reduzido de quem está começando.
+        o rendimento reduzido de quem está começando. Quem está destacado conta na equipe
+        <strong>de onde executa</strong>.
       </p>
     </div>
 
@@ -190,10 +192,10 @@ table.tbl tr.row-o td { background:#FFF7ED; }
           O problema não é a Agência. É a distribuição.
         </p>
         <p class="text-blue-100 text-lg mt-2">
-          <strong>23,1 mil horas</strong> de trabalho previsto contra um envelope de
-          <strong>55,2 mil horas</strong>: a rede usa <strong>42%</strong> do que a régua destina ao
-          PAF, e o plano inteiro cabe em <strong>14,6% das horas líquidas</strong> do país. Ainda
-          assim uma regional fica em 168%.
+          <strong>23,8 mil horas</strong> de trabalho previsto contra um envelope de
+          <strong>55,2 mil horas</strong>: a rede usa <strong>43%</strong> do que a régua destina ao
+          PAF, e o plano inteiro cabe em <strong>15,1% das horas líquidas</strong> do país. Ainda
+          assim uma regional fica em <strong>195% — 136% mesmo com o reforço do CNU</strong>.
         </p>
       </div>
 
@@ -218,7 +220,8 @@ table.tbl tr.row-o td { background:#FFF7ED; }
             As horas saem dos <strong>planos de trabalho do PGD (Hefesto)</strong>, de janeiro/2025 a
             julho/2026 — o que vocês pactuam e lançam todo mês. O custo por processo sai da
             <strong>Tabela da SFC</strong>: porto organizado 120 h · arrendamento 96 h · TUP 84 h ·
-            outorga geral 72 h · travessia registrada 48 h.
+            outorga geral 72 h · travessia registrada 58 h (revista pela GPF sobre o custo
+            observado — era a única modalidade em que a tabela cobrava menos do que a prática).
           </p>
         </div>
       </div>
@@ -237,6 +240,21 @@ table.tbl tr.row-o td { background:#FFF7ED; }
       </div>
     </div>
   </div>
+
+  <div class="card card-green">
+    <div class="ico" style="background:#BBF7D0;"><i class="fas fa-ruler-combined text-green-700 text-2xl"></i></div>
+    <div>
+      <p class="font-montserrat font-bold text-brand text-xl">O tamanho do PAF é medido, não escolhido</p>
+      <p class="text-gray-600 text-lg mt-1">
+        O recorte de <strong>200 outorgas</strong> foi aposentado: o maior PAF que cabe é
+        <strong>medido</strong> rodando o fluxo inteiro — custo, planos de trabalho e
+        equalização juntos. A fronteira do ciclo: <strong>675 outorgas</strong> (338 presenciais
+        + 337 remotas), <strong>86% do envelope nacional</strong>, com a taxa de sorteio
+        vigente e o Grupo C inteiro — nada de norma nova.
+      </p>
+    </div>
+  </div>
+</div>
 
 
   <div class="px-16 pb-4 flex justify-between items-center border-t border-gray-100 pt-3 mx-8">
