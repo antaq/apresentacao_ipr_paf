@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>O que muda para a sua Regional</title>
+<title>O painel — as telas</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<style>:root { --tz-base: 1.17; }
+<style>:root { --tz-base: 1.26; }
 
 body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
 .slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden; background:#ffffff; }
@@ -114,6 +114,14 @@ table.tbl th.num { text-align:right; }
 .gap-5 { row-gap:34px; }
 .gap-6 { row-gap:34px; }
 .gap-8 { row-gap:38px; }
+
+.telas-grid { align-content:space-around; grid-auto-rows:min-content; }
+.tela { display:flex; gap:13px; align-items:flex-start; background:#F8FAFC; border-radius:13px; padding:11px 16px; border-left:5px solid #0066CC; }
+.tela-novo { background:linear-gradient(135deg,#FFFBEB,#FEF3C7); border-left-color:#F59E0B; }
+.tela i { color:#0066CC; font-size:calc(19px * var(--tz)); width:26px; text-align:center; margin-top:2px; }
+.tela-novo i { color:#D97706; }
+.tela-t { margin:0; font-family:'Montserrat',sans-serif; font-weight:700; color:#003366; font-size:calc(17px * var(--tz)); }
+.tela-d { margin:2px 0 0; color:#475569; font-size:calc(14px * var(--tz)); line-height:1.4; }
 </style>
 </head>
 <body>
@@ -125,8 +133,8 @@ table.tbl th.num { text-align:right; }
     <div class="flex items-center gap-3">
       <div style="width:5px;height:44px;" class="bg-accent"></div>
       <div>
-        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">O prático</p>
-        <p class="text-5xl font-montserrat font-bold text-brand uppercase tracking-tight">O que muda para a sua Regional</p>
+        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Onde ver tudo isso</p>
+        <p class="text-5xl font-montserrat font-bold text-brand uppercase tracking-tight">O painel, tela por tela</p>
       </div>
       <div class="ml-auto flex items-center gap-3">
         
@@ -137,70 +145,40 @@ table.tbl th.num { text-align:right; }
   </div>
 
 
-  <div class="flex-1 px-16 pb-2 grid grid-cols-2 gap-5">
-    <div class="flex flex-col gap-3">
-      <p class="font-montserrat font-bold text-brand text-3xl"><i class="fas fa-gift text-accent mr-2"></i>O que vocês ganham</p>
-
-      <div class="card card-green">
-        <div class="ico" style="background:#BBF7D0;"><i class="fas fa-list-check text-green-700 text-2xl"></i></div>
-        <div>
-          <p class="font-montserrat font-bold text-brand text-xl">Uma lista que não tem empresa extinta</p>
-          <p class="text-gray-600 text-lg mt-1">Nenhuma ODSF sai contra CNPJ baixado. Foram 68 casos evitados só em 2027.</p>
-        </div>
-      </div>
-      <div class="card card-green">
-        <div class="ico" style="background:#BBF7D0;"><i class="fas fa-gauge text-green-700 text-2xl"></i></div>
-        <div>
-          <p class="font-montserrat font-bold text-brand text-xl">O argumento de carga vira número</p>
-          <p class="text-gray-600 text-lg mt-1">&ldquo;Não cabe na equipe&rdquo; deixou de ser impressão: é horas por ano, medidas no PGD de vocês, publicadas na tela.</p>
-        </div>
-      </div>
-      <div class="card card-green">
-        <div class="ico" style="background:#BBF7D0;"><i class="fas fa-handshake-angle text-green-700 text-2xl"></i></div>
-        <div>
-          <p class="font-montserrat font-bold text-brand text-xl">Apoio com dono e registro</p>
-          <p class="text-gray-600 text-lg mt-1">A missão de apoio deixa de ser combinação informal: tem proposta, aprovação, fundamento e nº SEI — e as horas contam para quem apoia.</p>
-        </div>
-      </div>
-      <div class="card card-green">
-        <div class="ico" style="background:#BBF7D0;"><i class="fas fa-folder-tree text-green-700 text-2xl"></i></div>
-        <div>
-          <p class="font-montserrat font-bold text-brand text-xl">O levantamento já vem pronto</p>
-          <p class="text-gray-600 text-lg mt-1">O dossiê do CNPJ reúne outorgas, instrumentos e fiscalizações num lugar só — em vez de quatro sistemas abertos à mão.</p>
-        </div>
-      </div>
+  <div class="flex-1 px-16 pb-2 flex flex-col gap-4">
+    <div class="grid grid-cols-3 gap-3 flex-1 telas-grid">
+      <div class="tela"><i class="fas fa-table-columns"></i><div><p class="tela-t">Executiva</p><p class="tela-d">O retrato do ciclo: distribuição por faixa, por segmento e a <strong>carga de cada regional</strong>.</p></div></div>
+      <div class="tela"><i class="fas fa-table-list"></i><div><p class="tela-t">Analítica</p><p class="tela-d">A lista completa, filtrável por faixa, regional, UF, modalidade. Exporta em CSV.</p></div></div>
+      <div class="tela"><i class="fas fa-clipboard-list"></i><div><p class="tela-t">Apoio ao PAF</p><p class="tela-d">A listagem priorizada do ciclo e o simulador: e se o peso do ICF fosse outro?</p></div></div>
+      <div class="tela"><i class="fas fa-id-badge"></i><div><p class="tela-t">Ficha da outorga</p><p class="tela-d">A nota decomposta indicador por indicador, com o histórico de fiscalizações.</p></div></div>
+      <div class="tela tela-novo"><i class="fas fa-dice"></i><div><p class="tela-t">Sorteio</p><p class="tela-d">Compromisso, semente do Beacon e a ata em CSV para conferência externa.</p></div></div>
+      <div class="tela tela-novo"><i class="fas fa-id-card"></i><div><p class="tela-t">Cadastro</p><p class="tela-d">A fila de validação dos CNPJs baixados e suspensos, com o <strong>dossiê do CNPJ</strong>.</p></div></div>
+      <div class="tela tela-novo"><i class="fas fa-gauge-high"></i><div><p class="tela-t">Força de Trabalho</p><p class="tela-d">Demanda × capacidade por regional, com os participantes do PGD por linha.</p></div></div>
+      <div class="tela tela-novo"><i class="fas fa-scale-balanced"></i><div><p class="tela-t">Equalização</p><p class="tela-d">A proposta de redistribuição, lote a lote, com aprovar / rejeitar / redirecionar.</p></div></div>
+      <div class="tela"><i class="fas fa-triangle-exclamation"></i><div><p class="tela-t">Alertas</p><p class="tela-d">O que está estranho no ciclo: lacunas, saltos de faixa, atribuições fracas.</p></div></div>
+      <div class="tela"><i class="fas fa-chart-line"></i><div><p class="tela-t">Histórico</p><p class="tela-d">Os quatro ciclos lado a lado — quem subiu, quem desceu e por quê.</p></div></div>
+      <div class="tela"><i class="fas fa-circle-question"></i><div><p class="tela-t">Ajuda</p><p class="tela-d">Esta apresentação inteira, em texto, sempre atualizada com os números do banco.</p></div></div>
+      <div class="tela"><i class="fas fa-code"></i><div><p class="tela-t">API</p><p class="tela-d">Para quem quiser puxar os dados para uma planilha ou outro sistema.</p></div></div>
     </div>
 
-    <div class="flex flex-col gap-3">
-      <p class="font-montserrat font-bold text-brand text-3xl"><i class="fas fa-hand-point-right text-accent mr-2"></i>O que precisamos de vocês</p>
-
-      <div class="card card-amber">
-        <div class="ico" style="background:#FDE68A;"><i class="fas fa-keyboard text-yellow-700 text-2xl"></i></div>
+    <div class="destaque flex items-center gap-8">
+      <div class="flex items-center gap-4" style="flex:0 0 auto;">
+        <i class="fas fa-globe text-4xl gold" style="color:#FFD700;"></i>
         <div>
-          <p class="font-montserrat font-bold text-brand text-xl">1. Lançar o PdT com cuidado</p>
-          <p class="text-gray-600 text-lg mt-1">A capacidade e o custo por fiscalização saem <strong>daí</strong>. Lançamento genérico vira reserva alta e capacidade baixa — e o número que volta para vocês fica pior do que a realidade.</p>
+          <p class="text-blue-100 text-sm uppercase tracking-widest font-semibold">Endereço</p>
+          <p class="font-montserrat font-bold" style="font-size:calc(24px * var(--tz)); white-space:nowrap;">ipr-paf.up.railway.app</p>
         </div>
       </div>
-      <div class="card card-amber">
-        <div class="ico" style="background:#FDE68A;"><i class="fas fa-clipboard-check text-yellow-700 text-2xl"></i></div>
+      <div class="flex items-center gap-4 border-l border-blue-400 pl-8" style="border-color:rgba(255,255,255,0.25); flex:0 0 auto;">
+        <i class="fas fa-right-to-bracket text-3xl" style="color:#FFD700;"></i>
         <div>
-          <p class="font-montserrat font-bold text-brand text-xl">2. Registrar a ação fiscal</p>
-          <p class="text-gray-600 text-lg mt-1">O ICF lê a data da última fiscalização. Ação não registrada mantém a outorga como &ldquo;nunca visitada&rdquo; e ela volta na lista do ano seguinte.</p>
+          <p class="text-blue-100 text-sm uppercase tracking-widest font-semibold">Acesso</p>
+          <p class="font-montserrat font-bold text-xl" style="white-space:nowrap;">Login com a sua conta <strong>@antaq.gov.br</strong></p>
         </div>
       </div>
-      <div class="card card-amber">
-        <div class="ico" style="background:#FDE68A;"><i class="fas fa-map-pin text-yellow-700 text-2xl"></i></div>
-        <div>
-          <p class="font-montserrat font-bold text-brand text-xl">3. Conferir a jurisdição da sua carteira</p>
-          <p class="text-gray-600 text-lg mt-1">A tela Executiva mostra quais outorgas estão atribuídas a vocês. Divergência conhecida vira <strong>exceção registrada</strong> — avisem a GPF em vez de resolver por fora.</p>
-        </div>
-      </div>
-      <div class="card card-amber">
-        <div class="ico" style="background:#FDE68A;"><i class="fas fa-square-check text-yellow-700 text-2xl"></i></div>
-        <div>
-          <p class="font-montserrat font-bold text-brand text-xl">4. Decidir o que está na fila</p>
-          <p class="text-gray-600 text-lg mt-1">67 casos de cadastro aguardam conferência — um já decidido por pessoa — e 12 lotes de equalização aguardam aprovação. <strong>Nada disso anda sozinho</strong> — é decisão humana, por desenho.</p>
-        </div>
+      <div class="ml-auto text-right" style="min-width:0;">
+        <p class="text-blue-100 text-base">Dúvida sobre um número da tela?</p>
+        <p class="font-montserrat font-bold text-lg">Todo bloco tem um <i class="fas fa-circle-question"></i> que explica de onde ele veio.</p>
       </div>
     </div>
   </div>
@@ -208,7 +186,7 @@ table.tbl th.num { text-align:right; }
 
   <div class="px-16 pb-4 flex justify-between items-center border-t border-gray-100 pt-3 mx-8">
     <p class="text-gray-400 text-sm">IPR 2.0 e o PAF 2027 — Encontro de Chefias · GPF/SFC/ANTAQ</p>
-    <p class="text-gray-300 text-sm font-mono">16 / 18</p>
+    <p class="text-gray-300 text-sm font-mono">16 / 19</p>
   </div>
 </div>
 <script src="zoom.js"></script>

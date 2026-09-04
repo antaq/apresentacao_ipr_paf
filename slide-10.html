@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>O sorteio do Grupo A</title>
+<title>A fórmula e as faixas A1..C4</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<style>:root { --tz-base: 1.251; }
+<style>:root { --tz-base: 1.134; }
 
 body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
 .slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden; background:#ffffff; }
@@ -114,16 +114,6 @@ table.tbl th.num { text-align:right; }
 .gap-5 { row-gap:34px; }
 .gap-6 { row-gap:34px; }
 .gap-8 { row-gap:38px; }
-
-.etapa { display:flex; gap:16px; align-items:flex-start; background:#F8FAFC; border-radius:14px; padding:14px 20px; border-left:5px solid #0066CC; }
-.etapa-n {
-  width:40px; height:40px; border-radius:50%; flex-shrink:0;
-  background:#003366; color:#fff; display:flex; align-items:center; justify-content:center;
-  font-family:'Montserrat',sans-serif; font-weight:900; font-size:calc(19px * var(--tz));
-}
-.etapa-t { margin:0; font-family:'Montserrat',sans-serif; font-weight:700; color:#003366; font-size:calc(20px * var(--tz)); }
-.etapa-d { margin:3px 0 0; color:#475569; font-size:calc(16px * var(--tz)); line-height:1.5; }
-.seta { text-align:center; color:#94A3B8; font-size:calc(18px * var(--tz)); margin:-4px 0; }
 </style>
 </head>
 <body>
@@ -135,8 +125,8 @@ table.tbl th.num { text-align:right; }
     <div class="flex items-center gap-3">
       <div style="width:5px;height:44px;" class="bg-accent"></div>
       <div>
-        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Seção &ldquo;O sorteio do Grupo A&rdquo; da Ajuda</p>
-        <p class="text-5xl font-montserrat font-bold text-brand uppercase tracking-tight">Aleatoriedade verificável no PAF</p>
+        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Seções &ldquo;Fórmula&rdquo; e &ldquo;Faixas&rdquo; da Ajuda</p>
+        <p class="text-5xl font-montserrat font-bold text-brand uppercase tracking-tight">Da nota para a faixa</p>
       </div>
       <div class="ml-auto flex items-center gap-3">
         
@@ -148,78 +138,68 @@ table.tbl th.num { text-align:right; }
 
 
   <div class="flex-1 px-16 pb-2 grid grid-cols-12 gap-5">
-    <div class="col-span-5 flex flex-col gap-3">
+    <div class="col-span-6 flex flex-col gap-3">
+      <p class="font-montserrat font-bold text-brand text-2xl">A conta</p>
+      <div class="formula" style="line-height:1.7;">
+        IPR_base = ( IIN&middot;1 + INN&middot;2 + IOU&middot;2 + IRI&middot;3 + IGI&middot;3<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ IOC&middot;3 + ICF&middot;3 + IVO&middot;2 + <strong>ICD&middot;1</strong> + <strong>IMA&middot;1</strong> ) &divide; <strong>21</strong><br/>
+        <span style="color:#94A3B8;">&nbsp;</span><br/>
+        IPR_final = MAIOR( IPR_base &times; 100 , piso F_IRA )
+      </div>
+      <p class="text-gray-600 text-lg">
+        O <strong>21</strong> é a soma dos pesos dos dez indicadores ativos. Ele não está escrito no
+        código: vem de uma tabela versionada. Ligar ou desligar um indicador muda a fórmula,
+        muda os pisos e <strong>obriga a recalibrar as faixas</strong>.
+      </p>
+
       <div class="card card-red">
-        <div class="ico" style="background:#FECACA;"><i class="fas fa-circle-question text-red-600 text-2xl"></i></div>
+        <div class="ico" style="background:#FECACA;"><i class="fas fa-ban text-red-600 text-2xl"></i></div>
         <div>
-          <p class="font-montserrat font-bold text-brand text-2xl">O ponto cego</p>
+          <p class="font-montserrat font-bold text-brand text-xl">Por que as faixas foram refeitas</p>
           <p class="text-gray-600 text-lg mt-1">
-            Priorizar só quem tem histórico ruim cria um círculo:
-            <strong>quem nunca é fiscalizado nunca gera histórico</strong> — e sem histórico
-            continua no Grupo A, que é a maior parte do universo.
+            Os cortes da NT 9/2021 (5 / 15 / 30 / 40 / 50 / 60 / 70) foram medidos contra o universo
+            real: a maior nota do ciclo 2027 é <strong>54,79</strong>. Com aqueles cortes,
+            <strong>C3 e C4 nunca teriam ninguém</strong>. Faixa que ninguém alcança não prioriza nada.
           </p>
         </div>
       </div>
 
-      <p class="font-montserrat font-bold text-brand text-2xl">Quanto se sorteia</p>
-      <table class="tbl">
-        <thead><tr><th>Risco da modalidade</th><th class="num">% do Grupo A</th></tr></thead>
-        <tbody>
-          <tr><td>IRA 70 ou mais (ex.: travessia)</td><td class="num"><strong>10%</strong></td></tr>
-          <tr><td>IRA entre 35 e 69</td><td class="num">7%</td></tr>
-          <tr><td>IRA abaixo de 35 ou sem IRA</td><td class="num">5%</td></tr>
-        </tbody>
-      </table>
-
-      <div class="card">
-        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-arrow-up-right-dots text-accent text-2xl"></i></div>
+      <div class="card card-amber">
+        <div class="ico" style="background:#FDE68A;"><i class="fas fa-users-gear text-yellow-700 text-2xl"></i></div>
         <div>
-          <p class="font-montserrat font-bold text-brand text-xl">A sorteada entra com prioridade máxima</p>
+          <p class="font-montserrat font-bold text-brand text-xl">O tamanho do Grupo C tem âncora</p>
           <p class="text-gray-600 text-lg mt-1">
-            É tratada como C1 na lista do PAF, <strong>sem que sua faixa calculada mude</strong>.
-            Ela lidera a listagem daquele ciclo — e o resultado da visita passa a alimentar o
-            histórico dela.
+            Está amarrado à <strong>capacidade real de fiscalizar</strong> — na casa de trezentas
+            outorgas, o que o PAF consegue de fato programar. Um Grupo C com 800 seria tão
+            inútil quanto um vazio.
           </p>
         </div>
       </div>
     </div>
 
-    <div class="col-span-7 flex flex-col gap-3">
-      <p class="font-montserrat font-bold text-brand text-2xl">Duas etapas separadas no tempo — é isso que o torna confiável</p>
-
-      <div class="etapa">
-        <div class="etapa-n">1</div>
-        <div>
-          <p class="etapa-t">Compromisso</p>
-          <p class="etapa-d">
-            Congela-se a lista de quem pode ser sorteado, com uma <strong>impressão digital</strong>
-            dela, e registra-se <strong>qual número aleatório será usado</strong>: um pulso futuro do
-            <strong>NIST Randomness Beacon</strong> — que <strong>ainda não existe</strong> no momento
-            do compromisso.
-          </p>
-        </div>
-      </div>
-      <div class="seta"><i class="fas fa-arrow-down"></i></div>
-      <div class="etapa">
-        <div class="etapa-n">2</div>
-        <div>
-          <p class="etapa-t">Execução</p>
-          <p class="etapa-d">
-            Publicado o pulso, ele vira a semente do sorteio. O resultado é totalmente previsível a
-            partir dos dois: <strong>mesma lista + mesma semente = mesmas sorteadas, sempre</strong>.
-          </p>
-        </div>
-      </div>
-
+    <div class="col-span-6 flex flex-col gap-3">
+      <p class="font-montserrat font-bold text-brand text-2xl">A régua em vigor · ciclo 2027</p>
+      <table class="tbl">
+        <thead><tr><th>Faixa</th><th>Nota</th><th>Leitura</th><th class="num">Outorgas</th></tr></thead>
+        <tbody>
+          <tr><td><span class="pill pill-a">A1</span></td><td>até 7,42</td><td>sem sinal relevante</td><td class="num">265</td></tr>
+          <tr><td><span class="pill pill-a">A2</span></td><td>7,43 – 11,86</td><td>risco baixo</td><td class="num">155</td></tr>
+          <tr><td><span class="pill pill-b">B1</span></td><td>11,87 – 17,27</td><td>piso de atividade e nunca fiscalizadas</td><td class="num">943</td></tr>
+          <tr><td><span class="pill pill-b">B2</span></td><td>17,28 – 21,05</td><td>histórico próprio começa a pesar</td><td class="num">503</td></tr>
+          <tr><td><span class="pill pill-c">C1</span></td><td>21,06 – 24,40</td><td>alto — prioridade no PAF</td><td class="num">291</td></tr>
+          <tr><td><span class="pill pill-c">C2</span></td><td>24,41 – 27,98</td><td>muito alto</td><td class="num">188</td></tr>
+          <tr><td><span class="pill pill-c">C3</span></td><td>27,99 – 32,14</td><td>crítico</td><td class="num">97</td></tr>
+          <tr><td><span class="pill pill-c">C4</span></td><td>acima de 32,14</td><td>extremo — mobilização imediata</td><td class="num">36</td></tr>
+        </tbody>
+      </table>
+      <p class="legenda">
+        A régua é <strong>versionada</strong>: os limiares valem para o regime de pesos atual
+        (soma 21). Os limiares antigos continuam válidos para os ciclos calculados naquele regime —
+        por isso o Histórico compara faixas sem misturar réguas.
+      </p>
       <div class="destaque">
-        <p class="font-montserrat font-bold" style="font-size:calc(21px * var(--tz));">
-          Como o número é escolhido <em>antes de existir</em>, ninguém pode rodar o sorteio,
-          não gostar do resultado e trocar a semente.
-        </p>
-        <p class="text-blue-100 text-lg mt-2">
-          O Beacon é numerado, datado, assinado e encadeado. Qualquer pessoa de fora refaz a conta
-          com a lista, a semente e o algoritmo publicado — e tem de chegar exatamente à mesma lista.
-          A tela <strong>Sorteio</strong> publica a ata em CSV para essa conferência.
+        <p class="font-montserrat font-bold" style="font-size:calc(20px * var(--tz));">
+          Média do universo: <strong>16,61</strong> &nbsp;·&nbsp; Máxima: <strong>54,79</strong>
         </p>
       </div>
     </div>
@@ -228,7 +208,7 @@ table.tbl th.num { text-align:right; }
 
   <div class="px-16 pb-4 flex justify-between items-center border-t border-gray-100 pt-3 mx-8">
     <p class="text-gray-400 text-sm">IPR 2.0 e o PAF 2027 — Encontro de Chefias · GPF/SFC/ANTAQ</p>
-    <p class="text-gray-300 text-sm font-mono">10 / 18</p>
+    <p class="text-gray-300 text-sm font-mono">10 / 19</p>
   </div>
 </div>
 <script src="zoom.js"></script>

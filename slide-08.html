@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>F_IRA — o piso de risco da atividade</title>
+<title>ICD e IMA — onde fica e quem opera</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<style>:root { --tz-base: 1.215; }
+<style>:root { --tz-base: 1.152; }
 
 body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
 .slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden; background:#ffffff; }
@@ -115,13 +115,18 @@ table.tbl th.num { text-align:right; }
 .gap-6 { row-gap:34px; }
 .gap-8 { row-gap:38px; }
 
-.dim {
-  display:flex; align-items:center; gap:12px;
-  background:#F8FAFC; border-radius:12px; padding:10px 16px; border-left:5px solid #0066CC;
+.ind-h {
+  margin:0; display:flex; align-items:center; gap:10px;
+  font-family:'Montserrat',sans-serif; font-weight:800; color:#003366;
+  font-size:calc(22px * var(--tz));
 }
-.dim i { color:#0066CC; font-size:calc(20px * var(--tz)); }
-.dim-t { margin:0; font-family:'Montserrat',sans-serif; font-weight:700; color:#003366; font-size:calc(16px * var(--tz)); }
-.dim-p { margin:0; color:#64748B; font-size:calc(14px * var(--tz)); }
+.ind-h i { color:#0066CC; }
+.ind-p {
+  background:#E0F2FE; color:#0369A1; border-radius:999px;
+  padding:2px 12px; font-size:calc(14px * var(--tz)); font-weight:700;
+}
+table.tbl-mini th, table.tbl-mini td { font-size:calc(15px * var(--tz)); padding:5px 9px; }
+.slide > .flex-1 > .grid > .flex.flex-col { justify-content:flex-start; }
 </style>
 </head>
 <body>
@@ -133,8 +138,8 @@ table.tbl th.num { text-align:right; }
     <div class="flex items-center gap-3">
       <div style="width:5px;height:44px;" class="bg-accent"></div>
       <div>
-        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Seção &ldquo;F_IRA&rdquo; da Ajuda</p>
-        <p class="text-5xl font-montserrat font-bold text-brand uppercase tracking-tight">O piso do risco da atividade</p>
+        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Seções &ldquo;O ICD&rdquo; e &ldquo;O IMA&rdquo; da Ajuda</p>
+        <p class="text-5xl font-montserrat font-bold text-brand uppercase tracking-tight">Onde fica e quem opera</p>
       </div>
       <div class="ml-auto flex items-center gap-3">
         
@@ -145,69 +150,89 @@ table.tbl th.num { text-align:right; }
   </div>
 
 
-  <div class="flex-1 px-16 pb-2 grid grid-cols-12 gap-5">
-    <div class="col-span-6 flex flex-col gap-3">
-      <div class="destaque">
-        <p class="font-montserrat font-bold" style="font-size:calc(23px * var(--tz));">
-          IRA é da modalidade, não da empresa
+  <div class="flex-1 px-16 pb-2 flex flex-col gap-3">
+
+    <p class="text-gray-600 text-xl">
+      O IPR já media <strong>comportamento</strong> — o que a empresa fez — e <strong>exposição</strong>
+      — há quanto tempo ninguém olha, quanto ela movimenta. Faltavam duas perguntas que todo chefe de
+      regional faz antes de montar uma missão: <strong>onde fica</strong> e <strong>quem opera</strong>.
+    </p>
+
+    <div class="grid grid-cols-2 gap-5 flex-1">
+
+      <div class="flex flex-col gap-2">
+        <p class="ind-h"><i class="fas fa-route"></i> ICD &middot; custo-distância &nbsp;<span class="ind-p">peso 1</span></p>
+        <p class="text-gray-600 text-lg">
+          Distância da outorga até a <strong>sede da regional que a fiscaliza</strong>, com agravante
+          <strong>&times;2 nas UFs do Norte</strong>, onde qualquer deslocamento custa mais em diária e em tempo.
         </p>
-        <p class="text-blue-100 text-xl mt-1">
-          <strong>Travessia tem IRA 73</strong> — não importa quem opere. Longo Curso, 73.
-          Contrato de Uso Temporário, 11. É o risco inerente <strong>da atividade</strong>.
-        </p>
+        <table class="tbl tbl-mini">
+          <thead><tr><th>Distância</th><th class="num">Valor</th><th class="num">Outorgas</th></tr></thead>
+          <tbody>
+            <tr><td>até 99 km</td><td class="num">0,00</td><td class="num">1.446</td></tr>
+            <tr><td>100 – 299 km</td><td class="num">0,25</td><td class="num">334</td></tr>
+            <tr><td>300 – 599 km</td><td class="num">0,50</td><td class="num">204</td></tr>
+            <tr><td>600 – 999 km</td><td class="num">0,75</td><td class="num">174</td></tr>
+            <tr><td><strong>1.000 km ou mais</strong></td><td class="num"><strong>1,00</strong></td><td class="num"><strong>320</strong></td></tr>
+          </tbody>
+        </table>
+        <div class="card card-amber">
+          <div class="ico" style="background:#FDE68A;"><i class="fas fa-scale-balanced text-yellow-700 text-2xl"></i></div>
+          <div>
+            <p class="font-montserrat font-bold text-brand text-xl">Distância é custo, não culpa</p>
+            <p class="text-gray-600 text-lg mt-1">
+              O ICD não acusa ninguém: ele avisa o planejamento de que aquela fiscalização presencial
+              custa viagem. <strong>1.143 das 2.478 outorgas</strong> estão em UF do Norte; a mais
+              distante fica a <strong>2.541 km</strong> da sua regional.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <p class="text-gray-600 text-xl">
-        O IRA sai da <strong>NT_IRA</strong> e combina quatro dimensões:
-      </p>
-      <div class="grid grid-cols-2 gap-3">
-        <div class="dim"><i class="fas fa-life-ring"></i><div><p class="dim-t">Segurança</p><p class="dim-p">35%</p></div></div>
-        <div class="dim"><i class="fas fa-coins"></i><div><p class="dim-t">Econômica</p><p class="dim-p">25%</p></div></div>
-        <div class="dim"><i class="fas fa-leaf"></i><div><p class="dim-t">Ambiental</p><p class="dim-p">20%</p></div></div>
-        <div class="dim"><i class="fas fa-binoculars"></i><div><p class="dim-t">Monitorabilidade</p><p class="dim-p">20%</p></div></div>
-      </div>
-
-      <div class="card card-green">
-        <div class="ico" style="background:#BBF7D0;"><i class="fas fa-shield-halved text-green-700 text-2xl"></i></div>
-        <div>
-          <p class="font-montserrat font-bold text-brand text-xl">O efeito na prática</p>
-          <p class="text-gray-600 text-lg mt-1">
-            Uma <strong>travessia nunca fiscalizada jamais cai em A1</strong>. O piso garante que
-            atividade perigosa não vá parar na faixa mais branda só porque a empresa ainda não tem
-            ficha.
-          </p>
+      <div class="flex flex-col gap-2">
+        <p class="ind-h"><i class="fas fa-building"></i> IMA &middot; maturidade empresarial &nbsp;<span class="ind-p">peso 1</span></p>
+        <p class="text-gray-600 text-lg">
+          Empresa <strong>jovem</strong> e <strong>pequena</strong> tende a ter menos estrutura de
+          conformidade. Idade do CNPJ e porte entram com <strong>metade do peso cada</strong>; o limiar de
+          capital (R$ 20 milhões) foi calibrado na mediana do próprio universo.
+        </p>
+        <table class="tbl tbl-mini">
+          <thead><tr><th>Idade do CNPJ</th><th class="num">Valor</th><th>Porte</th><th class="num">Valor</th></tr></thead>
+          <tbody>
+            <tr><td>até 3 anos</td><td class="num">1,00</td><td>MEI</td><td class="num">1,00</td></tr>
+            <tr><td>3 – 5 anos</td><td class="num">0,75</td><td>ME</td><td class="num">0,75</td></tr>
+            <tr><td>5 – 10 anos</td><td class="num">0,50</td><td>EPP</td><td class="num">0,50</td></tr>
+            <tr><td>10 – 20 anos</td><td class="num">0,25</td><td>demais, abaixo do limiar</td><td class="num">0,25</td></tr>
+            <tr><td>mais de 20 anos</td><td class="num">0,00</td><td>demais, acima</td><td class="num">0,00</td></tr>
+          </tbody>
+        </table>
+        <div class="card card-green">
+          <div class="ico" style="background:#BBF7D0;"><i class="fas fa-hand-holding-heart text-green-700 text-2xl"></i></div>
+          <div>
+            <p class="font-montserrat font-bold text-brand text-xl">Priorização, não punição — e a regra da lancha</p>
+            <p class="text-gray-600 text-lg mt-1">
+              MEI e ME de <strong>passageiros na navegação interior</strong>, travessias incluídas, recebem
+              IMA <strong>no mínimo 0,75</strong>: são <strong>330 outorgas</strong>, e
+              <strong>82% das travessias</strong> são MEI ou ME. Sem esse piso o indicador não mediria nada
+              justamente onde importa. Quem sobe na fila sobe para ser fiscalizado <strong>com
+              orientação</strong> — chegar antes da autuação é o papel da fiscalização em quem não tem
+              estrutura.
+            </p>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="col-span-6 flex flex-col gap-3">
-      <p class="font-montserrat font-bold text-brand text-2xl">Como o piso é aplicado</p>
-      <div class="formula">IPR_final &nbsp;=&nbsp; MAIOR( nota calculada , piso da atividade )</div>
-      <p class="text-gray-600 text-lg">
-        Não é uma soma: é um <strong>mínimo garantido</strong>. Se a nota calculada já passa do piso,
-        o piso não faz nada. Se fica abaixo, o piso assume.
-      </p>
-
-      <table class="tbl">
-        <thead><tr><th>IRA da modalidade</th><th class="num">Piso em pontos</th><th>O que significa</th></tr></thead>
-        <tbody>
-          <tr><td><strong>70 ou mais</strong></td><td class="num"><strong>13,16</strong></td><td>Garante pelo menos <span class="pill pill-b">B1</span></td></tr>
-          <tr><td>51 a 69</td><td class="num">4,21</td><td>Sinal dentro de <span class="pill pill-a">A1</span></td></tr>
-          <tr><td>35 a 50</td><td class="num">2,63</td><td>Sinal fraco</td></tr>
-          <tr><td>Abaixo de 35</td><td class="num">0,00</td><td>Sem piso</td></tr>
-        </tbody>
-      </table>
-
-      <div class="card card-amber">
-        <div class="ico" style="background:#FDE68A;"><i class="fas fa-gavel text-yellow-700 text-2xl"></i></div>
-        <div>
-          <p class="font-montserrat font-bold text-brand text-xl">Onde o piso aterrissa é decisão, não conta</p>
-          <p class="text-gray-600 text-lg mt-1">
-            A GPF decidiu que atividade inerentemente arriscada não deve ficar nas faixas mais
-            brandas, e a recalibração de 2026 posicionou os limiares de acordo. É política de
-            fiscalização escrita em número.
-          </p>
-        </div>
+    <div class="destaque flex items-center gap-6">
+      <i class="fas fa-plus text-2xl" style="opacity:0.35;"></i>
+      <div>
+        <p class="font-montserrat font-bold" style="font-size:calc(21px * var(--tz));">
+          Com ICD e IMA, a soma dos pesos foi de <strong>19 para 21</strong> — e as faixas A1..C4
+          tiveram de ser recalibradas junto.
+        </p>
+        <p class="text-blue-100 text-lg mt-1">
+          Limiar de faixa é versionado por regime de pesos: o corte de &Sigma;&nbsp;=&nbsp;19 não vale em &Sigma;&nbsp;=&nbsp;21.
+        </p>
       </div>
     </div>
   </div>
@@ -215,7 +240,7 @@ table.tbl th.num { text-align:right; }
 
   <div class="px-16 pb-4 flex justify-between items-center border-t border-gray-100 pt-3 mx-8">
     <p class="text-gray-400 text-sm">IPR 2.0 e o PAF 2027 — Encontro de Chefias · GPF/SFC/ANTAQ</p>
-    <p class="text-gray-300 text-sm font-mono">8 / 18</p>
+    <p class="text-gray-300 text-sm font-mono">8 / 19</p>
   </div>
 </div>
 <script src="zoom.js"></script>

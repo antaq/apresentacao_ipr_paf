@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Equalização da carga entre regionais</title>
+<title>Força de Trabalho — o PAF cabe?</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<style>:root { --tz-base: 0.945; }
+<style>:root { --tz-base: 0.882; }
 
 body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
 .slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden; background:#ffffff; }
@@ -115,9 +115,14 @@ table.tbl th.num { text-align:right; }
 .gap-6 { row-gap:34px; }
 .gap-8 { row-gap:38px; }
 
-.modo { display:flex; gap:14px; align-items:flex-start; background:#F8FAFC; border-radius:14px; padding:12px 18px; border-left:5px solid #0066CC; }
-.modo-t { margin:0; font-family:'Montserrat',sans-serif; font-weight:700; color:#003366; font-size:calc(18px * var(--tz)); }
-.modo-d { margin:2px 0 0; color:#475569; font-size:calc(15px * var(--tz)); line-height:1.45; }
+.leg { border-radius:999px; padding:4px 14px; font-size:calc(13px * var(--tz)); font-weight:600; }
+.leg-v { background:#DCFCE7; color:#166534; }
+.leg-v2 { background:#ECFDF5; color:#047857; }
+.leg-a { background:#FEF9C3; color:#854D0E; }
+.leg-o { background:#FFEDD5; color:#9A3412; }
+.leg-r { background:#FEE2E2; color:#991B1B; }
+table.tbl tr.row-r td { background:#FEF2F2; }
+table.tbl tr.row-o td { background:#FFF7ED; }
 </style>
 </head>
 <body>
@@ -129,8 +134,8 @@ table.tbl th.num { text-align:right; }
     <div class="flex items-center gap-3">
       <div style="width:5px;height:44px;" class="bg-accent"></div>
       <div>
-        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Novo em 2027 · tela Equalização</p>
-        <p class="text-5xl font-montserrat font-bold text-brand uppercase tracking-tight">Dividir melhor o trabalho</p>
+        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Novo em 2027 · tela Força de Trabalho</p>
+        <p class="text-5xl font-montserrat font-bold text-brand uppercase tracking-tight">O PAF cabe em quem o executa?</p>
       </div>
       <div class="ml-auto flex items-center gap-3">
         <span class="novo-tag"><i class="fas fa-star"></i> Novidade 2027</span>
@@ -141,114 +146,122 @@ table.tbl th.num { text-align:right; }
   </div>
 
 
-  <div class="flex-1 px-16 pb-2 grid grid-cols-12 gap-5">
-    <div class="col-span-6 flex flex-col gap-3">
-      <div class="card card-amber">
-        <div class="ico" style="background:#FDE68A;"><i class="fas fa-triangle-exclamation text-yellow-700 text-2xl"></i></div>
-        <div>
-          <p class="font-montserrat font-bold text-brand text-2xl">Isso já acontecia — sem regra e sem registro</p>
-          <p class="text-gray-600 text-lg mt-1">
-            As fiscalizações de Santana vinham sendo feitas por equipes de fora, principalmente de
-            Belém, em viagens de apoio. Sem regra escrita, sem registro de quem decidiu, e com as
-            <strong>horas lançadas na conta de quem viajou</strong>.
-          </p>
-          <p class="text-gray-600 text-lg mt-1">
-            Efeito colateral: a capacidade de Santana <em>parecia</em> maior do que é. Aqueles
-            <strong>136% são piso, não teto</strong>.
-          </p>
-        </div>
+  <div class="flex-1 px-16 pb-2 flex flex-col gap-3">
+    <div class="flex-1 grid grid-cols-12 gap-5">
+    <div class="col-span-7 flex flex-col gap-3">
+      <div class="formula" style="text-align:center; line-height:1.6;">
+        ocupação &nbsp;=&nbsp; horas que o plano exige no ano &nbsp;&divide;&nbsp; envelope do PAF<br/>
+        <span style="color:#94A3B8; font-size:calc(16px * var(--tz));">envelope do PAF = 35% das horas líquidas da equipe, igual para toda regional</span>
       </div>
-
-      <p class="font-montserrat font-bold text-brand text-2xl">Duas formas diferentes de dividir</p>
-      <div class="modo">
-        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-right-left text-accent text-2xl"></i></div>
-        <div>
-          <p class="modo-t">Transferência</p>
-          <p class="modo-d">A outorga <strong>passa a ser de outra regional</strong> neste ciclo.
-          Só vale para o que não exige ir ao local — análise documental, navegação marítima.</p>
-        </div>
-      </div>
-      <div class="modo">
-        <div class="ico" style="background:#DCFCE7;"><i class="fas fa-plane-departure text-green-700 text-2xl"></i></div>
-        <div>
-          <p class="modo-t">Missão de apoio</p>
-          <p class="modo-d">A outorga <strong>fica onde está</strong> e uma equipe de fora vai até lá
-          executar. As horas são debitadas de quem apoia. É o que já se fazia — agora com dono,
-          registro e efeito no planejamento.</p>
-        </div>
-      </div>
-
-      <div class="card card-green">
-        <div class="ico" style="background:#BBF7D0;"><i class="fas fa-sitemap text-green-700 text-2xl"></i></div>
-        <div>
-          <p class="font-montserrat font-bold text-brand text-xl">A jurisdição NÃO muda</p>
-          <p class="text-gray-600 text-lg mt-1">
-            Quem responde institucionalmente por cada outorga continua sendo quem sempre foi.
-            A equalização é uma <strong>camada sobreposta, válida para o ciclo</strong> — ela diz
-            quem <em>executa</em>, não quem <em>responde</em>.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-span-6 flex flex-col gap-3">
-      <div class="grid grid-cols-3 gap-3">
-        <div class="stat-card"><p class="stat-num" style="font-size:calc(38px * var(--tz));">136%&rarr;98%</p><p class="text-blue-200 text-sm font-semibold mt-2">ocupação de Santana</p></div>
-        <div class="stat-card"><p class="stat-num">12</p><p class="text-blue-200 text-sm font-semibold mt-2">movimentos propostos<br/>(483 horas)</p></div>
-        <div class="stat-card"><p class="stat-num">0</p><p class="text-blue-200 text-sm font-semibold mt-2">regionais acima<br/>do limite</p></div>
+      <div class="flex gap-2">
+        <span class="leg leg-v">até 70% · folga</span>
+        <span class="leg leg-v2">até 90% · adequada</span>
+        <span class="leg leg-a">até 100% · justa</span>
+        <span class="leg leg-o">até 130% · excedida</span>
+        <span class="leg leg-r">acima de 130% · inviável</span>
       </div>
 
       <table class="tbl">
-        <thead><tr><th>O que a proposta faz</th><th class="num">Blocos</th><th class="num">Horas</th></tr></thead>
+        <thead><tr>
+          <th>Regional</th><th class="num">Equipe</th><th class="num">CNU</th>
+          <th class="num">Envelope PAF c/ CNU</th><th class="num">Demanda h/ano</th>
+          <th class="num">Sem reforço</th><th class="num">Com reforço</th>
+        </tr></thead>
         <tbody>
-          <tr><td>Transferências (a outorga muda de carteira)</td><td class="num">8</td><td class="num">123</td></tr>
-          <tr><td>Missões de apoio (a equipe é que viaja)</td><td class="num">4</td><td class="num">361</td></tr>
-          <tr><td colspan="3" style="color:#64748B;">Transferências: todas para Santos. Missões: Florianópolis, São Luís e Vitória — <strong>ninguém recebeu o problema inteiro</strong>. <strong>75% do alívio sai como apoio</strong>: a carteira de Santana é travessia presencial, que não muda de dono.</td></tr>
+          <tr class="row-r"><td><strong>URESN</strong> · Santana</td><td class="num">3</td><td class="num">+1</td><td class="num">1.281</td><td class="num">4.904</td><td class="num">549%</td><td class="num"><strong>383%</strong></td></tr>
+          <tr class="row-r"><td><strong>GREBL</strong> · Belém</td><td class="num">17</td><td class="num">+7</td><td class="num">8.061</td><td class="num">11.371</td><td class="num">210%</td><td class="num"><strong>141%</strong></td></tr>
+          <tr class="row-o"><td><strong>GREMN</strong> · Manaus</td><td class="num">14</td><td class="num">+7</td><td class="num">6.973</td><td class="num">8.151</td><td class="num">195%</td><td class="num"><strong>117%</strong></td></tr>
+          <tr><td><strong>UREPL</strong> · Pelotas</td><td class="num">4</td><td class="num">—</td><td class="num">1.768</td><td class="num">1.336</td><td class="num">76%</td><td class="num">76%</td></tr>
+          <tr><td><strong>UREPV</strong> · Porto Velho</td><td class="num">3</td><td class="num">—</td><td class="num">1.723</td><td class="num">1.229</td><td class="num">71%</td><td class="num">71%</td></tr>
+          <tr><td><strong>UREFT</strong> · Fortaleza</td><td class="num">4</td><td class="num">—</td><td class="num">1.768</td><td class="num">1.147</td><td class="num">65%</td><td class="num">65%</td></tr>
+          <tr><td colspan="7" style="color:#64748B;">URESL 59% · GRERJ 58% · GREFL 53% · GREST 43% · GRERE 38% · UREVT 22% · URECB 21% · URESV 17%</td></tr>
         </tbody>
       </table>
+      <p class="legenda">
+        Cenário base: as <strong>587 outorgas do Grupo C</strong> mais a expectativa do sorteio
+        sobre as 415 do Grupo A, precificadas pela <strong>Tabela de Atividades da SFC</strong>.
+        O Grupo C cresceu de 305 para 587 com a recalibração das faixas em &Sigma;&nbsp;=&nbsp;21. O envelope &ldquo;com
+        reforço&rdquo; inclui os <strong>20 convocados do CNU</strong> lotados nas regionais, já com
+        o rendimento reduzido de quem está começando. Quem está destacado conta na equipe
+        <strong>de onde executa</strong>.
+      </p>
+    </div>
 
-      <div class="card">
-        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-boxes-stacked text-accent text-2xl"></i></div>
-        <div>
-          <p class="font-montserrat font-bold text-brand text-xl">Não se move uma outorga, move-se um bloco</p>
-          <p class="text-gray-600 text-lg mt-1">
-            Fiscalizar uma travessia ou vinte na mesma localidade custa quase o mesmo em
-            deslocamento. Por isso o que viaja é o <strong>bloco inteiro</strong> — e ele não se
-            quebra: ou vai todo, ou fica, com o motivo escrito.
-          </p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-compass text-accent text-2xl"></i></div>
-        <div>
-          <p class="font-montserrat font-bold text-brand text-xl">Como o destino é escolhido</p>
-          <p class="text-gray-600 text-lg mt-1">
-            Quatro critérios com peso: <strong>folga 40%</strong> · <strong>proximidade 35%</strong> ·
-            <strong>afinidade com a carteira 15%</strong> · <strong>jurisdição 10%</strong>.
-            O relatório publica o preço da preferência por folga: <strong>4.984 km a mais</strong>
-            do que se a proximidade decidisse sozinha.
-          </p>
-        </div>
-      </div>
-
+    <div class="col-span-5 flex flex-col gap-3">
       <div class="destaque">
-        <p class="font-montserrat font-bold" style="font-size:calc(21px * var(--tz));">
-          <i class="fas fa-user-pen mr-2"></i>A rodada propõe. Quem decide é gente.
+        <p class="font-montserrat font-bold" style="font-size:calc(24px * var(--tz));">
+          O problema não é a Agência. É a distribuição.
         </p>
-        <p class="text-blue-100 text-lg mt-1">
-          Nenhum lote muda de responsável antes de alguém aprovar, lote por lote, com
-          <strong>fundamento e nº SEI</strong>. Rodada nova não desfaz o que foi aprovado nem
-          reapresenta o que foi rejeitado.
+        <p class="text-blue-100 text-lg mt-2">
+          <strong>42,1 mil horas</strong> de trabalho previsto contra um envelope de
+          <strong>55,2 mil horas</strong>: a rede usa <strong>76%</strong> do que a régua destina ao
+          PAF, e o plano inteiro cabe em <strong>27% das horas líquidas</strong> do país. Ainda
+          assim uma regional fica em <strong>549% — 383% mesmo com o reforço do CNU</strong>.
         </p>
+      </div>
+
+      <div class="card card-amber">
+        <div class="ico" style="background:#FDE68A;"><i class="fas fa-ruler text-yellow-700 text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-xl">Uma régua só, igual para todas</p>
+          <p class="text-gray-600 text-lg mt-1">
+            Até agosto a capacidade de cada regional era o que sobrava do que ela mesma lançava fora
+            do PAF — <strong>quem registrava menos PAF ganhava capacidade maior</strong>. Agora o
+            envelope é 35% para todas. Ocupação de 100% quer dizer que <strong>o PAF preencheu esse
+            envelope</strong>, não que o servidor está 100% ocupado.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-database text-accent text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-xl">De onde vêm as horas e quanto custa</p>
+          <p class="text-gray-600 text-lg mt-1">
+            As horas saem dos <strong>planos de trabalho do PGD (Hefesto)</strong>, de janeiro/2025 a
+            julho/2026 — o que vocês pactuam e lançam todo mês. O custo por processo sai da
+            <strong>Tabela da SFC</strong>: porto organizado 120 h · arrendamento 96 h · TUP 84 h ·
+            outorga geral 72 h · travessia registrada 58 h (revista pela GPF sobre o custo
+            observado — era a única modalidade em que a tabela cobrava menos do que a prática).
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-user-shield text-accent text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-xl">Quem está em GEF sai do cômputo</p>
+          <p class="text-gray-600 text-lg mt-1">
+            Contêiner e Investimento atuam em <strong>rito próprio</strong> e não recebem
+            fiscalização ordinária: <strong>23 integrantes</strong>, 17 servidores-equivalentes,
+            <strong>16,4% da capacidade bruta</strong>. Ninguém some da tela — a pessoa aparece com o
+            selo do grupo e a carga efetiva ao lado da bruta.
+          </p>
+        </div>
       </div>
     </div>
   </div>
 
+  <div class="card card-green">
+    <div class="ico" style="background:#BBF7D0;"><i class="fas fa-ruler-combined text-green-700 text-2xl"></i></div>
+    <div>
+      <p class="font-montserrat font-bold text-brand text-xl">O tamanho do PAF é medido, não escolhido</p>
+      <p class="text-gray-600 text-lg mt-1">
+        O recorte de <strong>200 outorgas</strong> foi aposentado: o maior PAF que cabe é
+        <strong>medido</strong> rodando o fluxo inteiro — custo, planos de trabalho e equalização
+        juntos. Com ICD e IMA, o que o PAF <em>obriga</em> — o Grupo C inteiro mais o sorteio —
+        passou a ocupar <strong>76% do envelope nacional</strong>, e <strong>cabe</strong> depois
+        da equalização. Quanto ainda sobra para fiscalizar <em>além</em> do devido é medida a
+        refazer com as faixas novas — número que só sai depois de publicado.
+      </p>
+    </div>
+  </div>
+</div>
+
 
   <div class="px-16 pb-4 flex justify-between items-center border-t border-gray-100 pt-3 mx-8">
     <p class="text-gray-400 text-sm">IPR 2.0 e o PAF 2027 — Encontro de Chefias · GPF/SFC/ANTAQ</p>
-    <p class="text-gray-300 text-sm font-mono">13 / 18</p>
+    <p class="text-gray-300 text-sm font-mono">13 / 19</p>
   </div>
 </div>
 <script src="zoom.js"></script>

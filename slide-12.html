@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Força de Trabalho — o PAF cabe?</title>
+<title>Cadastro — CNPJ baixado e suspenso</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<style>:root { --tz-base: 0.882; }
+<style>:root { --tz-base: 0.945; }
 
 body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
 .slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden; background:#ffffff; }
@@ -114,15 +114,6 @@ table.tbl th.num { text-align:right; }
 .gap-5 { row-gap:34px; }
 .gap-6 { row-gap:34px; }
 .gap-8 { row-gap:38px; }
-
-.leg { border-radius:999px; padding:4px 14px; font-size:calc(13px * var(--tz)); font-weight:600; }
-.leg-v { background:#DCFCE7; color:#166534; }
-.leg-v2 { background:#ECFDF5; color:#047857; }
-.leg-a { background:#FEF9C3; color:#854D0E; }
-.leg-o { background:#FFEDD5; color:#9A3412; }
-.leg-r { background:#FEE2E2; color:#991B1B; }
-table.tbl tr.row-r td { background:#FEF2F2; }
-table.tbl tr.row-o td { background:#FFF7ED; }
 </style>
 </head>
 <body>
@@ -134,8 +125,8 @@ table.tbl tr.row-o td { background:#FFF7ED; }
     <div class="flex items-center gap-3">
       <div style="width:5px;height:44px;" class="bg-accent"></div>
       <div>
-        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Novo em 2027 · tela Força de Trabalho</p>
-        <p class="text-5xl font-montserrat font-bold text-brand uppercase tracking-tight">O PAF cabe em quem o executa?</p>
+        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Novo em 2027 · tela Cadastro</p>
+        <p class="text-5xl font-montserrat font-bold text-brand uppercase tracking-tight">O CNPJ existe mesmo?</p>
       </div>
       <div class="ml-auto flex items-center gap-3">
         <span class="novo-tag"><i class="fas fa-star"></i> Novidade 2027</span>
@@ -146,120 +137,105 @@ table.tbl tr.row-o td { background:#FFF7ED; }
   </div>
 
 
-  <div class="flex-1 px-16 pb-2 flex flex-col gap-3">
-    <div class="flex-1 grid grid-cols-12 gap-5">
-    <div class="col-span-7 flex flex-col gap-3">
-      <div class="formula" style="text-align:center; line-height:1.6;">
-        ocupação &nbsp;=&nbsp; horas que o plano exige no ano &nbsp;&divide;&nbsp; envelope do PAF<br/>
-        <span style="color:#94A3B8; font-size:calc(16px * var(--tz));">envelope do PAF = 35% das horas líquidas da equipe, igual para toda regional</span>
-      </div>
-      <div class="flex gap-2">
-        <span class="leg leg-v">até 70% · folga</span>
-        <span class="leg leg-v2">até 90% · adequada</span>
-        <span class="leg leg-a">até 100% · justa</span>
-        <span class="leg leg-o">até 130% · excedida</span>
-        <span class="leg leg-r">acima de 130% · inviável</span>
+  <div class="px-16 pb-3 grid grid-cols-4 gap-4">
+    <div class="stat-card"><p class="stat-num">2.133</p><p class="text-blue-200 text-sm font-semibold mt-2">CNPJs conferidos<br/>na Receita Federal</p></div>
+    <div class="stat-card"><p class="stat-num">149</p><p class="text-blue-200 text-sm font-semibold mt-2">não estão ativos<br/>(7% do total)</p></div>
+    <div class="stat-card"><p class="stat-num">68</p><p class="text-blue-200 text-sm font-semibold mt-2">outorgas fora da<br/>listagem do PAF 2027</p></div>
+    <div class="stat-card"><p class="stat-num">0</p><p class="text-blue-200 text-sm font-semibold mt-2">bloqueios sem<br/>tratamento</p></div>
+  </div>
+
+  <div class="flex-1 px-16 pb-2 grid grid-cols-12 gap-5">
+    <div class="col-span-6 flex flex-col gap-3">
+      <div class="card card-red">
+        <div class="ico" style="background:#FECACA;"><i class="fas fa-file-circle-xmark text-red-600 text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-2xl">O caso que motivou tudo</p>
+          <p class="text-gray-600 text-lg mt-1">
+            A <strong>ODSF nº 568/2026/URECB</strong> foi aberta contra a CPA Armazéns Gerais —
+            CNPJ <strong>baixado desde 2022</strong>. Quem opera o terminal de Paranaguá é outra
+            empresa, confirmado pela APPA.
+          </p>
+          <p class="text-gray-600 text-lg mt-1">
+            O risco tinha sido calculado, e a fiscalização programada, <strong>sobre a empresa
+            errada</strong>. Os sistemas internos não sabem quando um CNPJ é baixado na Receita.
+          </p>
+        </div>
       </div>
 
+      <p class="font-montserrat font-bold text-brand text-2xl">O que a conferência encontrou</p>
       <table class="tbl">
-        <thead><tr>
-          <th>Regional</th><th class="num">Equipe</th><th class="num">CNU</th>
-          <th class="num">Envelope PAF c/ CNU</th><th class="num">Demanda h/ano</th>
-          <th class="num">Sem reforço</th><th class="num">Com reforço</th>
-        </tr></thead>
+        <thead><tr><th>Situação</th><th class="num">Outorgas</th><th>O que acontece</th></tr></thead>
         <tbody>
-          <tr class="row-r"><td><strong>URESN</strong> · Santana</td><td class="num">3</td><td class="num">+1</td><td class="num">1.281</td><td class="num">1.742</td><td class="num">195%</td><td class="num"><strong>136%</strong></td></tr>
-          <tr class="row-o"><td><strong>GREBL</strong> · Belém</td><td class="num">17</td><td class="num">+7</td><td class="num">8.061</td><td class="num">6.091</td><td class="num">112%</td><td class="num"><strong>76%</strong></td></tr>
-          <tr class="row-o"><td><strong>GREMN</strong> · Manaus</td><td class="num">14</td><td class="num">+7</td><td class="num">6.973</td><td class="num">5.257</td><td class="num">126%</td><td class="num"><strong>75%</strong></td></tr>
-          <tr><td><strong>GRERJ</strong> · Rio de Janeiro</td><td class="num">11</td><td class="num">+2</td><td class="num">6.300</td><td class="num">2.610</td><td class="num">47%</td><td class="num">41%</td></tr>
-          <tr><td><strong>URESL</strong> · São Luís</td><td class="num">7</td><td class="num">—</td><td class="num">3.657</td><td class="num">1.525</td><td class="num">42%</td><td class="num">42%</td></tr>
-          <tr><td><strong>UREPV</strong> · Porto Velho</td><td class="num">3</td><td class="num">—</td><td class="num">1.723</td><td class="num">646</td><td class="num">37%</td><td class="num">37%</td></tr>
-          <tr><td colspan="7" style="color:#64748B;">UREFT 49% · GREST 27% · UREVT 26% · GREFL 21% · UREPL 18% · URESV 16% · GRERE 14% · URECB 13%</td></tr>
+          <tr><td>Conforme</td><td class="num">2.254</td><td>segue no PAF sem ressalva</td></tr>
+          <tr><td><strong>Baixada</strong>, sem sucessor</td><td class="num">38</td><td><span class="pill pill-c">sai do PAF</span></td></tr>
+          <tr><td><strong>Baixada</strong>, com sucessor provável</td><td class="num">28</td><td><span class="pill pill-c">sai do PAF</span></td></tr>
+          <tr><td><strong>Suspensa</strong></td><td class="num">2</td><td><span class="pill pill-c">sai do PAF</span></td></tr>
+          <tr><td>Inapta</td><td class="num">83</td><td><span class="pill pill-a">continua no PAF</span></td></tr>
+          <tr><td>Ativa, com divergência de cadastro</td><td class="num">73</td><td><span class="pill pill-a">continua no PAF</span></td></tr>
         </tbody>
       </table>
       <p class="legenda">
-        Cenário base: as 305 outorgas do Grupo C mais a expectativa do sorteio do Grupo A,
-        precificadas pela <strong>Tabela de Atividades da SFC</strong>. O envelope &ldquo;com
-        reforço&rdquo; inclui os <strong>20 convocados do CNU</strong> lotados nas regionais, já com
-        o rendimento reduzido de quem está começando. Quem está destacado conta na equipe
-        <strong>de onde executa</strong>.
+        <strong>Inapta continua</strong> de propósito: deixar de entregar declaração não extingue a
+        empresa nem a obrigação regulatória. Tirar as 83 premiaria justamente quem não declara.
       </p>
     </div>
 
-    <div class="col-span-5 flex flex-col gap-3">
-      <div class="destaque">
-        <p class="font-montserrat font-bold" style="font-size:calc(24px * var(--tz));">
-          O problema não é a Agência. É a distribuição.
-        </p>
-        <p class="text-blue-100 text-lg mt-2">
-          <strong>23,8 mil horas</strong> de trabalho previsto contra um envelope de
-          <strong>55,2 mil horas</strong>: a rede usa <strong>43%</strong> do que a régua destina ao
-          PAF, e o plano inteiro cabe em <strong>15,1% das horas líquidas</strong> do país. Ainda
-          assim uma regional fica em <strong>195% — 136% mesmo com o reforço do CNU</strong>.
-        </p>
-      </div>
+    <div class="col-span-6 flex flex-col gap-3">
+      <p class="font-montserrat font-bold text-brand text-2xl">Quatro coisas que não se pode confundir</p>
 
-      <div class="card card-amber">
-        <div class="ico" style="background:#FDE68A;"><i class="fas fa-ruler text-yellow-700 text-2xl"></i></div>
+      <div class="card">
+        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-eye-slash text-accent text-2xl"></i></div>
         <div>
-          <p class="font-montserrat font-bold text-brand text-xl">Uma régua só, igual para todas</p>
+          <p class="font-montserrat font-bold text-brand text-xl">1. Inativar não é excluir</p>
           <p class="text-gray-600 text-lg mt-1">
-            Até agosto a capacidade de cada regional era o que sobrava do que ela mesma lançava fora
-            do PAF — <strong>quem registrava menos PAF ganhava capacidade maior</strong>. Agora o
-            envelope é 35% para todas. Ocupação de 100% quer dizer que <strong>o PAF preencheu esse
-            envelope</strong>, não que o servidor está 100% ocupado.
+            A outorga <strong>continua visível</strong> no painel, marcada. Ela só não entra na
+            listagem do PAF. Ela precisa aparecer justamente na tela onde o problema dela é tratado.
           </p>
         </div>
       </div>
 
       <div class="card">
-        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-database text-accent text-2xl"></i></div>
+        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-user-check text-accent text-2xl"></i></div>
         <div>
-          <p class="font-montserrat font-bold text-brand text-xl">De onde vêm as horas e quanto custa</p>
+          <p class="font-montserrat font-bold text-brand text-xl">2. A máquina propõe, a pessoa decide</p>
           <p class="text-gray-600 text-lg mt-1">
-            As horas saem dos <strong>planos de trabalho do PGD (Hefesto)</strong>, de janeiro/2025 a
-            julho/2026 — o que vocês pactuam e lançam todo mês. O custo por processo sai da
-            <strong>Tabela da SFC</strong>: porto organizado 120 h · arrendamento 96 h · TUP 84 h ·
-            outorga geral 72 h · travessia registrada 58 h (revista pela GPF sobre o custo
-            observado — era a única modalidade em que a tabela cobrava menos do que a prática).
+            A saída é <strong>imediata e protetiva</strong>; a conferência humana vem depois e pode
+            <strong>reverter</strong>. Revertida, a máquina não reinativa enquanto a situação
+            cadastral for a mesma. <strong>A decisão humana vence a regra.</strong>
           </p>
         </div>
       </div>
 
       <div class="card">
-        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-user-shield text-accent text-2xl"></i></div>
+        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-rotate-left text-accent text-2xl"></i></div>
         <div>
-          <p class="font-montserrat font-bold text-brand text-xl">Quem está em GEF sai do cômputo</p>
+          <p class="font-montserrat font-bold text-brand text-xl">3. CNPJ regularizado volta sozinho</p>
           <p class="text-gray-600 text-lg mt-1">
-            Contêiner e Investimento atuam em <strong>rito próprio</strong> e não recebem
-            fiscalização ordinária: <strong>23 integrantes</strong>, 17 servidores-equivalentes,
-            <strong>16,4% da capacidade bruta</strong>. Ninguém some da tela — a pessoa aparece com o
-            selo do grupo e a carga efetiva ao lado da bruta.
+            Se a empresa se regulariza na Receita, a outorga retorna ao PAF na conferência seguinte —
+            desde que a saída ainda fosse proposta da máquina.
+          </p>
+        </div>
+      </div>
+
+      <div class="card card-green">
+        <div class="ico" style="background:#BBF7D0;"><i class="fas fa-folder-open text-green-700 text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-xl">4. O dossiê do CNPJ já vem pronto</p>
+          <p class="text-gray-600 text-lg mt-1">
+            Extinguir o termo de outorga é ato da área de outorgas, e ela decide sobre o
+            <strong>instrumento</strong>. A tela reúne, por CNPJ, <strong>todas as outorgas, os
+            283 instrumentos</strong> das quatro fontes (processo de outorga, terminal, operador
+            portuário e arrendamento) e o histórico de fiscalização — sem abrir quatro sistemas à mão.
           </p>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="card card-green">
-    <div class="ico" style="background:#BBF7D0;"><i class="fas fa-ruler-combined text-green-700 text-2xl"></i></div>
-    <div>
-      <p class="font-montserrat font-bold text-brand text-xl">O tamanho do PAF é medido, não escolhido</p>
-      <p class="text-gray-600 text-lg mt-1">
-        O recorte de <strong>200 outorgas</strong> foi aposentado: o maior PAF que cabe é
-        <strong>medido</strong> rodando o fluxo inteiro — custo, planos de trabalho e
-        equalização juntos. A fronteira do ciclo: <strong>675 outorgas</strong> (338 presenciais
-        + 337 remotas), <strong>86% do envelope nacional</strong>, com a taxa de sorteio
-        vigente e o Grupo C inteiro — nada de norma nova.
-      </p>
-    </div>
-  </div>
-</div>
 
 
   <div class="px-16 pb-4 flex justify-between items-center border-t border-gray-100 pt-3 mx-8">
     <p class="text-gray-400 text-sm">IPR 2.0 e o PAF 2027 — Encontro de Chefias · GPF/SFC/ANTAQ</p>
-    <p class="text-gray-300 text-sm font-mono">12 / 18</p>
+    <p class="text-gray-300 text-sm font-mono">12 / 19</p>
   </div>
 </div>
 <script src="zoom.js"></script>

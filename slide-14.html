@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>De onde vem cada número</title>
+<title>Equalização da carga entre regionais</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<style>:root { --tz-base: 1.08; }
+<style>:root { --tz-base: 0.945; }
 
 body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
 .slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden; background:#ffffff; }
@@ -115,10 +115,9 @@ table.tbl th.num { text-align:right; }
 .gap-6 { row-gap:34px; }
 .gap-8 { row-gap:38px; }
 
-.fonte { display:flex; gap:14px; align-items:flex-start; background:#F8FAFC; border-radius:12px; padding:10px 16px; border-left:5px solid #0066CC; }
-.fonte i { color:#0066CC; font-size:calc(19px * var(--tz)); width:26px; text-align:center; margin-top:3px; }
-.fonte-t { margin:0; font-family:'Montserrat',sans-serif; font-weight:700; color:#003366; font-size:calc(17px * var(--tz)); }
-.fonte-d { margin:2px 0 0; color:#475569; font-size:calc(14px * var(--tz)); line-height:1.4; }
+.modo { display:flex; gap:14px; align-items:flex-start; background:#F8FAFC; border-radius:14px; padding:12px 18px; border-left:5px solid #0066CC; }
+.modo-t { margin:0; font-family:'Montserrat',sans-serif; font-weight:700; color:#003366; font-size:calc(18px * var(--tz)); }
+.modo-d { margin:2px 0 0; color:#475569; font-size:calc(15px * var(--tz)); line-height:1.45; }
 </style>
 </head>
 <body>
@@ -130,11 +129,11 @@ table.tbl th.num { text-align:right; }
     <div class="flex items-center gap-3">
       <div style="width:5px;height:44px;" class="bg-accent"></div>
       <div>
-        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Seções &ldquo;Pipeline&rdquo; e &ldquo;Arquitetura&rdquo; da Ajuda</p>
-        <p class="text-5xl font-montserrat font-bold text-brand uppercase tracking-tight">De onde vem cada número</p>
+        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Novo em 2027 · tela Equalização</p>
+        <p class="text-5xl font-montserrat font-bold text-brand uppercase tracking-tight">Dividir melhor o trabalho</p>
       </div>
       <div class="ml-auto flex items-center gap-3">
-        
+        <span class="novo-tag"><i class="fas fa-star"></i> Novidade 2027</span>
         <img src="assets/logo-antaq-azul.png" alt="ANTAQ" style="height:32px;">
         <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">GPF</p>
       </div>
@@ -143,59 +142,107 @@ table.tbl th.num { text-align:right; }
 
 
   <div class="flex-1 px-16 pb-2 grid grid-cols-12 gap-5">
-    <div class="col-span-5 flex flex-col gap-3">
-      <p class="font-montserrat font-bold text-brand text-2xl">As fontes</p>
-      <div class="fonte"><i class="fas fa-server"></i><div><p class="fonte-t">SQL Server da ANTAQ</p><p class="fonte-d">Fiscalização, Outorga, Corporativo, Arrendamento, SCP — o universo e os indicadores de comportamento. <strong>Acesso somente leitura.</strong></p></div></div>
-      <div class="fonte"><i class="fas fa-building-columns"></i><div><p class="fonte-t">Receita Federal</p><p class="fonte-d">Situação cadastral de cada CNPJ. <span class="pill pill-gold">novo</span></p></div></div>
-      <div class="fonte"><i class="fas fa-user-clock"></i><div><p class="fonte-t">PGD / Hefesto</p><p class="fonte-d">Planos de trabalho, horas por atividade e equipes. <span class="pill pill-gold">novo</span></p></div></div>
-      <div class="fonte"><i class="fas fa-chart-column"></i><div><p class="fonte-t">PIF e Estatístico Aquaviário</p><p class="fonte-d">Execução histórica da fiscalização e volume movimentado.</p></div></div>
-      <div class="fonte"><i class="fas fa-dice"></i><div><p class="fonte-t">NIST Randomness Beacon</p><p class="fonte-d">A semente pública do sorteio do Grupo A. <span class="pill pill-gold">novo</span></p></div></div>
-    </div>
+    <div class="col-span-6 flex flex-col gap-3">
+      <div class="card card-amber">
+        <div class="ico" style="background:#FDE68A;"><i class="fas fa-triangle-exclamation text-yellow-700 text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-2xl">Isso já acontecia — sem regra e sem registro</p>
+          <p class="text-gray-600 text-lg mt-1">
+            As fiscalizações de Santana vinham sendo feitas por equipes de fora, principalmente de
+            Belém, em viagens de apoio. Sem regra escrita, sem registro de quem decidiu, e com as
+            <strong>horas lançadas na conta de quem viajou</strong>.
+          </p>
+          <p class="text-gray-600 text-lg mt-1">
+            Efeito colateral: a capacidade de Santana <em>parecia</em> maior do que é. Aqueles
+            <strong>383% são piso, não teto</strong>.
+          </p>
+        </div>
+      </div>
 
-    <div class="col-span-7 flex flex-col gap-3">
-      <p class="font-montserrat font-bold text-brand text-2xl">O caminho</p>
-      <div class="formula" style="line-height:1.9;">
-        SQL Server ANTAQ <span style="color:#64748B;">(somente leitura)</span><br/>
-        &nbsp;&nbsp;&darr;&nbsp; extração parametrizada pela data de referência<br/>
-        Banco do painel <span style="color:#64748B;">(cópia local, congelada por ciclo)</span><br/>
-        &nbsp;&nbsp;&darr;&nbsp; ICF, IVO, sorteio, verificação cadastral, força de trabalho<br/>
-        &nbsp;&nbsp;&darr;&nbsp; recálculo do IPR e classificação em A1..C4<br/>
-        Painel e API
+      <p class="font-montserrat font-bold text-brand text-2xl">Duas formas diferentes de dividir</p>
+      <div class="modo">
+        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-right-left text-accent text-2xl"></i></div>
+        <div>
+          <p class="modo-t">Transferência</p>
+          <p class="modo-d">A outorga <strong>passa a ser de outra regional</strong> neste ciclo.
+          Só vale para o que não exige ir ao local — análise documental, navegação marítima.</p>
+        </div>
+      </div>
+      <div class="modo">
+        <div class="ico" style="background:#DCFCE7;"><i class="fas fa-plane-departure text-green-700 text-2xl"></i></div>
+        <div>
+          <p class="modo-t">Missão de apoio &mdash; em campo <em>ou</em> remota</p>
+          <p class="modo-d">A outorga <strong>fica onde está</strong> e outra equipe executa, com as
+          horas debitadas de quem apoia. A <strong>NT 2/2024</strong> divide a fiscalização em três
+          fases e só a <strong>Fase 2 é ir ao local</strong>: o apoio <strong>em campo</strong> gasta
+          diária e passagem, o <strong>remoto</strong> (Fases 1 e 3) só gasta hora.</p>
+        </div>
       </div>
 
       <div class="card card-green">
-        <div class="ico" style="background:#BBF7D0;"><i class="fas fa-calendar-day text-green-700 text-2xl"></i></div>
+        <div class="ico" style="background:#BBF7D0;"><i class="fas fa-sitemap text-green-700 text-2xl"></i></div>
         <div>
-          <p class="font-montserrat font-bold text-brand text-xl">A data de referência é 30 de setembro do ano anterior</p>
+          <p class="font-montserrat font-bold text-brand text-xl">A jurisdição NÃO muda</p>
           <p class="text-gray-600 text-lg mt-1">
-            O PAF de 2027 é montado com o corte de <strong>30/09/2026</strong>. Não há exceção —
-            é o que permite comparar um ciclo com o outro.
+            Quem responde institucionalmente por cada outorga continua sendo quem sempre foi.
+            A equalização é uma <strong>camada sobreposta, válida para o ciclo</strong> — ela diz
+            quem <em>executa</em>, não quem <em>responde</em>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-span-6 flex flex-col gap-3">
+      <div class="grid grid-cols-3 gap-3">
+        <div class="stat-card"><p class="stat-num" style="font-size:calc(34px * var(--tz));">383%&rarr;74%</p><p class="text-blue-200 text-sm font-semibold mt-2">ocupação de Santana</p></div>
+        <div class="stat-card"><p class="stat-num">136</p><p class="text-blue-200 text-sm font-semibold mt-2">movimentos propostos<br/>(8.741 horas)</p></div>
+        <div class="stat-card"><p class="stat-num">0</p><p class="text-blue-200 text-sm font-semibold mt-2">regionais acima<br/>do limite</p></div>
+      </div>
+
+      <table class="tbl">
+        <thead><tr><th>O que a proposta faz</th><th class="num">Blocos</th><th class="num">Horas</th></tr></thead>
+        <tbody>
+          <tr><td>Transferências (a outorga muda de carteira)</td><td class="num">128</td><td class="num">2.225</td></tr>
+          <tr><td>Missões de apoio <strong>em campo</strong> (a equipe viaja)</td><td class="num">1</td><td class="num">663</td></tr>
+          <tr><td>Missões de apoio <strong>remotas</strong> (Fases 1 e 3)</td><td class="num">7</td><td class="num">5.853</td></tr>
+          <tr><td colspan="3" style="color:#64748B;"><strong>Oito regionais</strong> receberam alguma coisa — <strong>ninguém recebeu o problema inteiro</strong>. <strong>75% do alívio sai como apoio</strong>: a carteira de Santana é travessia presencial, que não muda de dono. As travessias do Oiapoque vão repartidas: o escritório para Santos, o campo para São Luís, <strong>numa ida só</strong>.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="card">
+        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-boxes-stacked text-accent text-2xl"></i></div>
+        <div>
+          <p class="font-montserrat font-bold text-brand text-xl">Não se move uma outorga, move-se um bloco</p>
+          <p class="text-gray-600 text-lg mt-1">
+            Fiscalizar uma travessia ou vinte na mesma localidade custa quase o mesmo em
+            deslocamento. Por isso o que viaja é o <strong>bloco inteiro</strong> — e ele não se
+            quebra: ou vai todo, ou fica, com o motivo escrito.
           </p>
         </div>
       </div>
 
       <div class="card">
-        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-fingerprint text-accent text-2xl"></i></div>
+        <div class="ico" style="background:#DBEAFE;"><i class="fas fa-compass text-accent text-2xl"></i></div>
         <div>
-          <p class="font-montserrat font-bold text-brand text-xl">Mesmo ciclo, mesma data, mesmo resultado</p>
+          <p class="font-montserrat font-bold text-brand text-xl">Como o destino é escolhido</p>
           <p class="text-gray-600 text-lg mt-1">
-            Todo cálculo é reproduzível. O retrato bruto de cada ciclo fica
-            <strong>congelado antes de qualquer tratamento</strong> — é o que permite reconferir
-            depois o que a fonte realmente devolveu.
+            Quatro critérios com peso: <strong>folga 40%</strong> · <strong>proximidade 35%</strong> ·
+            <strong>afinidade com a carteira 15%</strong> · <strong>jurisdição 10%</strong>. Os pesos
+            moram em tabela e são servidos por endpoint — nenhuma tela os replica. O relatório
+            publica <strong>a distância e o score de cada movimento</strong>, um a um.
           </p>
         </div>
       </div>
 
-      <div class="card card-amber">
-        <div class="ico" style="background:#FDE68A;"><i class="fas fa-lock text-yellow-700 text-2xl"></i></div>
-        <div>
-          <p class="font-montserrat font-bold text-brand text-xl">Nada é gravado nos sistemas de origem</p>
-          <p class="text-gray-600 text-lg mt-1">
-            O painel só lê. Correção de dado errado se faz no sistema de origem; quando a origem
-            tem lacuna conhecida, a decisão vai para uma <strong>tabela de exceções com autor e
-            fundamento</strong> — e nasce para ser aposentada quando a origem for corrigida.
-          </p>
-        </div>
+      <div class="destaque">
+        <p class="font-montserrat font-bold" style="font-size:calc(21px * var(--tz));">
+          <i class="fas fa-user-pen mr-2"></i>A rodada propõe. Quem decide é gente.
+        </p>
+        <p class="text-blue-100 text-lg mt-1">
+          Nenhum lote muda de responsável antes de alguém aprovar, lote por lote, com
+          <strong>fundamento e nº SEI</strong>. Rodada nova não desfaz o que foi aprovado nem
+          reapresenta o que foi rejeitado.
+        </p>
       </div>
     </div>
   </div>
@@ -203,7 +250,7 @@ table.tbl th.num { text-align:right; }
 
   <div class="px-16 pb-4 flex justify-between items-center border-t border-gray-100 pt-3 mx-8">
     <p class="text-gray-400 text-sm">IPR 2.0 e o PAF 2027 — Encontro de Chefias · GPF/SFC/ANTAQ</p>
-    <p class="text-gray-300 text-sm font-mono">14 / 18</p>
+    <p class="text-gray-300 text-sm font-mono">14 / 19</p>
   </div>
 </div>
 <script src="zoom.js"></script>

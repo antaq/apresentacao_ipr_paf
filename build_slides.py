@@ -13,7 +13,7 @@ cabeçalho e o rodapé saem daqui, para que 17 arquivos não divirjam em detalhe
 from pathlib import Path
 
 DST = Path("/home/pedro/Apresentacoes/EncontroChefias2026/apresentacao_ipr_paf2027")
-TOTAL = 18
+TOTAL = 19
 RODAPE = "IPR 2.0 e o PAF 2027 — Encontro de Chefias · GPF/SFC/ANTAQ"
 
 # Fator global de texto. Cada slide declara o `base` em que foi fechado; este
@@ -205,6 +205,7 @@ slide(
         <div class="bloco-body">
           <p><strong>Quem nunca foi fiscalizado deixou de ser &ldquo;risco zero&rdquo;</strong> (ICF).</p>
           <p><strong>O tamanho da operação passou a pesar</strong> (IVO).</p>
+          <p><strong>Onde a outorga fica e quem a opera entraram na conta</strong> (ICD e IMA).</p>
           <p><strong>Atividade perigosa tem piso</strong>: travessia nunca cai na faixa mais branda (F_IRA).</p>
           <p><strong>As faixas A1..C4 foram refeitas</strong> para caber na capacidade real da Agência.</p>
           <p><strong>Uma parcela do grupo de baixo risco entra por sorteio auditável.</strong></p>
@@ -238,7 +239,7 @@ slide(
           <p><strong>A missão de apoio deixou de ser informal</strong>: passa a ter dono e trilha de auditoria.</p>
           <p><strong>A régua de dimensionamento é a mesma para todas</strong> — 35% das horas da equipe destinados ao PAF.</p>
         </div>
-        <div class="bloco-foot"><strong>136% &rarr; 98%</strong> de ocupação na regional mais apertada</div>
+        <div class="bloco-foot"><strong>383% &rarr; 74%</strong> de ocupação na regional mais apertada</div>
       </div>
     </div>
 
@@ -257,7 +258,7 @@ slide(
       <div class="mini"><i class="fas fa-list-check text-accent"></i><span><strong>2.478</strong> outorgas avaliadas</span></div>
       <div class="mini"><i class="fas fa-clipboard-check text-accent"></i><span><strong>2.410</strong> na listagem do PAF 2027</span></div>
       <div class="mini"><i class="fas fa-map-location-dot text-accent"></i><span><strong>14</strong> regionais executoras</span></div>
-      <div class="mini"><i class="fas fa-display text-accent"></i><span><strong>11</strong> telas no menu</span></div>
+      <div class="mini"><i class="fas fa-display text-accent"></i><span><strong>12</strong> telas no menu</span></div>
     </div>
   </div>
 """,
@@ -782,10 +783,123 @@ slide(
 )
 
 # ---------------------------------------------------------------------------
-# 08 — F_IRA
+# 08 — ICD e IMA
 # ---------------------------------------------------------------------------
 slide(
     8,
+    "ICD e IMA — onde fica e quem opera",
+    "Seções &ldquo;O ICD&rdquo; e &ldquo;O IMA&rdquo; da Ajuda",
+    "Onde fica e quem opera",
+    """
+  <div class="flex-1 px-16 pb-2 flex flex-col gap-3">
+
+    <p class="text-gray-600 text-xl">
+      O IPR já media <strong>comportamento</strong> — o que a empresa fez — e <strong>exposição</strong>
+      — há quanto tempo ninguém olha, quanto ela movimenta. Faltavam duas perguntas que todo chefe de
+      regional faz antes de montar uma missão: <strong>onde fica</strong> e <strong>quem opera</strong>.
+    </p>
+
+    <div class="grid grid-cols-2 gap-5 flex-1">
+
+      <div class="flex flex-col gap-2">
+        <p class="ind-h"><i class="fas fa-route"></i> ICD &middot; custo-distância &nbsp;<span class="ind-p">peso 1</span></p>
+        <p class="text-gray-600 text-lg">
+          Distância da outorga até a <strong>sede da regional que a fiscaliza</strong>, com agravante
+          <strong>&times;2 nas UFs do Norte</strong>, onde qualquer deslocamento custa mais em diária e em tempo.
+        </p>
+        <table class="tbl tbl-mini">
+          <thead><tr><th>Distância</th><th class="num">Valor</th><th class="num">Outorgas</th></tr></thead>
+          <tbody>
+            <tr><td>até 99 km</td><td class="num">0,00</td><td class="num">1.446</td></tr>
+            <tr><td>100 – 299 km</td><td class="num">0,25</td><td class="num">334</td></tr>
+            <tr><td>300 – 599 km</td><td class="num">0,50</td><td class="num">204</td></tr>
+            <tr><td>600 – 999 km</td><td class="num">0,75</td><td class="num">174</td></tr>
+            <tr><td><strong>1.000 km ou mais</strong></td><td class="num"><strong>1,00</strong></td><td class="num"><strong>320</strong></td></tr>
+          </tbody>
+        </table>
+        <div class="card card-amber">
+          <div class="ico" style="background:#FDE68A;"><i class="fas fa-scale-balanced text-yellow-700 text-2xl"></i></div>
+          <div>
+            <p class="font-montserrat font-bold text-brand text-xl">Distância é custo, não culpa</p>
+            <p class="text-gray-600 text-lg mt-1">
+              O ICD não acusa ninguém: ele avisa o planejamento de que aquela fiscalização presencial
+              custa viagem. <strong>1.143 das 2.478 outorgas</strong> estão em UF do Norte; a mais
+              distante fica a <strong>2.541 km</strong> da sua regional.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <p class="ind-h"><i class="fas fa-building"></i> IMA &middot; maturidade empresarial &nbsp;<span class="ind-p">peso 1</span></p>
+        <p class="text-gray-600 text-lg">
+          Empresa <strong>jovem</strong> e <strong>pequena</strong> tende a ter menos estrutura de
+          conformidade. Idade do CNPJ e porte entram com <strong>metade do peso cada</strong>; o limiar de
+          capital (R$ 20 milhões) foi calibrado na mediana do próprio universo.
+        </p>
+        <table class="tbl tbl-mini">
+          <thead><tr><th>Idade do CNPJ</th><th class="num">Valor</th><th>Porte</th><th class="num">Valor</th></tr></thead>
+          <tbody>
+            <tr><td>até 3 anos</td><td class="num">1,00</td><td>MEI</td><td class="num">1,00</td></tr>
+            <tr><td>3 – 5 anos</td><td class="num">0,75</td><td>ME</td><td class="num">0,75</td></tr>
+            <tr><td>5 – 10 anos</td><td class="num">0,50</td><td>EPP</td><td class="num">0,50</td></tr>
+            <tr><td>10 – 20 anos</td><td class="num">0,25</td><td>demais, abaixo do limiar</td><td class="num">0,25</td></tr>
+            <tr><td>mais de 20 anos</td><td class="num">0,00</td><td>demais, acima</td><td class="num">0,00</td></tr>
+          </tbody>
+        </table>
+        <div class="card card-green">
+          <div class="ico" style="background:#BBF7D0;"><i class="fas fa-hand-holding-heart text-green-700 text-2xl"></i></div>
+          <div>
+            <p class="font-montserrat font-bold text-brand text-xl">Priorização, não punição — e a regra da lancha</p>
+            <p class="text-gray-600 text-lg mt-1">
+              MEI e ME de <strong>passageiros na navegação interior</strong>, travessias incluídas, recebem
+              IMA <strong>no mínimo 0,75</strong>: são <strong>330 outorgas</strong>, e
+              <strong>82% das travessias</strong> são MEI ou ME. Sem esse piso o indicador não mediria nada
+              justamente onde importa. Quem sobe na fila sobe para ser fiscalizado <strong>com
+              orientação</strong> — chegar antes da autuação é o papel da fiscalização em quem não tem
+              estrutura.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="destaque flex items-center gap-6">
+      <i class="fas fa-plus text-2xl" style="opacity:0.35;"></i>
+      <div>
+        <p class="font-montserrat font-bold" style="font-size:calc(21px * var(--tz));">
+          Com ICD e IMA, a soma dos pesos foi de <strong>19 para 21</strong> — e as faixas A1..C4
+          tiveram de ser recalibradas junto.
+        </p>
+        <p class="text-blue-100 text-lg mt-1">
+          Limiar de faixa é versionado por regime de pesos: o corte de &Sigma;&nbsp;=&nbsp;19 não vale em &Sigma;&nbsp;=&nbsp;21.
+        </p>
+      </div>
+    </div>
+  </div>
+""",
+    extra_css="""
+.ind-h {
+  margin:0; display:flex; align-items:center; gap:10px;
+  font-family:'Montserrat',sans-serif; font-weight:800; color:#003366;
+  font-size:calc(22px * var(--tz));
+}
+.ind-h i { color:#0066CC; }
+.ind-p {
+  background:#E0F2FE; color:#0369A1; border-radius:999px;
+  padding:2px 12px; font-size:calc(14px * var(--tz)); font-weight:700;
+}
+table.tbl-mini th, table.tbl-mini td { font-size:calc(15px * var(--tz)); padding:5px 9px; }
+.slide > .flex-1 > .grid > .flex.flex-col { justify-content:flex-start; }
+""",
+    base=1.28,
+)
+
+# ---------------------------------------------------------------------------
+# 09 — F_IRA
+# ---------------------------------------------------------------------------
+slide(
+    9,
     "F_IRA — o piso de risco da atividade",
     "Seção &ldquo;F_IRA&rdquo; da Ajuda",
     "O piso do risco da atividade",
@@ -836,9 +950,9 @@ slide(
       <table class="tbl">
         <thead><tr><th>IRA da modalidade</th><th class="num">Piso em pontos</th><th>O que significa</th></tr></thead>
         <tbody>
-          <tr><td><strong>70 ou mais</strong></td><td class="num"><strong>13,16</strong></td><td>Garante pelo menos <span class="pill pill-b">B1</span></td></tr>
-          <tr><td>51 a 69</td><td class="num">4,21</td><td>Sinal dentro de <span class="pill pill-a">A1</span></td></tr>
-          <tr><td>35 a 50</td><td class="num">2,63</td><td>Sinal fraco</td></tr>
+          <tr><td><strong>70 ou mais</strong></td><td class="num"><strong>11,90</strong></td><td>Garante pelo menos <span class="pill pill-b">B1</span></td></tr>
+          <tr><td>51 a 69</td><td class="num">3,81</td><td>Sinal dentro de <span class="pill pill-a">A1</span></td></tr>
+          <tr><td>35 a 50</td><td class="num">2,38</td><td>Sinal fraco</td></tr>
           <tr><td>Abaixo de 35</td><td class="num">0,00</td><td>Sem piso</td></tr>
         </tbody>
       </table>
@@ -870,10 +984,10 @@ slide(
 )
 
 # ---------------------------------------------------------------------------
-# 09 — Fórmula e faixas
+# 10 — Fórmula e faixas
 # ---------------------------------------------------------------------------
 slide(
-    9,
+    10,
     "A fórmula e as faixas A1..C4",
     "Seções &ldquo;Fórmula&rdquo; e &ldquo;Faixas&rdquo; da Ajuda",
     "Da nota para a faixa",
@@ -882,13 +996,13 @@ slide(
     <div class="col-span-6 flex flex-col gap-3">
       <p class="font-montserrat font-bold text-brand text-2xl">A conta</p>
       <div class="formula" style="line-height:1.7;">
-        IPR_base = ( IIN&middot;1 + INN&middot;2 + IOU&middot;2 + IRI&middot;3<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ IGI&middot;3 + IOC&middot;3 + ICF&middot;3 + IVO&middot;2 ) &divide; <strong>19</strong><br/>
+        IPR_base = ( IIN&middot;1 + INN&middot;2 + IOU&middot;2 + IRI&middot;3 + IGI&middot;3<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ IOC&middot;3 + ICF&middot;3 + IVO&middot;2 + <strong>ICD&middot;1</strong> + <strong>IMA&middot;1</strong> ) &divide; <strong>21</strong><br/>
         <span style="color:#94A3B8;">&nbsp;</span><br/>
         IPR_final = MAIOR( IPR_base &times; 100 , piso F_IRA )
       </div>
       <p class="text-gray-600 text-lg">
-        O <strong>19</strong> é a soma dos pesos dos oito indicadores ativos. Ele não está escrito no
+        O <strong>21</strong> é a soma dos pesos dos dez indicadores ativos. Ele não está escrito no
         código: vem de uma tabela versionada. Ligar ou desligar um indicador muda a fórmula,
         muda os pisos e <strong>obriga a recalibrar as faixas</strong>.
       </p>
@@ -899,7 +1013,7 @@ slide(
           <p class="font-montserrat font-bold text-brand text-xl">Por que as faixas foram refeitas</p>
           <p class="text-gray-600 text-lg mt-1">
             Os cortes da NT 9/2021 (5 / 15 / 30 / 40 / 50 / 60 / 70) foram medidos contra o universo
-            real: a maior nota do ciclo 2027 é <strong>59,89</strong>. Com aqueles cortes,
+            real: a maior nota do ciclo 2027 é <strong>54,79</strong>. Com aqueles cortes,
             <strong>C3 e C4 nunca teriam ninguém</strong>. Faixa que ninguém alcança não prioriza nada.
           </p>
         </div>
@@ -923,24 +1037,24 @@ slide(
       <table class="tbl">
         <thead><tr><th>Faixa</th><th>Nota</th><th>Leitura</th><th class="num">Outorgas</th></tr></thead>
         <tbody>
-          <tr><td><span class="pill pill-a">A1</span></td><td>até 8,50</td><td>sem sinal relevante</td><td class="num">327</td></tr>
-          <tr><td><span class="pill pill-a">A2</span></td><td>8,51 – 13,13</td><td>risco baixo</td><td class="num">150</td></tr>
-          <tr><td><span class="pill pill-b">B1</span></td><td>13,14 – 16,84</td><td>piso de atividade e nunca fiscalizadas</td><td class="num">1.169</td></tr>
-          <tr><td><span class="pill pill-b">B2</span></td><td>16,85 – 22,11</td><td>histórico próprio começa a pesar</td><td class="num">517</td></tr>
-          <tr><td><span class="pill pill-c">C1</span></td><td>22,12 – 26,32</td><td>alto — prioridade no PAF</td><td class="num">242</td></tr>
-          <tr><td><span class="pill pill-c">C2</span></td><td>26,33 – 28,70</td><td>muito alto</td><td class="num">20</td></tr>
-          <tr><td><span class="pill pill-c">C3</span></td><td>28,71 – 33,83</td><td>crítico</td><td class="num">24</td></tr>
-          <tr><td><span class="pill pill-c">C4</span></td><td>acima de 33,83</td><td>extremo — mobilização imediata</td><td class="num">29</td></tr>
+          <tr><td><span class="pill pill-a">A1</span></td><td>até 7,42</td><td>sem sinal relevante</td><td class="num">265</td></tr>
+          <tr><td><span class="pill pill-a">A2</span></td><td>7,43 – 11,86</td><td>risco baixo</td><td class="num">155</td></tr>
+          <tr><td><span class="pill pill-b">B1</span></td><td>11,87 – 17,27</td><td>piso de atividade e nunca fiscalizadas</td><td class="num">943</td></tr>
+          <tr><td><span class="pill pill-b">B2</span></td><td>17,28 – 21,05</td><td>histórico próprio começa a pesar</td><td class="num">503</td></tr>
+          <tr><td><span class="pill pill-c">C1</span></td><td>21,06 – 24,40</td><td>alto — prioridade no PAF</td><td class="num">291</td></tr>
+          <tr><td><span class="pill pill-c">C2</span></td><td>24,41 – 27,98</td><td>muito alto</td><td class="num">188</td></tr>
+          <tr><td><span class="pill pill-c">C3</span></td><td>27,99 – 32,14</td><td>crítico</td><td class="num">97</td></tr>
+          <tr><td><span class="pill pill-c">C4</span></td><td>acima de 32,14</td><td>extremo — mobilização imediata</td><td class="num">36</td></tr>
         </tbody>
       </table>
       <p class="legenda">
         A régua é <strong>versionada</strong>: os limiares valem para o regime de pesos atual
-        (soma 19). Os limiares antigos continuam válidos para os ciclos calculados naquele regime —
+        (soma 21). Os limiares antigos continuam válidos para os ciclos calculados naquele regime —
         por isso o Histórico compara faixas sem misturar réguas.
       </p>
       <div class="destaque">
         <p class="font-montserrat font-bold" style="font-size:calc(20px * var(--tz));">
-          Média do universo: <strong>15,9</strong> &nbsp;·&nbsp; Máxima: <strong>59,89</strong>
+          Média do universo: <strong>16,61</strong> &nbsp;·&nbsp; Máxima: <strong>54,79</strong>
         </p>
       </div>
     </div>
@@ -950,10 +1064,10 @@ slide(
 )
 
 # ---------------------------------------------------------------------------
-# 10 — Sorteio
+# 11 — Sorteio
 # ---------------------------------------------------------------------------
 slide(
-    10,
+    11,
     "O sorteio do Grupo A",
     "Seção &ldquo;O sorteio do Grupo A&rdquo; da Ajuda",
     "Aleatoriedade verificável no PAF",
@@ -1051,10 +1165,10 @@ slide(
 )
 
 # ---------------------------------------------------------------------------
-# 11 — Cadastro (NOVO)
+# 12 — Cadastro (NOVO)
 # ---------------------------------------------------------------------------
 slide(
-    11,
+    12,
     "Cadastro — CNPJ baixado e suspenso",
     "Novo em 2027 · tela Cadastro",
     "O CNPJ existe mesmo?",
@@ -1159,10 +1273,10 @@ slide(
 )
 
 # ---------------------------------------------------------------------------
-# 12 — Força de trabalho (NOVO)
+# 13 — Força de trabalho (NOVO)
 # ---------------------------------------------------------------------------
 slide(
-    12,
+    13,
     "Força de Trabalho — o PAF cabe?",
     "Novo em 2027 · tela Força de Trabalho",
     "O PAF cabe em quem o executa?",
@@ -1189,18 +1303,19 @@ slide(
           <th class="num">Sem reforço</th><th class="num">Com reforço</th>
         </tr></thead>
         <tbody>
-          <tr class="row-r"><td><strong>URESN</strong> · Santana</td><td class="num">3</td><td class="num">+1</td><td class="num">1.281</td><td class="num">1.742</td><td class="num">195%</td><td class="num"><strong>136%</strong></td></tr>
-          <tr class="row-o"><td><strong>GREBL</strong> · Belém</td><td class="num">17</td><td class="num">+7</td><td class="num">8.061</td><td class="num">6.091</td><td class="num">112%</td><td class="num"><strong>76%</strong></td></tr>
-          <tr class="row-o"><td><strong>GREMN</strong> · Manaus</td><td class="num">14</td><td class="num">+7</td><td class="num">6.973</td><td class="num">5.257</td><td class="num">126%</td><td class="num"><strong>75%</strong></td></tr>
-          <tr><td><strong>GRERJ</strong> · Rio de Janeiro</td><td class="num">11</td><td class="num">+2</td><td class="num">6.300</td><td class="num">2.610</td><td class="num">47%</td><td class="num">41%</td></tr>
-          <tr><td><strong>URESL</strong> · São Luís</td><td class="num">7</td><td class="num">—</td><td class="num">3.657</td><td class="num">1.525</td><td class="num">42%</td><td class="num">42%</td></tr>
-          <tr><td><strong>UREPV</strong> · Porto Velho</td><td class="num">3</td><td class="num">—</td><td class="num">1.723</td><td class="num">646</td><td class="num">37%</td><td class="num">37%</td></tr>
-          <tr><td colspan="7" style="color:#64748B;">UREFT 49% · GREST 27% · UREVT 26% · GREFL 21% · UREPL 18% · URESV 16% · GRERE 14% · URECB 13%</td></tr>
+          <tr class="row-r"><td><strong>URESN</strong> · Santana</td><td class="num">3</td><td class="num">+1</td><td class="num">1.281</td><td class="num">4.904</td><td class="num">549%</td><td class="num"><strong>383%</strong></td></tr>
+          <tr class="row-r"><td><strong>GREBL</strong> · Belém</td><td class="num">17</td><td class="num">+7</td><td class="num">8.061</td><td class="num">11.371</td><td class="num">210%</td><td class="num"><strong>141%</strong></td></tr>
+          <tr class="row-o"><td><strong>GREMN</strong> · Manaus</td><td class="num">14</td><td class="num">+7</td><td class="num">6.973</td><td class="num">8.151</td><td class="num">195%</td><td class="num"><strong>117%</strong></td></tr>
+          <tr><td><strong>UREPL</strong> · Pelotas</td><td class="num">4</td><td class="num">—</td><td class="num">1.768</td><td class="num">1.336</td><td class="num">76%</td><td class="num">76%</td></tr>
+          <tr><td><strong>UREPV</strong> · Porto Velho</td><td class="num">3</td><td class="num">—</td><td class="num">1.723</td><td class="num">1.229</td><td class="num">71%</td><td class="num">71%</td></tr>
+          <tr><td><strong>UREFT</strong> · Fortaleza</td><td class="num">4</td><td class="num">—</td><td class="num">1.768</td><td class="num">1.147</td><td class="num">65%</td><td class="num">65%</td></tr>
+          <tr><td colspan="7" style="color:#64748B;">URESL 59% · GRERJ 58% · GREFL 53% · GREST 43% · GRERE 38% · UREVT 22% · URECB 21% · URESV 17%</td></tr>
         </tbody>
       </table>
       <p class="legenda">
-        Cenário base: as 305 outorgas do Grupo C mais a expectativa do sorteio do Grupo A,
-        precificadas pela <strong>Tabela de Atividades da SFC</strong>. O envelope &ldquo;com
+        Cenário base: as <strong>587 outorgas do Grupo C</strong> mais a expectativa do sorteio
+        sobre as 415 do Grupo A, precificadas pela <strong>Tabela de Atividades da SFC</strong>.
+        O Grupo C cresceu de 305 para 587 com a recalibração das faixas em &Sigma;&nbsp;=&nbsp;21. O envelope &ldquo;com
         reforço&rdquo; inclui os <strong>20 convocados do CNU</strong> lotados nas regionais, já com
         o rendimento reduzido de quem está começando. Quem está destacado conta na equipe
         <strong>de onde executa</strong>.
@@ -1213,10 +1328,10 @@ slide(
           O problema não é a Agência. É a distribuição.
         </p>
         <p class="text-blue-100 text-lg mt-2">
-          <strong>23,8 mil horas</strong> de trabalho previsto contra um envelope de
-          <strong>55,2 mil horas</strong>: a rede usa <strong>43%</strong> do que a régua destina ao
-          PAF, e o plano inteiro cabe em <strong>15,1% das horas líquidas</strong> do país. Ainda
-          assim uma regional fica em <strong>195% — 136% mesmo com o reforço do CNU</strong>.
+          <strong>42,1 mil horas</strong> de trabalho previsto contra um envelope de
+          <strong>55,2 mil horas</strong>: a rede usa <strong>76%</strong> do que a régua destina ao
+          PAF, e o plano inteiro cabe em <strong>27% das horas líquidas</strong> do país. Ainda
+          assim uma regional fica em <strong>549% — 383% mesmo com o reforço do CNU</strong>.
         </p>
       </div>
 
@@ -1268,10 +1383,11 @@ slide(
       <p class="font-montserrat font-bold text-brand text-xl">O tamanho do PAF é medido, não escolhido</p>
       <p class="text-gray-600 text-lg mt-1">
         O recorte de <strong>200 outorgas</strong> foi aposentado: o maior PAF que cabe é
-        <strong>medido</strong> rodando o fluxo inteiro — custo, planos de trabalho e
-        equalização juntos. A fronteira do ciclo: <strong>675 outorgas</strong> (338 presenciais
-        + 337 remotas), <strong>86% do envelope nacional</strong>, com a taxa de sorteio
-        vigente e o Grupo C inteiro — nada de norma nova.
+        <strong>medido</strong> rodando o fluxo inteiro — custo, planos de trabalho e equalização
+        juntos. Com ICD e IMA, o que o PAF <em>obriga</em> — o Grupo C inteiro mais o sorteio —
+        passou a ocupar <strong>76% do envelope nacional</strong>, e <strong>cabe</strong> depois
+        da equalização. Quanto ainda sobra para fiscalizar <em>além</em> do devido é medida a
+        refazer com as faixas novas — número que só sai depois de publicado.
       </p>
     </div>
   </div>
@@ -1292,10 +1408,10 @@ table.tbl tr.row-o td { background:#FFF7ED; }
 )
 
 # ---------------------------------------------------------------------------
-# 13 — Equalização (NOVO)
+# 14 — Equalização (NOVO)
 # ---------------------------------------------------------------------------
 slide(
-    13,
+    14,
     "Equalização da carga entre regionais",
     "Novo em 2027 · tela Equalização",
     "Dividir melhor o trabalho",
@@ -1313,7 +1429,7 @@ slide(
           </p>
           <p class="text-gray-600 text-lg mt-1">
             Efeito colateral: a capacidade de Santana <em>parecia</em> maior do que é. Aqueles
-            <strong>136% são piso, não teto</strong>.
+            <strong>383% são piso, não teto</strong>.
           </p>
         </div>
       </div>
@@ -1330,10 +1446,11 @@ slide(
       <div class="modo">
         <div class="ico" style="background:#DCFCE7;"><i class="fas fa-plane-departure text-green-700 text-2xl"></i></div>
         <div>
-          <p class="modo-t">Missão de apoio</p>
-          <p class="modo-d">A outorga <strong>fica onde está</strong> e uma equipe de fora vai até lá
-          executar. As horas são debitadas de quem apoia. É o que já se fazia — agora com dono,
-          registro e efeito no planejamento.</p>
+          <p class="modo-t">Missão de apoio &mdash; em campo <em>ou</em> remota</p>
+          <p class="modo-d">A outorga <strong>fica onde está</strong> e outra equipe executa, com as
+          horas debitadas de quem apoia. A <strong>NT 2/2024</strong> divide a fiscalização em três
+          fases e só a <strong>Fase 2 é ir ao local</strong>: o apoio <strong>em campo</strong> gasta
+          diária e passagem, o <strong>remoto</strong> (Fases 1 e 3) só gasta hora.</p>
         </div>
       </div>
 
@@ -1352,17 +1469,18 @@ slide(
 
     <div class="col-span-6 flex flex-col gap-3">
       <div class="grid grid-cols-3 gap-3">
-        <div class="stat-card"><p class="stat-num" style="font-size:calc(38px * var(--tz));">136%&rarr;98%</p><p class="text-blue-200 text-sm font-semibold mt-2">ocupação de Santana</p></div>
-        <div class="stat-card"><p class="stat-num">12</p><p class="text-blue-200 text-sm font-semibold mt-2">movimentos propostos<br/>(483 horas)</p></div>
+        <div class="stat-card"><p class="stat-num" style="font-size:calc(34px * var(--tz));">383%&rarr;74%</p><p class="text-blue-200 text-sm font-semibold mt-2">ocupação de Santana</p></div>
+        <div class="stat-card"><p class="stat-num">136</p><p class="text-blue-200 text-sm font-semibold mt-2">movimentos propostos<br/>(8.741 horas)</p></div>
         <div class="stat-card"><p class="stat-num">0</p><p class="text-blue-200 text-sm font-semibold mt-2">regionais acima<br/>do limite</p></div>
       </div>
 
       <table class="tbl">
         <thead><tr><th>O que a proposta faz</th><th class="num">Blocos</th><th class="num">Horas</th></tr></thead>
         <tbody>
-          <tr><td>Transferências (a outorga muda de carteira)</td><td class="num">8</td><td class="num">123</td></tr>
-          <tr><td>Missões de apoio (a equipe é que viaja)</td><td class="num">4</td><td class="num">361</td></tr>
-          <tr><td colspan="3" style="color:#64748B;">Transferências: todas para Santos. Missões: Florianópolis, São Luís e Vitória — <strong>ninguém recebeu o problema inteiro</strong>. <strong>75% do alívio sai como apoio</strong>: a carteira de Santana é travessia presencial, que não muda de dono.</td></tr>
+          <tr><td>Transferências (a outorga muda de carteira)</td><td class="num">128</td><td class="num">2.225</td></tr>
+          <tr><td>Missões de apoio <strong>em campo</strong> (a equipe viaja)</td><td class="num">1</td><td class="num">663</td></tr>
+          <tr><td>Missões de apoio <strong>remotas</strong> (Fases 1 e 3)</td><td class="num">7</td><td class="num">5.853</td></tr>
+          <tr><td colspan="3" style="color:#64748B;"><strong>Oito regionais</strong> receberam alguma coisa — <strong>ninguém recebeu o problema inteiro</strong>. <strong>75% do alívio sai como apoio</strong>: a carteira de Santana é travessia presencial, que não muda de dono. As travessias do Oiapoque vão repartidas: o escritório para Santos, o campo para São Luís, <strong>numa ida só</strong>.</td></tr>
         </tbody>
       </table>
 
@@ -1384,9 +1502,9 @@ slide(
           <p class="font-montserrat font-bold text-brand text-xl">Como o destino é escolhido</p>
           <p class="text-gray-600 text-lg mt-1">
             Quatro critérios com peso: <strong>folga 40%</strong> · <strong>proximidade 35%</strong> ·
-            <strong>afinidade com a carteira 15%</strong> · <strong>jurisdição 10%</strong>.
-            O relatório publica o preço da preferência por folga: <strong>4.984 km a mais</strong>
-            do que se a proximidade decidisse sozinha.
+            <strong>afinidade com a carteira 15%</strong> · <strong>jurisdição 10%</strong>. Os pesos
+            moram em tabela e são servidos por endpoint — nenhuma tela os replica. O relatório
+            publica <strong>a distância e o score de cada movimento</strong>, um a um.
           </p>
         </div>
       </div>
@@ -1414,10 +1532,10 @@ slide(
 )
 
 # ---------------------------------------------------------------------------
-# 14 — De onde vem cada número
+# 15 — De onde vem cada número
 # ---------------------------------------------------------------------------
 slide(
-    14,
+    15,
     "De onde vem cada número",
     "Seções &ldquo;Pipeline&rdquo; e &ldquo;Arquitetura&rdquo; da Ajuda",
     "De onde vem cada número",
@@ -1490,10 +1608,10 @@ slide(
 )
 
 # ---------------------------------------------------------------------------
-# 15 — O painel
+# 16 — O painel
 # ---------------------------------------------------------------------------
 slide(
-    15,
+    16,
     "O painel — as telas",
     "Onde ver tudo isso",
     "O painel, tela por tela",
@@ -1549,10 +1667,10 @@ slide(
 )
 
 # ---------------------------------------------------------------------------
-# 16 — O que muda para a sua Regional
+# 17 — O que muda para a sua Regional
 # ---------------------------------------------------------------------------
 slide(
-    16,
+    17,
     "O que muda para a sua Regional",
     "O prático",
     "O que muda para a sua Regional",
@@ -1629,10 +1747,10 @@ slide(
 )
 
 # ---------------------------------------------------------------------------
-# 17 — Glossário
+# 18 — Glossário
 # ---------------------------------------------------------------------------
 slide(
-    17,
+    18,
     "Glossário",
     "Para consulta",
     "Glossário",
@@ -1646,6 +1764,8 @@ slide(
     <div class="glos"><span class="g-t">Faixa</span><span class="g-d">A classificação de A1 a C4 que decide o tratamento fiscal</span></div>
     <div class="glos"><span class="g-t">ICF</span><span class="g-d">Indicador de Cobertura Fiscalizatória — há quanto tempo não se fiscaliza</span></div>
     <div class="glos"><span class="g-t">IVO</span><span class="g-d">Indicador de Volume Operacional — o porte da operação</span></div>
+    <div class="glos"><span class="g-t">ICD</span><span class="g-d">Índice de Custo-Distância — quanto custa chegar até a outorga</span></div>
+    <div class="glos"><span class="g-t">IMA</span><span class="g-d">Índice de Maturidade Empresarial — idade e porte de quem opera</span></div>
     <div class="glos"><span class="g-t">IRA</span><span class="g-d">Indicador de Risco da Atividade — risco próprio da modalidade</span></div>
     <div class="glos"><span class="g-t">F_IRA</span><span class="g-d">O piso de nota que o IRA garante à outorga</span></div>
     <div class="glos"><span class="g-t">IRI · IGI · IOC</span><span class="g-d">Reincidência · gravidade · ocorrência crítica</span></div>
@@ -1664,12 +1784,14 @@ slide(
     <div class="glos"><span class="g-t">Reserva</span><span class="g-d">A fatia das horas comprometida com o que não é PAF</span></div>
     <div class="glos"><span class="g-t">GEF</span><span class="g-d">Grupo Especializado de Fiscalização — rito próprio, fora do cômputo do PAF ordinário</span></div>
     <div class="glos"><span class="g-t">Lote</span><span class="g-d">O conjunto de outorgas que viaja junto na equalização</span></div>
-    <div class="glos"><span class="g-t">Missão de apoio</span><span class="g-d">A outorga fica; a equipe de outra regional vai executar</span></div>
+    <div class="glos"><span class="g-t">Missão de apoio</span><span class="g-d">A outorga fica; outra regional executa — em campo (Fase 2) ou remota (Fases 1 e 3)</span></div>
     <div class="glos"><span class="g-t">Jurisdição</span><span class="g-d">Quem responde institucionalmente pela outorga — não muda com a equalização</span></div>
     <div class="glos"><span class="g-t">CNU</span><span class="g-d">Concurso Nacional Unificado — 20 convocados lotados nas regionais</span></div>
     <div class="glos"><span class="g-t">GPF</span><span class="g-d">Gerência de Planejamento e Inteligência da Fiscalização</span></div>
     <div class="glos"><span class="g-t">SFC</span><span class="g-d">Superintendência de Fiscalização e Coordenação das Unidades Regionais</span></div>
     <div class="glos"><span class="g-t">NT 9 · NT 11 · NT 19</span><span class="g-d">As Notas Técnicas que fundamentam o índice e o plano</span></div>
+    <div class="glos"><span class="g-t">NT 2/2024</span><span class="g-d">A norma que divide a fiscalização em três fases — só a Fase 2 é ir ao local</span></div>
+    <div class="glos"><span class="g-t">&Sigma; dos pesos</span><span class="g-d">A soma dos pesos dos indicadores ativos — 21 desde ICD e IMA; limiar de faixa é versionado por ela</span></div>
   </div>
 """,
     extra_css="""
@@ -1681,9 +1803,9 @@ slide(
 )
 
 # ---------------------------------------------------------------------------
-# 18 — Encerramento
+# 19 — Encerramento
 # ---------------------------------------------------------------------------
-SLIDES.append(dict(n=18, raw=True))
+SLIDES.append(dict(n=19, raw=True))
 
 
 def render(s):
